@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,10 +38,7 @@
     .warn-box{border:2px solid #c0392b;background:#fff5f5}
     .warn-box .nb-head{background:#c0392b}
     .doc-footer{margin-top:16px;border-top:2px solid #1a1a1a;padding-top:8px;font-size:9.5px;color:#555;display:flex;justify-content:space-between}
-    @media print{
-      body{background:white;padding:0}
-      .page{box-shadow:none;border:none;padding:12px;max-width:100%}
-    }
+    @media print{body{background:white;padding:0}.page{box-shadow:none;border:none;padding:12px;max-width:100%}}
   </style>
 </head>
 <body>
@@ -49,53 +46,38 @@
 
   <!-- TITLE BLOCK -->
   <div class="title-block">
-    <div class="tb-header">PHARMACY FLOOR PLAN &amp; GPP COMPLIANCE LAYOUT — RATCHADA PRESTIGE CONDO</div>
+    <div class="tb-header">PHARMACY FLOOR PLAN &amp; GPP COMPLIANCE LAYOUT — RATCHADA PRESTIGE CONDO (Rev C)</div>
     <div class="tb-body">
       <div class="tb-col">
         <div class="tb-row"><span class="tb-key">Project</span><span class="tb-val">New Pharmacy Build-Out — Ratchada Prestige Condo</span></div>
         <div class="tb-row"><span class="tb-key">Drawing Type</span><span class="tb-val">Schematic Floor Plan — Space Allocation &amp; GPP Zones</span></div>
         <div class="tb-row"><span class="tb-key">Total Area</span><span class="tb-val">40 sqm (4.0 m × 10.0 m shophouse unit)</span></div>
         <div class="tb-row"><span class="tb-key">Scale (indicative)</span><span class="tb-val">1 : 50 (SVG schematic — contractor to verify on-site)</span></div>
-        <div class="tb-row"><span class="tb-key">Drawing No.</span><span class="tb-val">RPC-FP-001 Rev A</span></div>
-        <div class="tb-row"><span class="tb-key">Prepared by</span><span class="tb-val">Owner — for contractor &amp; FDA inspector reference</span></div>
+        <div class="tb-row"><span class="tb-key">Drawing No.</span><span class="tb-val">RPC-FP-001 Rev C</span></div>
         <div class="tb-row"><span class="tb-key">Standard</span><span class="tb-val">Thai FDA Good Pharmacy Practice (GPP) — Drug Act B.E. 2510</span></div>
         <div class="tb-row"><span class="tb-key">Status</span><span class="tb-val" style="font-weight:bold;color:#c0392b">FOR CONTRACTOR REVIEW — NOT FOR CONSTRUCTION</span></div>
       </div>
       <div class="tb-col">
         <div class="tb-row"><span class="tb-key">Budget (Reno, Option B)</span><span class="tb-val">฿120,000</span></div>
-        <div class="tb-row"><span class="tb-key">AC Units Required</span><span class="tb-val">2 × 12,000 BTU (zone 1–2 and zone 3–5), left wall-mount</span></div>
+        <div class="tb-row"><span class="tb-key">AC Units Required</span><span class="tb-val">2 × 12,000 BTU (left wall-mount)</span></div>
         <div class="tb-row"><span class="tb-key">Pharma Fridge</span><span class="tb-val">1 × 300 L dual-zone pharmaceutical (2–8 °C)</span></div>
-        <div class="tb-row"><span class="tb-key">CCTV</span><span class="tb-val">4 cameras — see plan (CAM-1 to CAM-4)</span></div>
         <div class="tb-row"><span class="tb-key">Max Storage Temp</span><span class="tb-val">≤ 25 °C</span></div>
         <div class="tb-row"><span class="tb-key">Max Humidity</span><span class="tb-val">≤ 60 % RH</span></div>
         <div class="tb-row"><span class="tb-key">Date</span><span class="tb-val">2026-05-26</span></div>
-        <div class="tb-row"><span class="tb-key">Revision</span><span class="tb-val">A — Initial Issue</span></div>
+        <div class="tb-row"><span class="tb-key">Revision</span><span class="tb-val">C — Zones consolidated: 4-zone layout, no door entries on plan</span></div>
       </div>
     </div>
   </div>
 
   <!-- FLOOR PLAN + SIDE PANEL -->
   <div class="main-layout">
-
-    <!-- SVG FLOOR PLAN -->
     <div class="fp-svg-wrap">
       <!--
         Room: 4.0 m wide × 10.0 m deep = 40 sqm
-        Scale: 90 px / m
-        Room SVG origin: x=80..440, y=65..965  (360 px × 900 px)
-        SVG viewBox: 0 0 530 1060
-        Orientation:
-          TOP  (y=65)  = PARTY WALL — upper unit (back of shop)
-          BOTTOM (y=965) = PARTY WALL — lower unit / street (front)
-          LEFT  (x=80)  = OUTSIDE WALL
-          RIGHT (x=440) = OUTSIDE WALL — entry side
-          Entry door: right wall, y=840..930 (swings LEFT into Z1)
-        Zone order top→bottom (back→front):
-          y=65..245   Z6 Office | Z7 Cold Storage | Z8 Staff+Utilities
-          y=245..425  Z4 Rx/Controlled | Z5 Consultation
-          y=425..560  Z3 General Drug Storage
-          y=560..740  Z2 Dispensing Counter
-          y=740..965  Z1 OTC Display & Entry
+        Scale: 90 px / m  |  x=80..440 (360px=4m)  |  y=65..965 (900px=10m)
+        LEFT  col x=80..260 (2m): Rest Room (top 2m) | Consultation+Dispensing (bottom 8m)
+        RIGHT col x=260..440 (2m): Activity Zone (top 3m) | OTC + Shelf (bottom 7m)
+        No door swing arcs on this plan.
       -->
       <svg viewBox="0 0 530 1060" width="380" style="display:block;border:1px solid #bbb">
         <defs>
@@ -105,332 +87,136 @@
           <marker id="a2" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse">
             <polygon points="0,0 7,3.5 0,7" fill="#444"/>
           </marker>
-          <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="6" stroke="#b00020" stroke-width="1.5"/>
-          </pattern>
         </defs>
 
         <!-- Page background -->
         <rect width="530" height="1060" fill="#f2f2ec"/>
 
         <!-- ── ZONE FILLS ── -->
-        <!-- Z6 Office (back-left) -->
-        <rect x="80"  y="65"  width="135" height="180" fill="#eeeeee"/>
-        <!-- Z7 Cold Storage (back-centre) -->
-        <rect x="215" y="65"  width="90"  height="180" fill="#e0f7fa"/>
-        <!-- Z8 Staff / Utilities (back-right) -->
-        <rect x="305" y="65"  width="135" height="180" fill="#fafafa"/>
-        <!-- Z4 Rx / Controlled (mid-left) -->
-        <rect x="80"  y="245" width="180" height="180" fill="#fce4ec"/>
-        <!-- Z5 Consultation (mid-right) -->
-        <rect x="260" y="245" width="180" height="180" fill="#f3e5f5"/>
-        <!-- Z3 General Storage -->
-        <rect x="80"  y="425" width="360" height="135" fill="#fff8e1"/>
-        <!-- Z2 Dispensing -->
-        <rect x="80"  y="560" width="360" height="180" fill="#e3edf8"/>
-        <!-- Z1 OTC Entry (front) -->
-        <rect x="80"  y="740" width="360" height="225" fill="#e8f5e9"/>
+        <!-- Rest Room  (x=80..260, y=65..245)  2m×2m = 4 m² -->
+        <rect x="80"  y="65"  width="180" height="180" fill="#f0f0ee"/>
+        <!-- Activity Zone  (x=260..440, y=65..335)  2m×3m = 6 m² -->
+        <rect x="260" y="65"  width="180" height="270" fill="#e0f2f1"/>
+        <!-- Consultation + Dispensing  (x=80..260, y=245..965)  2m×8m = 16 m² -->
+        <rect x="80"  y="245" width="180" height="720" fill="#e8edf8"/>
+        <!-- OTC + Medicine Shelf  (x=260..440, y=335..965)  2m×7m = 14 m² -->
+        <rect x="260" y="335" width="180" height="630" fill="#f9fbe7"/>
 
-        <!-- ── OUTER ROOM WALLS ── -->
-        <!-- Top party wall -->
+        <!-- ── OUTER WALLS (solid — no door gaps) ── -->
         <line x1="80"  y1="65"  x2="440" y2="65"  stroke="#111" stroke-width="4"/>
-        <!-- Bottom party wall -->
         <line x1="80"  y1="965" x2="440" y2="965" stroke="#111" stroke-width="4"/>
-        <!-- Left outside wall -->
         <line x1="80"  y1="65"  x2="80"  y2="965" stroke="#111" stroke-width="4"/>
-        <!-- Right outside wall — gap y=840..930 for entry door -->
-        <line x1="440" y1="65"  x2="440" y2="840" stroke="#111" stroke-width="4"/>
-        <line x1="440" y1="930" x2="440" y2="965" stroke="#111" stroke-width="4"/>
+        <line x1="440" y1="65"  x2="440" y2="965" stroke="#111" stroke-width="4"/>
 
-        <!-- ── INTERNAL ZONE DIVIDERS ── -->
-        <!-- Back row bottom boundary -->
-        <line x1="80"  y1="245" x2="440" y2="245" stroke="#333" stroke-width="2"/>
-        <!-- Back-row vertical splits -->
-        <line x1="215" y1="65"  x2="215" y2="245" stroke="#333" stroke-width="2"/>
-        <line x1="305" y1="65"  x2="305" y2="245" stroke="#333" stroke-width="2"/>
-        <!-- Z4 / Z5 vertical split -->
-        <line x1="260" y1="245" x2="260" y2="425" stroke="#333" stroke-width="2"/>
-        <!-- Z4+Z5 bottom boundary (Z3 top) — door gap x=365..410 handled below -->
-        <line x1="80"  y1="425" x2="365" y2="425" stroke="#333" stroke-width="2"/>
-        <line x1="410" y1="425" x2="440" y2="425" stroke="#333" stroke-width="2"/>
-        <!-- Z3 bottom boundary -->
-        <line x1="80"  y1="560" x2="440" y2="560" stroke="#333" stroke-width="2"/>
-        <!-- Z2 bottom boundary (Z1 top) -->
-        <line x1="80"  y1="740" x2="440" y2="740" stroke="#333" stroke-width="2"/>
+        <!-- ── INTERNAL DIVIDERS ── -->
+        <!-- Center vertical (full height) -->
+        <line x1="260" y1="65"  x2="260" y2="965" stroke="#333" stroke-width="2"/>
+        <!-- y=245: Rest Room / Consultation+Dispensing boundary (left col only) -->
+        <line x1="80"  y1="245" x2="260" y2="245" stroke="#333" stroke-width="2"/>
+        <!-- y=335: Activity / OTC boundary (right col only) -->
+        <line x1="260" y1="335" x2="440" y2="335" stroke="#333" stroke-width="2"/>
+        <!-- Visual sub-divider: consultation / dispensing soft line (dashed) -->
+        <line x1="80"  y1="460" x2="260" y2="460" stroke="#7986cb" stroke-width="1" stroke-dasharray="6,3" opacity=".6"/>
 
-        <!-- ── MAIN ENTRY DOOR (right wall, y=840..930, 1 m = 90 px) ── -->
-        <!-- Hinge at (440,840) top of gap; door swings inward left into Z1 -->
-        <line x1="440" y1="840" x2="350" y2="840" stroke="#2e7d32" stroke-width="1.5"/>
-        <path d="M440,930 A90,90 0 0,1 350,840" fill="none" stroke="#2e7d32" stroke-width="1" stroke-dasharray="5,3"/>
-        <path d="M440,840 L440,930 A90,90 0 0,0 350,840 Z" fill="rgba(100,200,120,.12)" stroke="none"/>
-        <!-- ENTRY label near door -->
-        <text x="412" y="898" text-anchor="middle" font-size="8" fill="#1b5e20" font-weight="bold">◄ ENTRY</text>
-
-        <!-- ── CONSULTATION DOOR (bottom of Z5, x=365..410, 0.5 m) ── -->
-        <!-- Hinge at (410,425); door swings UP into Z5 -->
-        <line x1="410" y1="425" x2="410" y2="380" stroke="#7b1fa2" stroke-width="1.5"/>
-        <path d="M365,425 A45,45 0 0,1 410,380" fill="none" stroke="#7b1fa2" stroke-width="1" stroke-dasharray="4,3"/>
-        <path d="M410,425 L365,425 A45,45 0 0,1 410,380 Z" fill="rgba(200,150,220,.15)" stroke="none"/>
-        <!-- Patch door gap in Z3/Z5 boundary -->
-        <rect x="365" y="420" width="45" height="10" fill="#f3e5f5"/>
-
-        <!-- ── AC UNITS (left wall, project inward) ── -->
-        <!-- AC-1: Z2 area (left wall) -->
-        <rect x="80" y="605" width="10" height="60" fill="#80deea" stroke="#006064" stroke-width="1"/>
-        <text x="94" y="623" font-size="6.5" fill="#004d50" font-weight="bold">AC-1</text>
-        <text x="94" y="633" font-size="6" fill="#004d50">12,000 BTU</text>
-        <!-- AC-2: Z3 area (left wall) -->
-        <rect x="80" y="450" width="10" height="60" fill="#80deea" stroke="#006064" stroke-width="1"/>
-        <text x="94" y="468" font-size="6.5" fill="#004d50" font-weight="bold">AC-2</text>
-        <text x="94" y="478" font-size="6" fill="#004d50">12,000 BTU</text>
-
-        <!-- ── FURNITURE: Z1 OTC Entry (y=740..965) ── -->
-        <!-- Left wall shelving -->
-        <rect x="83" y="755" width="12" height="55" fill="#c8e6c9" stroke="#388e3c" stroke-width="1"/>
-        <rect x="83" y="822" width="12" height="55" fill="#c8e6c9" stroke="#388e3c" stroke-width="1"/>
-        <rect x="83" y="890" width="12" height="55" fill="#c8e6c9" stroke="#388e3c" stroke-width="1"/>
-        <!-- Right wall shelving (above door y=740..830 and below door y=938..965) -->
-        <rect x="426" y="755" width="12" height="55" fill="#c8e6c9" stroke="#388e3c" stroke-width="1"/>
-        <rect x="426" y="936" width="12" height="22" fill="#c8e6c9" stroke="#388e3c" stroke-width="1"/>
-        <!-- Gondola rows -->
-        <rect x="130" y="772" width="240" height="12" fill="#a5d6a7" stroke="#388e3c" stroke-width="1"/>
-        <text x="250" y="781" text-anchor="middle" font-size="7" fill="#1b5e20">GONDOLA SHELF — OTC ROW 1</text>
-        <rect x="130" y="826" width="240" height="12" fill="#a5d6a7" stroke="#388e3c" stroke-width="1"/>
-        <text x="250" y="835" text-anchor="middle" font-size="7" fill="#1b5e20">GONDOLA SHELF — OTC ROW 2</text>
-        <!-- Glass display cabinet near dispensing counter (top of Z1) -->
-        <rect x="130" y="744" width="240" height="14" fill="#81c784" stroke="#388e3c" stroke-width="1"/>
-        <text x="250" y="754" text-anchor="middle" font-size="7.5" fill="#1b5e20" font-weight="bold">GLASS DISPLAY CABINET (ยา ข / ค)</text>
-
-        <!-- ── FURNITURE: Z2 Dispensing (y=560..740) ── -->
-        <!-- Dispensing counter near bottom of zone (customer-facing toward Z1) -->
-        <rect x="90" y="714" width="340" height="34" fill="#7986cb" stroke="#283593" stroke-width="1.5" rx="2"/>
-        <text x="260" y="735" text-anchor="middle" font-size="9" font-weight="bold" fill="white">DISPENSING COUNTER</text>
-        <!-- Pharmacist workstation above counter -->
-        <rect x="100" y="635" width="140" height="70" fill="#c5cae9" stroke="#3949ab" stroke-width="1" rx="2"/>
-        <text x="170" y="664" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#1a237e">PHARMACIST</text>
-        <text x="170" y="676" text-anchor="middle" font-size="8" fill="#1a237e">WORKSTATION</text>
-        <!-- PC on workstation -->
-        <rect x="108" y="640" width="24" height="18" fill="#ddd" stroke="#999" stroke-width="1"/>
-        <rect x="114" y="658" width="12" height="4"  fill="#bbb" stroke="#999" stroke-width=".5"/>
-        <text x="120" y="652" text-anchor="middle" font-size="6" fill="#333">PC</text>
-        <!-- Pharmacist licence frame -->
-        <rect x="270" y="624" width="50" height="38" fill="white" stroke="#3949ab" stroke-width="1.5"/>
-        <text x="295" y="638" text-anchor="middle" font-size="6.5" fill="#1a237e" font-weight="bold">PHARMACIST</text>
-        <text x="295" y="648" text-anchor="middle" font-size="6.5" fill="#1a237e">LICENSE</text>
-        <text x="295" y="657" text-anchor="middle" font-size="6"   fill="#1a237e">(displayed)</text>
-        <!-- Sink on counter -->
-        <rect x="356" y="720" width="22" height="22" fill="#b2ebf2" stroke="#00838f" stroke-width="1" rx="3"/>
-        <circle cx="367" cy="731" r="5" fill="none" stroke="#00838f" stroke-width="1"/>
-        <circle cx="367" cy="731" r="1.5" fill="#00838f"/>
-        <text x="367" y="752" text-anchor="middle" font-size="7" fill="#00838f">SINK</text>
-
-        <!-- ── FURNITURE: Z3 General Storage (y=425..560) ── -->
-        <rect x="83"  y="428" width="12" height="125" fill="#ffe082" stroke="#f57c00" stroke-width="1"/>
-        <rect x="426" y="428" width="12" height="125" fill="#ffe082" stroke="#f57c00" stroke-width="1"/>
-        <!-- Shelf rows -->
-        <rect x="120" y="433" width="260" height="12" fill="#ffd54f" stroke="#f57c00" stroke-width="1"/>
-        <text x="250" y="442" text-anchor="middle" font-size="7" fill="#e65100">SHELF ROWS — LABELLED BY DRUG CATEGORY</text>
-        <rect x="120" y="458" width="260" height="12" fill="#ffd54f" stroke="#f57c00" stroke-width="1"/>
-        <rect x="120" y="483" width="260" height="12" fill="#ffd54f" stroke="#f57c00" stroke-width="1"/>
-        <!-- Thermo-hygrometer -->
-        <rect x="407" y="427" width="30" height="20" fill="white" stroke="#f57c00" stroke-width="1"/>
-        <text x="422" y="436" text-anchor="middle" font-size="5.5" fill="#e65100" font-weight="bold">THERMO</text>
-        <text x="422" y="444" text-anchor="middle" font-size="5.5" fill="#e65100">HYGRO</text>
-
-        <!-- ── FURNITURE: Z4 Rx / Controlled (y=245..425, x=80..260) ── -->
-        <!-- Locked steel cabinet -->
-        <rect x="95"  y="270" width="65" height="110" fill="url(#hatch)" stroke="#b71c1c" stroke-width="2.5" rx="2"/>
-        <rect x="95"  y="270" width="65" height="110" fill="rgba(252,228,236,.5)" stroke="#b71c1c" stroke-width="2.5" rx="2"/>
-        <text x="128" y="308" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#b71c1c">LOCKED</text>
-        <text x="128" y="319" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#b71c1c">CABINET</text>
-        <text x="128" y="330" text-anchor="middle" font-size="7.5" fill="#b71c1c">Sch A / B Rx</text>
-        <!-- Padlock icon -->
-        <rect x="121" y="338" width="14" height="11" rx="2" fill="#b71c1c"/>
-        <path d="M123,338 Q128,329 133,338" fill="none" stroke="#b71c1c" stroke-width="2"/>
-        <!-- Rx shelving -->
-        <rect x="168" y="260" width="10" height="130" fill="#f48fb1" stroke="#b71c1c" stroke-width="1"/>
-
-        <!-- ── FURNITURE: Z5 Consultation (y=245..425, x=260..440) ── -->
-        <!-- Table -->
-        <rect x="275" y="265" width="55" height="38" fill="#ce93d8" stroke="#7b1fa2" stroke-width="1" rx="2"/>
-        <text x="303" y="280" text-anchor="middle" font-size="7.5" fill="#4a148c">TABLE</text>
-        <text x="303" y="291" text-anchor="middle" font-size="7"   fill="#4a148c">Consultation</text>
-        <!-- 2 chairs -->
-        <rect x="278" y="310" width="20" height="20" fill="#e1bee7" stroke="#7b1fa2" stroke-width="1" rx="2"/>
-        <text x="288" y="323" text-anchor="middle" font-size="6" fill="#4a148c">CH1</text>
-        <rect x="313" y="310" width="20" height="20" fill="#e1bee7" stroke="#7b1fa2" stroke-width="1" rx="2"/>
-        <text x="323" y="323" text-anchor="middle" font-size="6" fill="#4a148c">CH2</text>
-        <!-- Reference books -->
-        <rect x="405" y="252" width="28" height="18" fill="#ce93d8" stroke="#7b1fa2" stroke-width="1"/>
-        <text x="419" y="260" text-anchor="middle" font-size="5.5" fill="#4a148c" font-weight="bold">REF</text>
-        <text x="419" y="267" text-anchor="middle" font-size="5.5" fill="#4a148c">BOOKS</text>
-
-        <!-- ── FURNITURE: Z6 Office (y=65..245, x=80..215) ── -->
-        <rect x="88"  y="95"  width="85" height="55" fill="#e0e0e0" stroke="#616161" stroke-width="1" rx="2"/>
-        <text x="131" y="118" text-anchor="middle" font-size="8" fill="#212121">DESK</text>
-        <rect x="92"  y="100" width="24" height="18" fill="#ddd" stroke="#999" stroke-width=".75"/>
-        <rect x="98"  y="118" width="12" height="4"  fill="#bbb" stroke="#999" stroke-width=".5"/>
-        <text x="104" y="112" text-anchor="middle" font-size="5.5" fill="#333">PC</text>
-        <!-- Filing cabinet -->
-        <rect x="88"  y="160" width="45" height="40" fill="#bdbdbd" stroke="#616161" stroke-width="1"/>
-        <text x="111" y="178" text-anchor="middle" font-size="7" fill="#212121">RECORDS</text>
-        <text x="111" y="188" text-anchor="middle" font-size="7" fill="#212121">FILES</text>
-
-        <!-- ── FURNITURE: Z7 Cold Storage (y=65..245, x=215..305) ── -->
-        <!-- Pharma fridge -->
-        <rect x="222" y="78"  width="76" height="130" fill="#b2ebf2" stroke="#0097a7" stroke-width="2" rx="3"/>
-        <line x1="222" y1="143" x2="298" y2="143" stroke="#0097a7" stroke-width="1"/>
-        <text x="260" y="116" text-anchor="middle" font-size="8"   fill="#006064" font-weight="bold">PHARMA</text>
-        <text x="260" y="128" text-anchor="middle" font-size="8"   fill="#006064" font-weight="bold">FRIDGE</text>
-        <text x="260" y="155" text-anchor="middle" font-size="9"   fill="#006064" font-weight="bold">2–8 °C</text>
-        <text x="260" y="168" text-anchor="middle" font-size="7"   fill="#006064">300 L dual-zone</text>
-        <!-- Temp log clipboard -->
-        <rect x="225" y="78"  width="22" height="15" fill="white" stroke="#0097a7" stroke-width="1"/>
-        <text x="236" y="89"  text-anchor="middle" font-size="5.5" fill="#006064">TEMP LOG</text>
-
-        <!-- ── FURNITURE: Z8 Staff / Utilities (y=65..245, x=305..440) ── -->
-        <!-- Sink -->
-        <rect x="312" y="74"  width="24" height="24" fill="#b2ebf2" stroke="#00838f" stroke-width="1" rx="3"/>
-        <circle cx="324" cy="86"  r="5" fill="none" stroke="#00838f" stroke-width="1"/>
-        <circle cx="324" cy="86"  r="1.5" fill="#00838f"/>
-        <text x="324" y="108" text-anchor="middle" font-size="7" fill="#00838f">SINK</text>
-        <!-- Fire extinguisher -->
-        <ellipse cx="397" cy="90" rx="8" ry="11" fill="#ef5350" stroke="#b71c1c" stroke-width="1.5"/>
-        <rect x="393" y="75"  width="8"  height="7"  rx="1" fill="#ef5350" stroke="#b71c1c" stroke-width="1"/>
-        <text x="397" y="110" text-anchor="middle" font-size="6.5" fill="#b71c1c" font-weight="bold">F.E.</text>
-        <!-- Locker -->
-        <rect x="310" y="120" width="42" height="55" fill="#e0e0e0" stroke="#616161" stroke-width="1" rx="1"/>
-        <line x1="310" y1="147" x2="352" y2="147" stroke="#999" stroke-width=".75"/>
-        <text x="331" y="138" text-anchor="middle" font-size="7" fill="#212121">STAFF</text>
-        <text x="331" y="157" text-anchor="middle" font-size="7" fill="#212121">LOCKER</text>
-        <!-- Waste bins -->
-        <rect x="358" y="120" width="22" height="25" fill="#ffcc80" stroke="#e65100" stroke-width="1" rx="1"/>
-        <text x="369" y="134" text-anchor="middle" font-size="5.5" fill="#e65100">WASTE</text>
-        <rect x="383" y="120" width="22" height="25" fill="#ef9a9a" stroke="#b71c1c" stroke-width="1" rx="1"/>
-        <text x="394" y="131" text-anchor="middle" font-size="5.5" fill="#b71c1c">MED</text>
-        <text x="394" y="139" text-anchor="middle" font-size="5.5" fill="#b71c1c">WASTE</text>
-
-        <!-- ── CCTV CAMERAS ── -->
-        <!-- CAM-1: Z1 OTC overview (left wall, top of Z1) — points right -->
-        <polygon points="92,755 80,748 80,768" fill="#d32f2f" stroke="#b71c1c" stroke-width="1"/>
-        <circle cx="92" cy="758" r="7" fill="#d32f2f" stroke="#b71c1c" stroke-width="1"/>
-        <circle cx="92" cy="758" r="2.5" fill="white"/>
-        <text x="68" y="778" text-anchor="middle" font-size="8" fill="#b71c1c" font-weight="bold">CAM-1</text>
-
-        <!-- CAM-2: Dispensing counter (left wall, top of Z2) — points right -->
-        <polygon points="92,568 80,561 80,581" fill="#d32f2f" stroke="#b71c1c" stroke-width="1"/>
-        <circle cx="92" cy="571" r="7" fill="#d32f2f" stroke="#b71c1c" stroke-width="1"/>
-        <circle cx="92" cy="571" r="2.5" fill="white"/>
-        <text x="68" y="591" text-anchor="middle" font-size="8" fill="#b71c1c" font-weight="bold">CAM-2</text>
-
-        <!-- CAM-3: Rx / Controlled — MANDATORY (left wall, top of Z4) — points right -->
-        <polygon points="92,253 80,246 80,266" fill="#d32f2f" stroke="#b71c1c" stroke-width="1"/>
-        <circle cx="92" cy="256" r="7" fill="#d32f2f" stroke="#b71c1c" stroke-width="1"/>
-        <circle cx="92" cy="256" r="2.5" fill="white"/>
-        <text x="68" y="276" text-anchor="middle" font-size="8" fill="#b71c1c" font-weight="bold">CAM-3</text>
-        <text x="68" y="287" text-anchor="middle" font-size="6.5" fill="#b71c1c">(MANDATORY)</text>
-
-        <!-- CAM-4: Back zone overview (left wall, top of back zone) — points right -->
-        <polygon points="92,75 80,68 80,88" fill="#d32f2f" stroke="#b71c1c" stroke-width="1"/>
-        <circle cx="92" cy="78"  r="7" fill="#d32f2f" stroke="#b71c1c" stroke-width="1"/>
-        <circle cx="92" cy="78"  r="2.5" fill="white"/>
-        <text x="68" y="98"  text-anchor="middle" font-size="8" fill="#b71c1c" font-weight="bold">CAM-4</text>
-
-        <!-- ── ZONE LABELS ── -->
-        <!-- Z1 OTC Entry -->
-        <rect x="83" y="743" width="38" height="17" fill="#2e7d32" rx="2"/>
-        <text x="102" y="755" text-anchor="middle" font-size="9" fill="white" font-weight="bold">10 m²</text>
-        <text x="265" y="862" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b5e20">ZONE 1 — OTC DISPLAY &amp; ENTRY</text>
-        <text x="265" y="878" text-anchor="middle" font-size="9.5" fill="#2e7d32">Customer browsing | Drug class signage ก/ข/ค/ง | ≥ 300 lux lighting</text>
-
-        <!-- Z2 Dispensing -->
-        <rect x="83" y="563" width="38" height="17" fill="#1a237e" rx="2"/>
-        <text x="102" y="575" text-anchor="middle" font-size="9" fill="white" font-weight="bold">8 m²</text>
-        <text x="270" y="598" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a237e">ZONE 2 — DISPENSING COUNTER</text>
-        <text x="270" y="612" text-anchor="middle" font-size="9" fill="#283593">Pharmacist workstation | Hand-wash sink | License displayed</text>
-
-        <!-- Z3 General Storage -->
-        <rect x="83" y="428" width="38" height="17" fill="#e65100" rx="2"/>
-        <text x="102" y="440" text-anchor="middle" font-size="9" fill="white" font-weight="bold">6 m²</text>
-        <text x="240" y="513" text-anchor="middle" font-size="11" font-weight="bold" fill="#bf360c">ZONE 3 — GENERAL DRUG STORAGE</text>
-        <text x="240" y="526" text-anchor="middle" font-size="8.5" fill="#e65100">Labelled shelves by category | Thermo-hygrometer | ≤25 °C / ≤60 %RH</text>
-
-        <!-- Z4 Rx/Controlled -->
-        <rect x="83" y="248" width="38" height="17" fill="#b71c1c" rx="2"/>
-        <text x="102" y="260" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m²</text>
-        <text x="170" y="395" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#b71c1c">ZONE 4</text>
-        <text x="170" y="408" text-anchor="middle" font-size="8.5" fill="#c62828">Rx / CONTROLLED</text>
-        <text x="170" y="419" text-anchor="middle" font-size="7.5" fill="#c62828">Locked cabinet + CCTV</text>
-
-        <!-- Z5 Consultation -->
-        <rect x="262" y="248" width="38" height="17" fill="#6a1b9a" rx="2"/>
-        <text x="281" y="260" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m²</text>
-        <text x="355" y="365" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#6a1b9a">ZONE 5</text>
-        <text x="355" y="378" text-anchor="middle" font-size="8.5" fill="#7b1fa2">CONSULTATION</text>
-        <text x="355" y="390" text-anchor="middle" font-size="7.5" fill="#7b1fa2">Privacy screen + 2 chairs</text>
-        <text x="355" y="401" text-anchor="middle" font-size="7.5" fill="#7b1fa2">Reference books</text>
-
-        <!-- Z6 Office -->
+        <!-- ── REST ROOM furniture ── -->
+        <!-- Zone label -->
         <rect x="83" y="68" width="38" height="17" fill="#424242" rx="2"/>
-        <text x="102" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">3 m²</text>
-        <text x="148" y="228" text-anchor="middle" font-size="9" font-weight="bold" fill="#212121">ZONE 6</text>
-        <text x="148" y="240" text-anchor="middle" font-size="7.5" fill="#424242">OFFICE + RECORDS</text>
+        <text x="102" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m²</text>
+        <text x="170" y="160" text-anchor="middle" font-size="10" font-weight="bold" fill="#424242">ห้องน้ำ</text>
+        <text x="170" y="174" text-anchor="middle" font-size="8.5" fill="#616161">Rest Room</text>
 
-        <!-- Z7 Cold Storage -->
-        <rect x="218" y="68" width="38" height="17" fill="#006064" rx="2"/>
-        <text x="237" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">2 m²</text>
-        <text x="260" y="228" text-anchor="middle" font-size="9" font-weight="bold" fill="#006064">ZONE 7</text>
-        <text x="260" y="240" text-anchor="middle" font-size="7.5" fill="#006064">COLD STORAGE</text>
+        <!-- ── ACTIVITY ZONE furniture (y=65..335) ── -->
+        <!-- Zone label -->
+        <rect x="263" y="68" width="38" height="17" fill="#00796b" rx="2"/>
+        <text x="282" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">6 m²</text>
+        <text x="349" y="160" text-anchor="middle" font-size="10" font-weight="bold" fill="#00695c">โซนกิจกรรม</text>
+        <text x="349" y="174" text-anchor="middle" font-size="8.5" fill="#00796b">Activity Zone</text>
+        <text x="349" y="188" text-anchor="middle" font-size="7.5" fill="#00796b">Shelving + Health Events</text>
+        <text x="349" y="202" text-anchor="middle" font-size="7" fill="#888">3 shelf rows | Event table | 2 chairs</text>
 
-        <!-- Z8 Staff/Utilities -->
-        <rect x="308" y="68" width="38" height="17" fill="#424242" rx="2"/>
-        <text x="327" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">3 m²</text>
-        <text x="375" y="228" text-anchor="middle" font-size="9" font-weight="bold" fill="#212121">ZONE 8</text>
-        <text x="375" y="240" text-anchor="middle" font-size="7.5" fill="#424242">STAFF + UTILITIES</text>
+        <!-- ── CONSULTATION + DISPENSING (y=245..965) ── -->
+        <!-- Sub-zone label: CONSULTATION (upper, y=245..580) -->
+        <rect x="83" y="248" width="68" height="14" fill="#3949ab" rx="2"/>
+        <text x="117" y="259" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">CONSULTATION</text>
+        <rect x="155" y="248" width="38" height="17" fill="#1a237e" rx="2"/>
+        <text x="174" y="260" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m²</text>
+        <!-- Sub-zone label: DISPENSING (lower, y=580..965) -->
+        <rect x="83" y="470" width="60" height="14" fill="#1a237e" rx="2"/>
+        <text x="113" y="480" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">DISPENSING</text>
+        <rect x="150" y="470" width="38" height="17" fill="#1a237e" rx="2"/>
+        <text x="169" y="483" text-anchor="middle" font-size="9" fill="white" font-weight="bold">12 m²</text>
+
+        <!-- Pharmacist workstation -->
+        <rect x="400"  y="980" transform="rotate(-90,173,970)" width="150" height="68" fill="#c5cae9" stroke="#3949ab" stroke-width="1" rx="2"/>
+        <text x="470" y="1015" transform="rotate(-90,173,970)" text-anchor="middle" font-size="8" font-weight="bold" fill="#1a237e">PHARMACIST</text>
+        <text x="470" y="1025" transform="rotate(-90,173,970)" text-anchor="middle" font-size="7.5" fill="#1a237e">WORKSTATION</text>
+        <!-- Dispensing counter -->
+        <rect x="190"  y="1010" transform="rotate(-90,173,970)" width="200" height="36" fill="#7986cb" stroke="#283593" stroke-width="1.5" rx="2"/>
+        <text x="290" y="1025" transform="rotate(-90,173,970)" text-anchor="middle" font-size="9" font-weight="bold" fill="white">เคาน์เตอร์จ่ายยา</text>
+        <text x="290" y="1035" transform="rotate(-90,173,970)" text-anchor="middle" font-size="7.5" fill="white">Dispensing Counter</text>
+        <!-- Locked Rx cabinet -->
+        <rect x="90"  y="842" width="65" height="100" fill="#fce4ec" stroke="#b71c1c" stroke-width="2" rx="2"/>
+        <text x="123" y="854" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">LOCKED</text>
+        <text x="123" y="865" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">CABINET</text>
+        <text x="123" y="876" text-anchor="middle" font-size="7" fill="#b71c1c">Sch A/B Rx</text>
+        <rect x="119" y="883" width="10" height="8" rx="2" fill="#b71c1c"/>
+        <path d="M121,883 Q124,877 127,883" fill="none" stroke="#b71c1c" stroke-width="1.5"/>
+        <!-- Pharma fridge -->
+        <rect x="90" y="720" width="78" height="110" fill="#b2ebf2" stroke="#0097a7" stroke-width="2" rx="3"/>
+        <text x="130" y="758" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">PHARMA</text>
+        <text x="130" y="769" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">FRIDGE</text>
+        <text x="130" y="780" text-anchor="middle" font-size="8.5" fill="#006064" font-weight="bold">2–8 °C</text>
+        <text x="130" y="791" text-anchor="middle" font-size="6.5" fill="#006064">300 L</text>
+        <!-- Zone area label -->
+        <rect x="83" y="248" width="0" height="0"/><!-- spacer -->
+        <text x="170" y="350" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">โซนให้คำปรึกษา</text>
+        <text x="170" y="365" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Consultation</text>
+        <text x="170" y="540" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">โซนจ่ายยา</text>
+        <text x="170" y="550" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Dispensing</text>
+
+        <!-- ── OTC + MEDICINE SHELF (y=335..965) ── -->
+        <!-- Thermo-hygrometer -->
+        <rect x="408" y="338" width="30" height="20" fill="white" stroke="#f57c00" stroke-width="1"/>
+        <text x="423" y="347" text-anchor="middle" font-size="5.5" fill="#e65100" font-weight="bold">THERMO</text>
+        <text x="423" y="355" text-anchor="middle" font-size="5.5" fill="#e65100">HYGRO</text>
+        <!-- Zone label -->
+        <rect x="263" y="338" width="38" height="17" fill="#33691e" rx="2"/>
+        <text x="282" y="350" text-anchor="middle" font-size="9" fill="white" font-weight="bold">14 m²</text>
+        <text x="349" y="580" text-anchor="middle" font-size="11" font-weight="bold" fill="#33691e">ชั้นวางยา + OTC</text>
+        <text x="349" y="594" text-anchor="middle" font-size="8.5" fill="#558b2f">Medicine Shelf + OTC Display</text>
+        <text x="349" y="608" text-anchor="middle" font-size="7.5" fill="#558b2f">Wall shelves | Gondola | Glass cabinet</text>
+        <text x="349" y="622" text-anchor="middle" font-size="7" fill="#888">Signage ก/ข/ค/ง | ≤25°C / ≤60%RH</text>
+
+        <!-- ── AC units (left wall) ── -->
+        <rect x="80" y="680" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
+        <text x="94" y="698" font-size="6.5" fill="#004d50" font-weight="bold">AC-1</text>
+        <text x="94" y="708" font-size="6" fill="#004d50">12K BTU</text>
+        <rect x="80" y="370" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
+        <text x="94" y="388" font-size="6.5" fill="#004d50" font-weight="bold">AC-2</text>
+        <text x="94" y="398" font-size="6" fill="#004d50">12K BTU</text>
 
         <!-- ── DIMENSION LINES ── -->
-        <!-- Width dimension (above room) -->
         <line x1="80" y1="44" x2="440" y2="44" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
         <rect x="204" y="38" width="92" height="14" fill="#f2f2ec"/>
         <text x="260" y="49" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">4,000 mm</text>
-
-        <!-- Height dimension (right of room) -->
-        <line x1="460" y1="65" x2="460" y2="965" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
-        <text x="495" y="515" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" transform="rotate(90,495,515)">10,000 mm</text>
-
-        <!-- Zone height ticks (right side) -->
-        <line x1="443" y1="245" x2="458" y2="245" stroke="#999" stroke-width=".75"/>
-        <text x="463" y="158" font-size="7.5" fill="#777">2,000</text>
-        <line x1="443" y1="425" x2="458" y2="425" stroke="#999" stroke-width=".75"/>
-        <text x="463" y="338" font-size="7.5" fill="#777">2,000</text>
-        <line x1="443" y1="560" x2="458" y2="560" stroke="#999" stroke-width=".75"/>
-        <text x="463" y="495" font-size="7.5" fill="#777">1,500</text>
-        <line x1="443" y1="740" x2="458" y2="740" stroke="#999" stroke-width=".75"/>
-        <text x="463" y="653" font-size="7.5" fill="#777">2,000</text>
-        <text x="463" y="855" font-size="7.5" fill="#777">2,500</text>
-
-        <!-- Width ticks at Z4/Z5 split -->
         <line x1="260" y1="49" x2="260" y2="63" stroke="#999" stroke-width=".75"/>
         <text x="170" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,000</text>
         <text x="350" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,000</text>
+        <line x1="460" y1="65" x2="460" y2="965" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
+        <text x="495" y="515" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" transform="rotate(90,495,515)">10,000 mm</text>
+        <!-- Zone height ticks -->
+        <line x1="443" y1="245" x2="458" y2="245" stroke="#999" stroke-width=".75"/>
+        <text x="463" y="158" font-size="7.5" fill="#777">2,000</text>
+        <line x1="443" y1="335" x2="458" y2="335" stroke="#999" stroke-width=".75"/>
+        <text x="463" y="293" font-size="7.5" fill="#777">3,000</text>
+        <text x="463" y="655" font-size="7.5" fill="#777">8,000</text>
+        <text x="463" y="855" font-size="7.5" fill="#777">7,000</text>
 
-        <!-- Back zone width ticks -->
-        <line x1="80"  y1="978" x2="440" y2="978" stroke="#ccc" stroke-width=".75"/>
-        <line x1="215" y1="970" x2="215" y2="986" stroke="#999" stroke-width=".75"/>
-        <line x1="305" y1="970" x2="305" y2="986" stroke="#999" stroke-width=".75"/>
-        <text x="148" y="994" text-anchor="middle" font-size="7.5" fill="#777">1,500</text>
-        <text x="260" y="994" text-anchor="middle" font-size="7.5" fill="#777">1,000</text>
-        <text x="372" y="994" text-anchor="middle" font-size="7.5" fill="#777">1,500</text>
-
-        <!-- ── WALL / ORIENTATION LABELS ── -->
-        <!-- Top party wall -->
-        <text x="260" y="22" text-anchor="middle" font-size="9" font-weight="bold" fill="#555">◄── PARTY WALL — UPPER UNIT (shared) ──►</text>
-        <!-- Bottom party wall -->
+        <!-- ── WALL LABELS ── -->
+        <text x="260" y="22"   text-anchor="middle" font-size="9" font-weight="bold" fill="#555">◄── PARTY WALL — UPPER UNIT ──►</text>
         <text x="260" y="1014" text-anchor="middle" font-size="9" fill="#555">◄── PARTY WALL — LOWER UNIT / STREET ──►</text>
-        <!-- Left outside wall label (rotated, reads upward) -->
-        <text x="28" y="515" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(-90,28,515)">OUTSIDE WALL</text>
-        <!-- Right outside wall label (rotated, reads downward) -->
-        <text x="516" y="515" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(90,516,515)">OUTSIDE WALL — MAIN ENTRY SIDE</text>
+        <text x="28"  y="515"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(-90,28,515)">OUTSIDE WALL</text>
+        <text x="516" y="515"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(90,516,515)">OUTSIDE WALL</text>
 
       </svg>
     </div><!-- /fp-svg-wrap -->
@@ -441,14 +227,10 @@
       <div class="panel-box">
         <div class="pb-head">ZONE LEGEND</div>
         <div class="pb-body">
-          <div class="lg-item"><div class="lg-swatch" style="background:#e8f5e9;border-color:#388e3c"></div><strong>Z1</strong> OTC Display &amp; Entry — 10 m²</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#e3edf8;border-color:#3949ab"></div><strong>Z2</strong> Dispensing Counter — 8 m²</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#fff8e1;border-color:#f57c00"></div><strong>Z3</strong> General Drug Storage — 6 m²</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#fce4ec;border-color:#b71c1c"></div><strong>Z4</strong> Rx / Controlled Storage — 4 m²</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#f3e5f5;border-color:#7b1fa2"></div><strong>Z5</strong> Consultation Zone — 4 m²</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#eeeeee;border-color:#616161"></div><strong>Z6</strong> Office + Records — 3 m²</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#e0f7fa;border-color:#0097a7"></div><strong>Z7</strong> Cold Storage / Pharma Fridge — 2 m²</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#fafafa;border-color:#666"></div><strong>Z8</strong> Staff + Utilities — 3 m²</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#f0f0ee;border-color:#616161"></div><strong>Rest Room</strong> — ห้องน้ำ (4 m²)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#e0f2f1;border-color:#00796b"></div><strong>Activity Zone</strong> — โซนกิจกรรม + ชั้นวางยา (6 m²)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#e8edf8;border-color:#3949ab"></div><strong>Consultation + Dispensing</strong> — โซนให้คำปรึกษา + จ่ายยา (16 m²)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#f9fbe7;border-color:#558b2f"></div><strong>OTC + Medicine Shelf</strong> — ชั้นวางยา + OTC (14 m²)</div>
           <div style="font-size:10px;margin-top:6px;color:#555;border-top:1px solid #ddd;padding-top:6px"><strong>Total: 40 m²</strong> (4.0 m × 10.0 m)</div>
         </div>
       </div>
@@ -457,23 +239,21 @@
         <div class="pb-head">ORIENTATION KEY</div>
         <div class="pb-body" style="font-size:10.5px;line-height:1.7">
           <div><strong>Left / Right walls</strong> — outside walls (exterior-facing)</div>
-          <div><strong>Top / Bottom walls</strong> — party walls (shared with adjacent units)</div>
-          <div><strong>Entry door</strong> — right wall, bottom quarter (customer entry)</div>
-          <div style="margin-top:4px"><strong>Plan reads top → bottom = back → front</strong></div>
+          <div><strong>Top / Bottom walls</strong> — party walls (shared units)</div>
+          <div><strong>Left column</strong> = Rest Room (top 2m) | Consultation+Dispensing (bottom 8m)</div>
+          <div><strong>Right column</strong> = Activity Zone (top 3m) | OTC+Shelf (bottom 7m)</div>
+          <div style="margin-top:4px;color:#7b1fa2"><strong>Dashed blue line</strong> = soft boundary within merged zone</div>
         </div>
       </div>
 
       <div class="panel-box">
         <div class="pb-head">SYMBOL LEGEND</div>
         <div class="pb-body">
-          <div class="lg-item"><div style="width:22px;height:15px;background:#d32f2f;border-radius:50%;flex-shrink:0"></div>CCTV Camera (CAM-1 to CAM-4)</div>
           <div class="lg-item"><div style="width:22px;height:15px;background:#80deea;border:1px solid #006064;flex-shrink:0"></div>Air-conditioning unit (left wall-mount)</div>
           <div class="lg-item"><div style="width:22px;height:15px;background:#fce4ec;border:2px solid #b71c1c;flex-shrink:0"></div>Locked drug cabinet (wall-anchored)</div>
           <div class="lg-item"><div style="width:22px;height:15px;background:#b2ebf2;border:2px solid #0097a7;flex-shrink:0"></div>Pharmaceutical refrigerator 2–8 °C</div>
-          <div class="lg-item"><div style="width:22px;height:15px;background:#7986cb;flex-shrink:0"></div>Dispensing counter (furniture)</div>
-          <div class="lg-item"><div style="width:22px;height:15px;background:#a5d6a7;border:1px solid #388e3c;flex-shrink:0"></div>Gondola / wall shelving</div>
-          <div class="lg-item"><svg width="22" height="15"><path d="M0,15 Q0,2 22,0" fill="rgba(100,180,120,.3)" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="3,2"/></svg>Door swing arc</div>
-          <div class="lg-item"><div style="width:22px;height:15px;background:#ef5350;border-radius:3px;flex-shrink:0"></div>Fire extinguisher</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#7986cb;flex-shrink:0"></div>Dispensing counter</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#a5d6a7;border:1px solid #388e3c;flex-shrink:0"></div>Glass display cabinet / gondola shelf</div>
         </div>
       </div>
 
@@ -481,17 +261,16 @@
         <div class="pb-head" style="background:#b71c1c">GPP MANDATORY ITEMS (Thai FDA)</div>
         <div class="pb-body">
           <ul style="font-size:10.5px;margin-left:15px;line-height:1.8">
-            <li>Drug classification signage ก/ข/ค/ง at entry</li>
+            <li>Drug classification signage ก/ข/ค/ง at shelf tops</li>
             <li>Hand-wash sink at dispensing counter</li>
             <li>Pharmacist license framed &amp; visible at counter</li>
             <li>Locked steel cabinet for Schedule A/B drugs</li>
-            <li><strong>CCTV covering Rx storage zone (CAM-3)</strong></li>
+            <li><strong>CCTV covering locked cabinet (CAM-1 mandatory)</strong></li>
             <li>Pharma fridge 2–8 °C + daily temp log</li>
-            <li>Thermo-hygrometer in general storage zone</li>
-            <li>Privacy screen / partition in consultation zone</li>
+            <li>Thermo-hygrometer in OTC+shelf zone</li>
+            <li>Privacy screen in consultation zone</li>
             <li>Reference books in consultation zone</li>
-            <li>AC: storage area ≤ 25 °C / ≤ 60 % RH</li>
-            <li>Fire extinguisher (current inspection date)</li>
+            <li>All storage ≤ 25 °C / ≤ 60 % RH</li>
             <li>Licensed pharmacist present ALL operating hours</li>
           </ul>
         </div>
@@ -506,77 +285,45 @@
     <thead>
       <tr>
         <th style="width:3%">#</th>
-        <th style="width:16%">Zone</th>
+        <th style="width:18%">Zone</th>
         <th style="width:5%">m²</th>
         <th style="width:32%">Thai FDA GPP Requirement</th>
         <th style="width:28%">Contractor Action Required</th>
-        <th style="width:16%">Site Sign-Off Checklist</th>
+        <th style="width:14%">Sign-Off Checklist</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><strong>1</strong></td>
-        <td>OTC Display &amp; Entry</td>
-        <td>10</td>
-        <td>Drug classification signage (ก/ข/ค/ง) clearly visible at shelf tops; adequate lighting ≥ 300 lux; non-slip flooring; aisle width ≥ 90 cm</td>
-        <td>Install signage rail at shelf ends; LED strip under-shelf lighting; non-slip vinyl/tile flooring; install gondola shelving 2 rows (max 150 cm H); glass display cabinet front-facing for ยา ข/ค. Entry door: right wall, aluminium frame glass door 900 mm × 2100 mm</td>
-        <td class="check">☐ Signage rail installed<br>☐ Lighting ≥ 300 lux<br>☐ Non-slip flooring<br>☐ Shelving rows ×2<br>☐ Glass display cabinet<br>☐ Entry door installed</td>
+        <td>Rest Room<br>ห้องน้ำ</td>
+        <td>4</td>
+        <td>Staff hygiene facility; proper ventilation; lockable door; wall-hung sink with mixer tap; WC pan</td>
+        <td>Install WC pan + cistern; wall-hung sink with mixer tap, P-trap waste; exhaust fan 100 mm; tile walls to 1.5 m; ceramic tile floor with fall to floor drain; lockable door</td>
+        <td class="check">☐ WC installed<br>☐ Sink + tap<br>☐ Exhaust fan<br>☐ Tiled walls + floor<br>☐ Door with lock</td>
       </tr>
       <tr>
         <td><strong>2</strong></td>
-        <td>Dispensing Counter + Pharmacist Workstation</td>
-        <td>8</td>
-        <td>Hand-wash sink at or directly adjacent to counter; pharmacist licence framed and displayed; counter height 85–95 cm; Rx dispensing work surface min 1.5 m²; power outlets for POS + PC</td>
-        <td>Custom or modular pharmacy counter (full-width 3.6 m) at zone bottom facing OTC; integrate hand-wash sink with mixer tap, P-trap, waste line; install licence frame holder at eye-level (145–155 cm); 4× 15 A outlets behind counter; 1× Cat6 RJ45; cable tray</td>
-        <td class="check">☐ Counter at 90 cm H<br>☐ Sink functional<br>☐ Licence frame at 150 cm<br>☐ 4× outlets behind<br>☐ Cat6 RJ45 run</td>
+        <td>Activity Zone<br>โซนกิจกรรม + ชั้นวางยา</td>
+        <td>6</td>
+        <td>Flexible space for health screening events (BP, glucose monitoring); drug shelving; adequate lighting; clear floor area for walk-in events</td>
+        <td>3 rows wall-mounted adjustable shelving (right + back walls, powder-coated steel, 180 cm H); fold-flat or lightweight table for BP/glucose events; 2 chairs; 2× 15 A power outlets; ceiling LED panel ≥ 300 lux; maintain ≥ 2 m² clear floor area for events</td>
+        <td class="check">☐ 3 shelf rows<br>☐ 2× outlets<br>☐ LED ≥300 lux<br>☐ Event table + chairs<br>☐ Clear floor ≥2 m²</td>
       </tr>
       <tr>
         <td><strong>3</strong></td>
-        <td>General Drug Storage</td>
-        <td>6</td>
-        <td>Drugs stored by classification; ≤ 25 °C; ≤ 60 % RH; calibrated thermometer and hygrometer displayed; shelving off floor min 15 cm; no direct sunlight exposure</td>
-        <td>Adjustable metal shelving floor-to-ceiling (4 runs, powder-coated); wall-mount digital thermo-hygrometer with data logger; confirm AC-2 duct (left wall) covers this zone; sealed epoxy or vinyl floor; opaque wall if any existing window</td>
-        <td class="check">☐ Shelving 4 runs<br>☐ Thermo-hygrometer<br>☐ AC-2 duct coverage<br>☐ No direct sunlight<br>☐ Sealed floor</td>
+        <td>Consultation + Dispensing<br>โซนให้คำปรึกษา + จ่ายยา</td>
+        <td>16</td>
+        <td><em>Consultation (upper half):</em> Semi-private; privacy screen; table + 2 chairs; reference books. <em>Dispensing (lower half):</em> Pharmacist licence displayed; hand-wash sink at counter; Rx dispensing surface min 1.5 m²; pharma fridge 2–8 °C; locked cabinet for Schedule A/B + CCTV coverage (mandatory)</td>
+        <td><em>Upper:</em> Full-height gypsum partition (12 mm / 75 mm stud) or privacy screen along right boundary; consultation table ~90×60 cm + 2 chairs; bookshelf for reference materials; locked steel cabinet wall-anchored, 2-point lock; CAM-1 aimed at cabinet. <em>Lower:</em> Full-width dispensing counter 165 cm × 60 cm × 90 cm H; integrate hand-wash sink, P-trap; licence frame at 145–155 cm; 4× 15 A outlets + 1× Cat6; pharma fridge 300 L on dedicated 15 A UPS-backed MCB (10 cm clearance all sides); CAM-2 at top of dispensing zone; AC-1 left wall covers this zone</td>
+        <td class="check">☐ Privacy screen<br>☐ Table + chairs<br>☐ Ref books<br>☐ Locked cabinet anchored<br>☐ CAM-1 → cabinet<br>☐ Counter 90 cm H<br>☐ Sink functional<br>☐ Licence frame 150 cm<br>☐ Fridge dedicated MCB<br>☐ 4× outlets + Cat6<br>☐ CAM-2 installed</td>
       </tr>
       <tr>
         <td><strong>4</strong></td>
-        <td>Rx / Controlled Substance Storage</td>
-        <td>4</td>
-        <td>Locked steel cabinet for Schedule A/B controlled drugs; CCTV coverage of cabinet (mandatory); restricted pharmacist-only access; separated from customer zone</td>
-        <td>Install steel lockable cabinet min 60×40×120 cm, 2 independent locks (key + deadbolt), wall-anchor with 4× M8 bolts; install CAM-3 (left wall) aimed directly at cabinet with clear view; key storage inside dispensing counter (secure)</td>
-        <td class="check">☐ Locked cabinet wall-anchored<br>☐ CAM-3 installed, aimed at cabinet<br>☐ Zone separated from OTC<br>☐ Access restricted</td>
-      </tr>
-      <tr>
-        <td><strong>5</strong></td>
-        <td>Consultation Zone</td>
-        <td>4</td>
-        <td>Semi-private area; privacy screen or full-height partition; table + 2 chairs; Thai FDA reference books; adequate lighting; acoustically separated from sales floor</td>
-        <td>Install full-height gypsum partition (12 mm on 75 mm metal stud) along zone boundary; single-swing door 500 mm from Z3 side (x=365..410, y=425); 1× ceiling light fitting; 2× 15 A power outlets; furnish with table (approx 90×60 cm) + 2 chairs; bookshelf for reference materials</td>
-        <td class="check">☐ Partition + door<br>☐ Light installed<br>☐ 2× power outlets<br>☐ Table + 2 chairs (furnished)<br>☐ Reference bookshelf</td>
-      </tr>
-      <tr>
-        <td><strong>6</strong></td>
-        <td>Office + Records</td>
-        <td>3</td>
-        <td>Computer workstation for dispensing records; purchase/sales logs stored; secure document storage</td>
-        <td>Install desk + ergonomic chair; 4× 15 A outlets; 1× Cat6 RJ45 from network switch; lockable filing drawer or cabinet; UPS point for PC</td>
-        <td class="check">☐ Desk + chair<br>☐ 4× outlets + Cat6<br>☐ Lockable filing<br>☐ UPS connection point</td>
-      </tr>
-      <tr>
-        <td><strong>7</strong></td>
-        <td>Cold Storage — Pharma Fridge</td>
-        <td>2</td>
-        <td>Pharmaceutical-grade fridge 2–8 °C; temperature log; alarm for excursion; UPS-backed power</td>
-        <td>Dedicated 15 A / 220 V circuit (separate MCB) to fridge position; allow 10 cm clearance on all sides for ventilation; wall-mount temp log clipboard holder; UPS socket or connect to UPS bus; install fridge supplied by owner</td>
-        <td class="check">☐ Dedicated 15 A MCB circuit<br>☐ 10 cm clearance all sides<br>☐ Temp log holder mounted<br>☐ UPS-backed outlet</td>
-      </tr>
-      <tr>
-        <td><strong>8</strong></td>
-        <td>Staff + Utilities</td>
-        <td>3</td>
-        <td>Staff hand-wash sink; accessible fire extinguisher; staff storage; separate medical waste bin</td>
-        <td>Wall-hung sink with mixer tap + waste; fire extinguisher bracket at 120 cm (owner-supplied, install bracket); staff locker (1 unit); install 2-compartment waste bin area (general + med waste); 2× 15 A outlets</td>
-        <td class="check">☐ Staff sink functional<br>☐ F.E. bracket at 120 cm<br>☐ Locker installed<br>☐ 2-compartment waste area<br>☐ 2× outlets</td>
+        <td>OTC + Medicine Shelf<br>ชั้นวางยา + OTC</td>
+        <td>14</td>
+        <td>Drugs stored by classification; ≤ 25 °C; ≤ 60 % RH; calibrated thermo-hygrometer displayed; shelving min 15 cm off floor; no direct sunlight; drug classification signage ก/ข/ค/ง; glass display cabinet for ยา ข/ค; adequate lighting ≥ 300 lux</td>
+        <td>4 wall-shelf rows (right wall, adjustable heavy-duty metal, label by drug category); 3 gondola runs (double-sided, 150 cm H × 90 cm W bays); glass display cabinet 162 cm W at bottom of zone; wall-mount digital thermo-hygrometer with data logger at top of zone; AC-2 (left wall) covers this zone; signage rail at shelf ends; LED strip lighting ≥ 300 lux; non-slip vinyl/tile floor; sealed epoxy or vinyl — no grout lines</td>
+        <td class="check">☐ 4 wall-shelf rows<br>☐ 3 gondola runs<br>☐ Glass display cabinet<br>☐ Thermo-hygrometer<br>☐ AC-2 coverage<br>☐ Signage ก/ข/ค/ง<br>☐ Lighting ≥300 lux<br>☐ Non-slip flooring</td>
       </tr>
     </tbody>
   </table>
@@ -588,11 +335,10 @@
     <div class="nb-head">1. STRUCTURAL / PARTITION WORKS</div>
     <div class="nb-body">
       <ul>
-        <li>Consultation zone: gypsum board 12 mm on 75 mm metal stud, floor-to-ceiling; confirm ceiling height before ordering studs; min 2.7 m clear height required</li>
-        <li>No structural demolition expected — existing shell unit assumed; confirm with building management</li>
-        <li>Maximum shelf load: confirm slab load capacity before wall-anchoring heavy shelving; use rawl bolts into concrete, not drywall anchors</li>
-        <li>Building management approval required before any drilling into structural walls or slab</li>
-        <li>Entry door on right (outside) wall — verify structural opening; aluminium frame glass door 900 mm × 2100 mm; single or double leaf per owner decision</li>
+        <li>Consultation zone right boundary: full-height gypsum board 12 mm on 75 mm metal stud OR heavy-duty privacy screen (floor-to-ceiling); confirm ceiling height before ordering studs; min 2.7 m clear height required</li>
+        <li>Rest Room: full wet-area waterproofing (floor + 500 mm upstand all walls); tile finish; exhaust fan ducted to external</li>
+        <li>No structural demolition expected — existing shell unit assumed; confirm with building management before any wall drilling</li>
+        <li>Maximum shelf load: confirm slab load capacity; use rawl bolts into concrete, not drywall anchors</li>
       </ul>
     </div>
   </div>
@@ -601,16 +347,14 @@
     <div class="nb-head">2. ELECTRICAL WORKS</div>
     <div class="nb-body">
       <ul>
-        <li>AC-1 (left wall, Zone 1–2 area): dedicated 20 A / 220 V circuit from DB</li>
-        <li>AC-2 (left wall, Zone 3–5 area): dedicated 20 A / 220 V circuit from DB</li>
-        <li>Pharma fridge (Zone 7): dedicated 15 A / 220 V circuit, UPS-backed; separate MCB labelled "FRIDGE — DO NOT SWITCH OFF"</li>
+        <li>AC-1 (left wall, dispensing zone height): dedicated 20 A / 220 V circuit; covers Consultation+Dispensing zone</li>
+        <li>AC-2 (left wall, OTC zone height): dedicated 20 A / 220 V circuit; covers OTC+Shelf + Activity zones</li>
+        <li>Pharma fridge: dedicated 15 A / 220 V circuit, UPS-backed; MCB labelled "FRIDGE — DO NOT SWITCH OFF"</li>
         <li>Dispensing counter: 4× 15 A outlets + 1× Cat6 RJ45</li>
-        <li>Office: 4× 15 A outlets + 1× Cat6 RJ45</li>
-        <li>Consultation: 2× 15 A outlets</li>
-        <li>Staff zone: 2× 15 A outlets</li>
-        <li>Estimated total load: 2 × AC (4,400 W) + fridge (200 W) + lighting (400 W) + equipment (800 W) = ~5,800 W → minimum 32 A main MCB recommended; verify with licensed electrician</li>
-        <li>CCTV: 4× cameras on left wall; run Cat6 from each camera position to DVR/NVR location (suggest: Zone 6 office, back-left corner); DVR requires 2× outlets + Cat6 to network switch; power all cameras from DVR PSU or PoE switch</li>
-        <li>Network switch location: Z6 office — 1× wall-mount patch panel or small rack; run Cat6 home runs to counter, office, CCTV positions</li>
+        <li>Activity zone: 2× 15 A outlets + ceiling light</li>
+        <li>Rest Room: 1× 15 A shaver outlet; exhaust fan on separate switch</li>
+        <li>CCTV: 3× cameras on left wall; Cat6 home runs to DVR (back corner of Consultation+Dispensing zone)</li>
+        <li>Estimated load: 2×AC (4,400 W) + fridge (200 W) + lighting (400 W) + equipment (800 W) ≈ 5,800 W → minimum 32 A main MCB</li>
       </ul>
     </div>
   </div>
@@ -619,11 +363,10 @@
     <div class="nb-head">3. PLUMBING WORKS</div>
     <div class="nb-body">
       <ul>
-        <li>2 sinks required: (1) Dispensing counter — hand-wash, mixer tap, P-trap waste; (2) Staff/utilities zone (Z8) — same spec</li>
-        <li>Confirm existing floor waste points before finalising counter and sink positions; reposition of waste branch may incur additional cost</li>
-        <li>Hot water: not required — cold-water mixer tap sufficient</li>
-        <li>Supply line: 15 mm copper or CPVC; waste line: 50 mm PVC to floor drain</li>
-        <li>Allow for waterproofing around sink bases; seal to wall with silicone</li>
+        <li>2 sinks: (1) Dispensing counter — hand-wash, mixer tap, P-trap; (2) Rest Room — wall-hung, mixer tap, P-trap</li>
+        <li>Rest Room: WC pan + cistern, 100 mm soil waste; cold water supply; floor drain with waterproofing</li>
+        <li>Confirm existing floor waste points before finalising positions</li>
+        <li>Supply: 15 mm copper or CPVC; waste: 50 mm PVC (sink) / 100 mm PVC (WC)</li>
       </ul>
     </div>
   </div>
@@ -632,11 +375,11 @@
     <div class="nb-head">4. SHELVING, COUNTER &amp; FIXTURES</div>
     <div class="nb-body">
       <ul>
-        <li><strong>OTC gondola shelving:</strong> 2 double-sided gondola runs, 150 cm H × 90 cm W bays, adjustable, powder-coated steel; 1 glass display cabinet 180 cm W at top of OTC zone (facing dispensing counter) for Rx/ข drugs displayed under lock</li>
-        <li><strong>Drug storage shelving:</strong> wall-mounted heavy-duty adjustable metal shelving, floor-to-ceiling; min 15 cm clearance from floor; 4 runs along walls of Z3</li>
-        <li><strong>Dispensing counter:</strong> full-width custom unit (approx 350 cm × 60 cm × 90 cm H) at bottom of Z2 facing OTC; laminate or HPL surface; integrated cable channel; internal shelves and drawers for pharmacist use; integrate sink cutout per plan</li>
-        <li><strong>Locked Rx cabinet:</strong> heavy-gauge steel, 2-point lock, wall-anchored; min internal dimensions 50×35×100 cm (adjustable shelves inside)</li>
-        <li><strong>Consultation partition:</strong> full-height gypsum; single-swing 500 mm door; lever handle; paint to match walls</li>
+        <li><strong>OTC+Shelf zone:</strong> 4 wall-shelf rows (right wall, heavy-duty adjustable metal, min 15 cm floor clearance, labelled by category); 3 gondola runs (150 cm H, double-sided, 90 cm W bays); glass display cabinet 162 cm W at front</li>
+        <li><strong>Activity zone:</strong> 3 wall-shelf rows; fold-flat table for events; 2 chairs; maintain ≥ 2 m² clear floor</li>
+        <li><strong>Dispensing counter:</strong> custom unit 165 cm × 60 cm × 90 cm H; HPL surface; cable channel; sink cutout; internal shelves + drawers</li>
+        <li><strong>Locked Rx cabinet:</strong> heavy-gauge steel, 2-point lock, wall-anchored in Consultation zone; min 50×35×100 cm</li>
+        <li><strong>Pharma fridge:</strong> 300 L dual-zone; 10 cm clearance all sides; dedicated 15 A MCB + UPS</li>
       </ul>
     </div>
   </div>
@@ -645,11 +388,11 @@
     <div class="nb-head">5. FLOORING, WALLS &amp; FINISHES</div>
     <div class="nb-body">
       <ul>
-        <li><strong>Sales floor (Z1–Z2):</strong> commercial vinyl plank 2 mm wear layer, or 30×30 cm ceramic tile — non-slip coefficient R9 or better, easy to clean</li>
-        <li><strong>Storage and back areas (Z3–Z8):</strong> sealed epoxy coating or matching vinyl — no grout lines (prevents contamination)</li>
-        <li><strong>Walls:</strong> white semi-gloss latex paint (scrubbable); tile splash-back 60 cm height at all sinks</li>
-        <li><strong>Ceiling:</strong> white painted concrete or white acoustic tile; min 2.7 m clear height; LED panel lights (1 panel per zone, ~300–500 lux at work surfaces)</li>
-        <li><strong>Door (main entry):</strong> aluminium frame glass door 900 mm × 2100 mm on right outside wall; push/pull bars; owner to confirm single or double leaf</li>
+        <li><strong>Dispensing + OTC areas:</strong> commercial vinyl plank 2 mm wear layer, or 30×30 cm ceramic tile — non-slip R9+, easy to clean</li>
+        <li><strong>Storage + consultation + activity:</strong> sealed epoxy coating or matching vinyl — no grout lines</li>
+        <li><strong>Rest Room:</strong> ceramic tile throughout; floor drain; waterproofing membrane under tiles</li>
+        <li><strong>Walls:</strong> white semi-gloss latex (scrubbable); tile splash-back 60 cm at dispensing sink</li>
+        <li><strong>Ceiling:</strong> white painted or acoustic tile; min 2.7 m clear height; LED panels 300–500 lux at all work surfaces</li>
       </ul>
     </div>
   </div>
@@ -658,19 +401,19 @@
     <div class="nb-head">6. PRE-HANDOVER CHECKLIST — FDA SITE INSPECTION READINESS</div>
     <div class="nb-body">
       <ol>
-        <li>All 8 zones physically demarcated and labelled as per this plan</li>
-        <li>Dispensing counter hand-wash sink functional (running water, waste drain confirmed)</li>
-        <li>Locked steel cabinet installed, wall-anchored, and key tested</li>
-        <li>CCTV system installed — <strong>CAM-3 must have clear coverage of locked cabinet</strong>; DVR recording confirmed</li>
-        <li>Pharmaceutical fridge on dedicated circuit; temperature displays 2–8 °C; temp log clipboard in place</li>
-        <li>Thermo-hygrometer installed in Zone 3; reading ≤ 25 °C and ≤ 60 % RH confirmed</li>
-        <li>Consultation zone partition and door installed; acoustic privacy adequate</li>
-        <li>2 × AC units operational (left wall); storage zone temperature confirmed ≤ 25 °C</li>
-        <li>Drug classification signage (ก/ข/ค/ง) installed on shelving</li>
-        <li>Pharmacist licence frame installed at dispensing counter at eye level</li>
-        <li>Fire extinguisher bracket mounted at 120 cm; owner to hang charged extinguisher</li>
-        <li>Lighting ≥ 300 lux at dispensing counter and storage areas (confirm with lux meter)</li>
-        <li>All flooring non-slip, non-porous, and cleanable</li>
+        <li>All 4 zones physically demarcated and labelled as per this plan</li>
+        <li>Dispensing counter hand-wash sink functional</li>
+        <li>Locked steel cabinet installed, wall-anchored, key tested</li>
+        <li>CCTV — <strong>CAM-1 must have clear coverage of locked cabinet</strong>; DVR recording confirmed</li>
+        <li>Pharmaceutical fridge on dedicated circuit; temperature 2–8 °C; temp log clipboard in place</li>
+        <li>Thermo-hygrometer installed in OTC+Shelf zone; ≤ 25 °C and ≤ 60 % RH confirmed</li>
+        <li>Consultation area privacy screen installed; acoustic privacy adequate</li>
+        <li>2 × AC units operational; storage zone ≤ 25 °C confirmed</li>
+        <li>Drug classification signage ก/ข/ค/ง installed on shelving</li>
+        <li>Pharmacist licence frame at dispensing counter at eye level</li>
+        <li>Rest Room functional (WC, sink, exhaust fan, door lock)</li>
+        <li>Lighting ≥ 300 lux at dispensing counter and storage areas</li>
+        <li>All flooring non-slip, non-porous, cleanable</li>
         <li>All electrical circuits labelled at DB; RCD/ELCB protection confirmed</li>
         <li>Snag list resolved; site clean and ready for inspector walk-through</li>
       </ol>
@@ -679,7 +422,7 @@
 
   <!-- FOOTER -->
   <div class="doc-footer">
-    <div>Drawing: RPC-FP-001 Rev A | Thai FDA GPP Standard | Scale: 1:50 (schematic)</div>
+    <div>Drawing: RPC-FP-001 Rev C | Thai FDA GPP Standard | Scale: 1:50 (schematic)</div>
     <div>Ratchada Prestige Condo Pharmacy | FOR CONTRACTOR REVIEW ONLY</div>
     <div>40 m² | 4.0 m × 10.0 m | Date: 2026-05-26</div>
   </div>

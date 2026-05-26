@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แบบแปลนร้านขายยาและผัง GPP — รัชดา เพรสทีจ คอนโด</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Sarabun',sans-serif;background:#d8d8d0;padding:20px;color:#1a1a1a}
+    .page{background:white;max-width:960px;margin:0 auto 20px;padding:24px;border:1px solid #888;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+    .title-block{border:2px solid #1a1a1a;margin-bottom:18px}
+    .title-block .tb-header{background:#1a1a1a;color:white;padding:8px 14px;font-size:16px;font-weight:bold;letter-spacing:.5px}
+    .title-block .tb-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .tb-col{padding:10px 14px}
+    .tb-col:first-child{border-right:1px solid #ccc}
+    .tb-row{display:flex;gap:0;font-size:13px;border-bottom:1px solid #eee;padding:4px 0}
+    .tb-row:last-child{border-bottom:none}
+    .tb-key{font-weight:bold;width:170px;flex-shrink:0;color:#444}
+    .tb-val{color:#1a1a1a}
+    .main-layout{display:flex;gap:18px;align-items:flex-start;margin-bottom:18px}
+    .fp-svg-wrap{flex:0 0 auto}
+    .side-panel{flex:1;min-width:220px}
+    .section-head{background:#1a1a1a;color:white;padding:5px 12px;font-size:14px;font-weight:bold;margin:16px 0 8px}
+    table.gpp{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:14px}
+    table.gpp th{background:#333;color:white;padding:6px 8px;text-align:left}
+    table.gpp td{padding:5px 8px;border:1px solid #ccc;vertical-align:top;line-height:1.45}
+    table.gpp tr:nth-child(even) td{background:#f8f8f8}
+    .note-box{border:1.5px solid #1a1a1a;margin-bottom:10px;font-size:13px}
+    .note-box .nb-head{background:#333;color:white;padding:4px 10px;font-weight:bold}
+    .note-box .nb-body{padding:10px 12px}
+    .note-box ul,.note-box ol{margin-left:18px;line-height:1.65}
+    .doc-footer{margin-top:16px;border-top:2px solid #1a1a1a;padding-top:8px;font-size:11px;color:#555;display:flex;justify-content:space-between}
+    @media print{
+      body{background:white;padding:0}
+      .page{box-shadow:none;border:none;padding:12px;max-width:100%}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="title-block">
+    <div class="tb-header">แบบแปลนร้านขายยาและผังมาตรฐาน GPP — รัชดา เพรสทีจ คอนโด</div>
+    <div class="tb-body">
+      <div class="tb-col">
+        <div class="tb-row"><span class="tb-key">โครงการ</span><span class="tb-val">สร้างร้านขายยาใหม่ — รัชดา เพรสทีจ คอนโด</span></div>
+        <div class="tb-row"><span class="tb-key">ประเภทแบบแปลน</span><span class="tb-val">ผังพื้น (Schematic Floor Plan) — การจัดสรรพื้นที่และโซน GPP</span></div>
+        <div class="tb-row"><span class="tb-key">พื้นที่รวม</span><span class="tb-val">40 ตรม. (ยูนิตอาคารพาณิชย์ 4.0 ม. × 10.0 ม.)</span></div>
+        <div class="tb-row"><span class="tb-key">มาตราส่วน (โดยประมาณ)</span><span class="tb-val">1 : 50 (ผู้รับเหมาต้องตรวจสอบหน้างานอีกครั้ง)</span></div>
+        <div class="tb-row"><span class="tb-key">หมายเลขแบบ</span><span class="tb-val">RPC-FP-001 Rev A</span></div>
+        <div class="tb-row"><span class="tb-key">มาตรฐาน</span><span class="tb-val">วิธีปฏิบัติทางเภสัชกรรมชุมชน (GPP) — อย.</span></div>
+        <div class="tb-row"><span class="tb-key">สถานะ</span><span class="tb-val" style="font-weight:bold;color:#c0392b">สำหรับผู้รับเหมาตรวจสอบ — ห้ามใช้ก่อสร้างจริงโดยยังไม่ตรวจวัด</span></div>
+      </div>
+      <div class="tb-col">
+        <div class="tb-row"><span class="tb-key">งบประมาณ (Option B)</span><span class="tb-val">120,000 บาท (สำหรับงานต่อเติม/ตกแต่ง)</span></div>
+        <div class="tb-row"><span class="tb-key">เครื่องปรับอากาศ</span><span class="tb-val">2 × 12,000 BTU (โซน 1-2 และ โซน 3-5) ติดผนังด้านซ้าย</span></div>
+        <div class="tb-row"><span class="tb-key">ตู้เย็นแช่ยา</span><span class="tb-val">1 × 300 ลิตร แบบ Dual-zone (2–8 °C)</span></div>
+        <div class="tb-row"><span class="tb-key">กล้องวงจรปิด (CCTV)</span><span class="tb-val">4 ตัว — ดูตามผัง (CAM-1 ถึง CAM-4)</span></div>
+        <div class="tb-row"><span class="tb-key">อุณหภูมิเก็บรักษาสูงสุด</span><span class="tb-val">≤ 25 °C</span></div>
+        <div class="tb-row"><span class="tb-key">ความชื้นสูงสุด</span><span class="tb-val">≤ 60 % RH</span></div>
+        <div class="tb-row"><span class="tb-key">วันที่</span><span class="tb-val">26 พฤษภาคม 2026</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="fp-svg-wrap">
+      <svg viewBox="0 0 530 1060" width="380" style="display:block;border:1px solid #bbb">
+        <rect width="530" height="1060" fill="#f2f2ec"/>
+        <!-- โซนต่างๆ -->
+        <rect x="80" y="65" width="135" height="180" fill="#eeeeee"/>
+        <rect x="215" y="65" width="90" height="180" fill="#e0f7fa"/>
+        <rect x="305" y="65" width="135" height="180" fill="#fafafa"/>
+        <rect x="80" y="245" width="180" height="180" fill="#fce4ec"/>
+        <rect x="260" y="245" width="180" height="180" fill="#f3e5f5"/>
+        <rect x="80" y="425" width="360" height="135" fill="#fff8e1"/>
+        <rect x="80" y="560" width="360" height="180" fill="#e3edf8"/>
+        <rect x="80" y="740" width="360" height="225" fill="#e8f5e9"/>
+
+        <!-- เส้นผนัง -->
+        <line x1="80" y1="65" x2="440" y2="65" stroke="#111" stroke-width="4"/>
+        <line x1="80" y1="965" x2="440" y2="965" stroke="#111" stroke-width="4"/>
+        <line x1="80" y1="65" x2="80" y2="965" stroke="#111" stroke-width="4"/>
+        <line x1="440" y1="65" x2="440" y2="840" stroke="#111" stroke-width="4"/>
+        <line x1="440" y1="930" x2="440" y2="965" stroke="#111" stroke-width="4"/>
+        
+        <line x1="80" y1="245" x2="440" y2="245" stroke="#333" stroke-width="2"/>
+        <line x1="215" y1="65" x2="215" y2="245" stroke="#333" stroke-width="2"/>
+        <line x1="305" y1="65" x2="305" y2="245" stroke="#333" stroke-width="2"/>
+        <line x1="260" y1="245" x2="260" y2="425" stroke="#333" stroke-width="2"/>
+        <line x1="80" y1="425" x2="365" y2="425" stroke="#333" stroke-width="2"/>
+        <line x1="410" y1="425" x2="440" y2="425" stroke="#333" stroke-width="2"/>
+        <line x1="80" y1="560" x2="440" y2="560" stroke="#333" stroke-width="2"/>
+        <line x1="80" y1="740" x2="440" y2="740" stroke="#333" stroke-width="2"/>
+
+        <line x1="440" y1="840" x2="350" y2="840" stroke="#2e7d32" stroke-width="1.5"/>
+        <path d="M440,930 A90,90 0 0,1 350,840" fill="none" stroke="#2e7d32" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="412" y="898" text-anchor="middle" font-size="10" fill="#1b5e20" font-weight="bold">ทางเข้า</text>
+        
+        <!-- Text for Zones -->
+        <text x="147" y="150" text-anchor="middle" font-size="12" fill="#555">Z6: สนง./เอกสาร (3m²)</text>
+        <text x="260" y="150" text-anchor="middle" font-size="12" fill="#006064">Z7: ตู้เย็น (2m²)</text>
+        <text x="372" y="150" text-anchor="middle" font-size="12" fill="#555">Z8: พนักงาน/สาธารณูปโภค (3m²)</text>
+        <text x="170" y="335" text-anchor="middle" font-size="12" fill="#c62828">Z4: ยาควบคุมพิเศษ/อันตราย (4m²)</text>
+        <text x="350" y="335" text-anchor="middle" font-size="12" fill="#4a148c">Z5: พื้นที่ให้คำปรึกษา (4m²)</text>
+        <text x="260" y="492" text-anchor="middle" font-size="12" fill="#f57f17">Z3: พื้นที่เก็บยาทั่วไป (6m²)</text>
+        <text x="260" y="650" text-anchor="middle" font-size="12" fill="#1565c0">Z2: เคาน์เตอร์จ่ายยา (8m²)</text>
+        <text x="260" y="852" text-anchor="middle" font-size="12" fill="#2e7d32">Z1: พื้นที่แสดงสินค้า OTC (10m²)</text>
+
+      </svg>
+    </div>
+
+    <div class="side-panel">
+      <div class="section-head">มาตรฐานการจัดพื้นที่ (GPP Zones)</div>
+      <table class="gpp">
+        <thead>
+          <tr>
+            <th>โซน</th>
+            <th>ชื่อพื้นที่ (ตร.ม.)</th>
+            <th>ข้อกำหนดทางกฎหมาย GPP (อย.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Z1</td>
+            <td>แสดงสินค้า OTC (10)</td>
+            <td>ป้ายแยกประเภทยา ก/ข/ค/ง ชัดเจน แสงสว่าง &ge;300 lux</td>
+          </tr>
+          <tr>
+            <td>Z2</td>
+            <td>เคาน์เตอร์จ่ายยา (8)</td>
+            <td>ป้ายเภสัชกร อ่างล้างมือสำหรับเภสัชกร</td>
+          </tr>
+          <tr>
+            <td>Z3</td>
+            <td>พื้นที่เก็บยาทั่วไป (6)</td>
+            <td>ชั้นวางแยกหมวดหมู่ มีเทอร์โมไฮโกรมิเตอร์ ควบคุมอุณหภูมิ &le;25°C ความชื้น &le;60%</td>
+          </tr>
+          <tr>
+            <td>Z4</td>
+            <td>ยาควบคุม/อันตราย (4)</td>
+            <td>ตู้ล็อคกุญแจสำหรับยาอันตราย (Type A/B) กล้องวงจรปิด (CAM-3) จับภาพตู้ล็อคยา</td>
+          </tr>
+          <tr>
+            <td>Z5</td>
+            <td>ให้คำปรึกษา (4)</td>
+            <td>ฉากกั้นเพื่อความเป็นส่วนตัว โต๊ะและเก้าอี้ 2 ตัว พร้อมตำราอ้างอิง</td>
+          </tr>
+          <tr>
+            <td>Z6</td>
+            <td>สำนักงาน/เอกสาร (3)</td>
+            <td>คอมพิวเตอร์ ระบบบันทึกการจ่ายยา</td>
+          </tr>
+          <tr>
+            <td>Z7</td>
+            <td>เก็บความเย็น (2)</td>
+            <td>ตู้เย็นเก็บยา 2-8°C สมุดจดบันทึกอุณหภูมิประจำวัน</td>
+          </tr>
+          <tr>
+            <td>Z8</td>
+            <td>พนักงาน/อเนกประสงค์ (3)</td>
+            <td>อ่างล้างมือ ถังดับเพลิง ล็อกเกอร์พนักงาน ถังขยะติดเชื้อ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-head">รายการตรวจสอบก่อนส่งมอบงาน (Checklist)</div>
+      <div class="note-box">
+        <div class="nb-head">1. โครงสร้าง ระบบปรับอากาศ และไฟฟ้า</div>
+        <div class="nb-body">
+          <ul>
+            <li>ติดตั้งวงจรไฟฟ้าเฉพาะสำหรับตู้เย็นแช่ยา (สำรองไฟ UPS) 15 A พร้อมบันทึกอุณหภูมิ 2–8 °C</li>
+            <li>ความสว่างที่เคาน์เตอร์จ่ายยาและพื้นที่เก็บยา &ge; 300 lux (ทดสอบด้วยเครื่องวัด)</li>
+            <li>แอร์ 12,000 BTU จำนวน 2 ตัว ใช้งานได้ดี อุณหภูมิโซนเก็บยา &le; 25 °C</li>
+            <li>ตู้ยาอันตราย (Z4) ต้องมีกล้องวงจรปิด (CAM-3) ส่องเห็นชัดเจน และระบบบันทึก (DVR) ทำงาน</li>
+            <li>ทุกวงจรไฟฟ้ามีป้ายกำกับที่ตู้ไฟ และมีการป้องกันไฟรั่ว (RCD/ELCB)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-box">
+        <div class="nb-head">2. ระบบประปาและอื่นๆ</div>
+        <div class="nb-body">
+          <ul>
+            <li>อ่างล้างมือใช้งานได้ 2 จุด: ที่เคาน์เตอร์จ่ายยา (Z2) และห้องพนักงาน (Z8)</li>
+            <li>พื้นร้านทั้งหมดต้องเป็นวัสดุไม่ลื่น ไม่ซึมน้ำ และทำความสะอาดง่าย</li>
+            <li>ติดตั้งที่แขวนถังดับเพลิงระดับ 120 ซม. จากพื้น (เจ้าของร้านจะนำถังมาแขวน)</li>
+            <li>ป้ายประเภทยา (ก/ข/ค/ง) และกรอบป้ายใบประกอบวิชาชีพเภสัชกรรมติดตั้งที่ระดับสายตา</li>
+            <li>ทำความสะอาดหน้างานเรียบร้อย พร้อมสำหรับการเข้าตรวจประเมินจาก อย.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div>Drawing: RPC-FP-001 Rev A | มาตรฐาน GPP อย. ไทย | Scale: 1:50 (schematic)</div>
+    <div>Ratchada Prestige Condo Pharmacy | เอกสารสำหรับผู้รับเหมาพิจารณาเท่านั้น</div>
+    <div>40 m² | 4.0 m × 10.0 m | วันที่: 26 พ.ค. 2026</div>
+  </div>
+</div>
+</body>
+</html>
