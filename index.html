@@ -73,6 +73,7 @@
     <button onclick="showTab('inventory',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128230; Inventory</button>
     <button onclick="showTab('gpp',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#9989; GPP</button>
     <button onclick="showTab('roadmap',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128197; Roadmap</button>
+    <button onclick="showTab('floorplan',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128207; Floor Plan</button>
   </div>
 
   <!-- ===== TAB: SUMMARY ===== -->
@@ -353,6 +354,17 @@
           <div class="space-y-2 text-sm" id="tech-list"></div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ===== TAB: FLOOR PLAN ===== -->
+  <div id="tab-floorplan" class="tab-pane py-6">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-lg font-bold text-gray-800">GPP Floor Plan — RPC-FP-001 Rev A</h2>
+      <a href="floorplan.html" target="_blank" class="text-sm text-green-700 font-medium hover:underline">&#128196; Open full page ↗</a>
+    </div>
+    <div class="bg-white rounded-xl shadow overflow-hidden">
+      <iframe src="floorplan.html" title="GPP Floor Plan" style="width:100%;height:85vh;border:none;display:block;"></iframe>
     </div>
   </div>
 
