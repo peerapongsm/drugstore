@@ -1,9 +1,9 @@
-name: Deploy Jekyll site to Pages
+name: Deploy static site to Pages
 
 on:
   push:
     branches: ["master"]   # or your source branch
-  workflow_dispatch:     # allows manual runs
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,22 +21,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'   # match your Jekyll version requirements
-          bundler-cache: true
-
-      - name: Install dependencies
-        run: bundle install
-
-      - name: Build Jekyll site
-        run: bundle exec jekyll build --destination ./_site
-
+      # No Ruby/Jekyll setup needed — just upload your static files
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site
+          path: ./   # root of your repo, or ./dist if you build elsewhere
 
   deploy:
     environment:
