@@ -39,10 +39,20 @@
     .warn-box .nb-head{background:#c0392b}
     .doc-footer{margin-top:16px;border-top:2px solid #1a1a1a;padding-top:8px;font-size:9.5px;color:#555;display:flex;justify-content:space-between}
     @media print{body{background:white;padding:0}.page{box-shadow:none;border:none;padding:12px;max-width:100%}}
+    .lang-bar{display:flex;gap:8px;justify-content:flex-end;margin-bottom:8px;font-size:11px}
+    .lang-bar a{padding:4px 10px;border:1px solid #888;text-decoration:none;color:#444;border-radius:3px}
+    .lang-bar a.active{background:#1a1a1a;color:white;font-weight:bold;border-color:#1a1a1a}
+    .lang-bar a:hover:not(.active){background:#eee}
   </style>
 </head>
 <body>
 <div class="page">
+
+  <!-- LANGUAGE SWITCHER -->
+  <div class="lang-bar">
+    <a href="floorplan.html" class="active">EN</a>
+    <a href="floorplan-th.html">TH</a>
+  </div>
 
   <!-- TITLE BLOCK -->
   <div class="title-block">
@@ -135,7 +145,7 @@
         <text x="349" y="202" text-anchor="middle" font-size="7" fill="#888">3 shelf rows | Event table | 2 chairs</text>
 
         <!-- ── CONSULTATION + DISPENSING (y=245..965) ── -->
-        <!-- Sub-zone label: CONSULTATION (upper, y=245..580) -->
+        <!-- Sub-zone label: CONSULTATION (upper, y=245..460) -->
         <rect x="83" y="248" width="68" height="14" fill="#3949ab" rx="2"/>
         <text x="117" y="259" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">CONSULTATION</text>
         <rect x="155" y="248" width="38" height="17" fill="#1a237e" rx="2"/>
@@ -229,7 +239,8 @@
         <div class="pb-body">
           <div class="lg-item"><div class="lg-swatch" style="background:#f0f0ee;border-color:#616161"></div><strong>Rest Room</strong> — ห้องน้ำ (4 m²)</div>
           <div class="lg-item"><div class="lg-swatch" style="background:#e0f2f1;border-color:#00796b"></div><strong>Activity Zone</strong> — โซนกิจกรรม + ชั้นวางยา (6 m²)</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#e8edf8;border-color:#3949ab"></div><strong>Consultation + Dispensing</strong> — โซนให้คำปรึกษา + จ่ายยา (16 m²)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#e8edf8;border-color:#3949ab"></div><strong>Consultation</strong> — โซนให้คำปรึกษา (4 m²)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#dce3f5;border-color:#3949ab"></div><strong>Dispensing</strong> — โซนจ่ายยา (12 m²)</div>
           <div class="lg-item"><div class="lg-swatch" style="background:#f9fbe7;border-color:#558b2f"></div><strong>OTC + Medicine Shelf</strong> — ชั้นวางยา + OTC (14 m²)</div>
           <div style="font-size:10px;margin-top:6px;color:#555;border-top:1px solid #ddd;padding-top:6px"><strong>Total: 40 m²</strong> (4.0 m × 10.0 m)</div>
         </div>
@@ -240,7 +251,7 @@
         <div class="pb-body" style="font-size:10.5px;line-height:1.7">
           <div><strong>Left / Right walls</strong> — outside walls (exterior-facing)</div>
           <div><strong>Top / Bottom walls</strong> — party walls (shared units)</div>
-          <div><strong>Left column</strong> = Rest Room (top 2m) | Consultation+Dispensing (bottom 8m)</div>
+          <div><strong>Left column</strong> = Rest Room (top 2m) | Consultation (top ~2m) + Dispensing (bottom ~6m)</div>
           <div><strong>Right column</strong> = Activity Zone (top 3m) | OTC+Shelf (bottom 7m)</div>
           <div style="margin-top:4px;color:#7b1fa2"><strong>Dashed blue line</strong> = soft boundary within merged zone</div>
         </div>
@@ -310,12 +321,20 @@
         <td class="check">☐ 3 shelf rows<br>☐ 2× outlets<br>☐ LED ≥300 lux<br>☐ Event table + chairs<br>☐ Clear floor ≥2 m²</td>
       </tr>
       <tr>
-        <td><strong>3</strong></td>
-        <td>Consultation + Dispensing<br>โซนให้คำปรึกษา + จ่ายยา</td>
-        <td>16</td>
-        <td><em>Consultation (upper half):</em> Semi-private; privacy screen; table + 2 chairs; reference books. <em>Dispensing (lower half):</em> Pharmacist licence displayed; hand-wash sink at counter; Rx dispensing surface min 1.5 m²; pharma fridge 2–8 °C; locked cabinet for Schedule A/B + CCTV coverage (mandatory)</td>
-        <td><em>Upper:</em> Full-height gypsum partition (12 mm / 75 mm stud) or privacy screen along right boundary; consultation table ~90×60 cm + 2 chairs; bookshelf for reference materials; locked steel cabinet wall-anchored, 2-point lock; CAM-1 aimed at cabinet. <em>Lower:</em> Full-width dispensing counter 165 cm × 60 cm × 90 cm H; integrate hand-wash sink, P-trap; licence frame at 145–155 cm; 4× 15 A outlets + 1× Cat6; pharma fridge 300 L on dedicated 15 A UPS-backed MCB (10 cm clearance all sides); CAM-2 at top of dispensing zone; AC-1 left wall covers this zone</td>
-        <td class="check">☐ Privacy screen<br>☐ Table + chairs<br>☐ Ref books<br>☐ Locked cabinet anchored<br>☐ CAM-1 → cabinet<br>☐ Counter 90 cm H<br>☐ Sink functional<br>☐ Licence frame 150 cm<br>☐ Fridge dedicated MCB<br>☐ 4× outlets + Cat6<br>☐ CAM-2 installed</td>
+        <td><strong>3a</strong></td>
+        <td>Consultation<br>โซนให้คำปรึกษา</td>
+        <td>4</td>
+        <td>Semi-private area; privacy screen; consultation table + 2 chairs; reference books (Thai FDA GPP required); locked steel cabinet for Schedule A/B drugs; CCTV CAM-1 covering cabinet (mandatory)</td>
+        <td>Full-height gypsum partition (12 mm / 75 mm stud) or privacy screen along right boundary; consultation table ~90×60 cm + 2 chairs; bookshelf for reference materials; locked steel cabinet wall-anchored 2-point lock; CAM-1 aimed at cabinet; AC-1 left wall covers this zone</td>
+        <td class="check">☐ Privacy screen<br>☐ Table + chairs<br>☐ Ref books<br>☐ Locked cabinet anchored<br>☐ CAM-1 → cabinet</td>
+      </tr>
+      <tr>
+        <td><strong>3b</strong></td>
+        <td>Dispensing<br>โซนจ่ายยา</td>
+        <td>12</td>
+        <td>Pharmacist licence displayed; hand-wash sink at counter; Rx dispensing surface min 1.5 m²; pharma fridge 2–8 °C with daily temp log; adequate power outlets + network; CCTV CAM-2 coverage</td>
+        <td>Full-width dispensing counter 165 cm × 60 cm × 90 cm H; integrate hand-wash sink with P-trap; licence frame at 145–155 cm AFF; 4× 15 A outlets + 1× Cat6; pharma fridge 300 L on dedicated 15 A UPS-backed MCB (10 cm clearance all sides); CAM-2 at top of dispensing zone</td>
+        <td class="check">☐ Counter 90 cm H<br>☐ Sink functional<br>☐ Licence frame 150 cm<br>☐ Fridge dedicated MCB<br>☐ 4× outlets + Cat6<br>☐ CAM-2 installed</td>
       </tr>
       <tr>
         <td><strong>4</strong></td>

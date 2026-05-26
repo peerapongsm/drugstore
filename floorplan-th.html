@@ -3,200 +3,422 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>แบบแปลนร้านขายยาและผัง GPP — รัชดา เพรสทีจ คอนโด</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+  <title>ผังร้านยา GPP — Ratchada Prestige Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Sarabun',sans-serif;background:#d8d8d0;padding:20px;color:#1a1a1a}
+    body{font-family:'Sarabun',Arial,sans-serif;background:#d8d8d0;padding:20px;color:#1a1a1a}
     .page{background:white;max-width:960px;margin:0 auto 20px;padding:24px;border:1px solid #888;box-shadow:0 2px 10px rgba(0,0,0,.2)}
     .title-block{border:2px solid #1a1a1a;margin-bottom:18px}
-    .title-block .tb-header{background:#1a1a1a;color:white;padding:8px 14px;font-size:16px;font-weight:bold;letter-spacing:.5px}
+    .title-block .tb-header{background:#1a1a1a;color:white;padding:8px 14px;font-size:14px;font-weight:bold;letter-spacing:.5px}
     .title-block .tb-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
     .tb-col{padding:10px 14px}
     .tb-col:first-child{border-right:1px solid #ccc}
-    .tb-row{display:flex;gap:0;font-size:13px;border-bottom:1px solid #eee;padding:4px 0}
+    .tb-row{display:flex;gap:0;font-size:11px;border-bottom:1px solid #eee;padding:3px 0}
     .tb-row:last-child{border-bottom:none}
     .tb-key{font-weight:bold;width:170px;flex-shrink:0;color:#444}
     .tb-val{color:#1a1a1a}
     .main-layout{display:flex;gap:18px;align-items:flex-start;margin-bottom:18px}
     .fp-svg-wrap{flex:0 0 auto}
     .side-panel{flex:1;min-width:220px}
-    .section-head{background:#1a1a1a;color:white;padding:5px 12px;font-size:14px;font-weight:bold;margin:16px 0 8px}
-    table.gpp{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:14px}
+    .panel-box{border:1.5px solid #1a1a1a;margin-bottom:12px;font-size:11px}
+    .panel-box .pb-head{background:#1a1a1a;color:white;padding:4px 10px;font-size:11px;font-weight:bold}
+    .panel-box .pb-body{padding:10px}
+    .lg-item{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-size:11px}
+    .lg-swatch{width:22px;height:15px;border:1px solid #666;flex-shrink:0}
+    .section-head{background:#1a1a1a;color:white;padding:5px 12px;font-size:12px;font-weight:bold;margin:16px 0 8px}
+    table.gpp{width:100%;border-collapse:collapse;font-size:10.5px;margin-bottom:14px}
     table.gpp th{background:#333;color:white;padding:6px 8px;text-align:left}
     table.gpp td{padding:5px 8px;border:1px solid #ccc;vertical-align:top;line-height:1.45}
     table.gpp tr:nth-child(even) td{background:#f8f8f8}
-    .note-box{border:1.5px solid #1a1a1a;margin-bottom:10px;font-size:13px}
-    .note-box .nb-head{background:#333;color:white;padding:4px 10px;font-weight:bold}
+    table.gpp .check{color:#555;font-size:10px}
+    .note-box{border:1.5px solid #1a1a1a;margin-bottom:10px;font-size:11px}
+    .note-box .nb-head{background:#333;color:white;padding:4px 10px;font-size:11px;font-weight:bold}
     .note-box .nb-body{padding:10px 12px}
     .note-box ul,.note-box ol{margin-left:18px;line-height:1.65}
-    .doc-footer{margin-top:16px;border-top:2px solid #1a1a1a;padding-top:8px;font-size:11px;color:#555;display:flex;justify-content:space-between}
-    @media print{
-      body{background:white;padding:0}
-      .page{box-shadow:none;border:none;padding:12px;max-width:100%}
-    }
+    .warn-box{border:2px solid #c0392b;background:#fff5f5}
+    .warn-box .nb-head{background:#c0392b}
+    .doc-footer{margin-top:16px;border-top:2px solid #1a1a1a;padding-top:8px;font-size:9.5px;color:#555;display:flex;justify-content:space-between}
+    @media print{body{background:white;padding:0}.page{box-shadow:none;border:none;padding:12px;max-width:100%}}
+    .lang-bar{display:flex;gap:8px;justify-content:flex-end;margin-bottom:8px;font-size:11px}
+    .lang-bar a{padding:4px 10px;border:1px solid #888;text-decoration:none;color:#444;border-radius:3px}
+    .lang-bar a.active{background:#1a1a1a;color:white;font-weight:bold;border-color:#1a1a1a}
+    .lang-bar a:hover:not(.active){background:#eee}
   </style>
 </head>
 <body>
 <div class="page">
+
+  <!-- LANGUAGE SWITCHER -->
+  <div class="lang-bar">
+    <a href="floorplan.html">EN</a>
+    <a href="floorplan-th.html" class="active">TH</a>
+  </div>
+
+  <!-- TITLE BLOCK -->
   <div class="title-block">
-    <div class="tb-header">แบบแปลนร้านขายยาและผังมาตรฐาน GPP — รัชดา เพรสทีจ คอนโด</div>
+    <div class="tb-header">ผังพื้นที่ร้านยาและมาตรฐาน GPP — ราชดาเพรสทีจ คอนโด (ฉบับ C)</div>
     <div class="tb-body">
       <div class="tb-col">
-        <div class="tb-row"><span class="tb-key">โครงการ</span><span class="tb-val">สร้างร้านขายยาใหม่ — รัชดา เพรสทีจ คอนโด</span></div>
-        <div class="tb-row"><span class="tb-key">ประเภทแบบแปลน</span><span class="tb-val">ผังพื้น (Schematic Floor Plan) — การจัดสรรพื้นที่และโซน GPP</span></div>
-        <div class="tb-row"><span class="tb-key">พื้นที่รวม</span><span class="tb-val">40 ตรม. (ยูนิตอาคารพาณิชย์ 4.0 ม. × 10.0 ม.)</span></div>
-        <div class="tb-row"><span class="tb-key">มาตราส่วน (โดยประมาณ)</span><span class="tb-val">1 : 50 (ผู้รับเหมาต้องตรวจสอบหน้างานอีกครั้ง)</span></div>
-        <div class="tb-row"><span class="tb-key">หมายเลขแบบ</span><span class="tb-val">RPC-FP-001 Rev A</span></div>
-        <div class="tb-row"><span class="tb-key">มาตรฐาน</span><span class="tb-val">วิธีปฏิบัติทางเภสัชกรรมชุมชน (GPP) — อย.</span></div>
-        <div class="tb-row"><span class="tb-key">สถานะ</span><span class="tb-val" style="font-weight:bold;color:#c0392b">สำหรับผู้รับเหมาตรวจสอบ — ห้ามใช้ก่อสร้างจริงโดยยังไม่ตรวจวัด</span></div>
+        <div class="tb-row"><span class="tb-key">โครงการ</span><span class="tb-val">ก่อสร้างร้านขายยาใหม่ — ราชดาเพรสทีจ คอนโด</span></div>
+        <div class="tb-row"><span class="tb-key">ประเภทแบบ</span><span class="tb-val">ผังแบบแผนผัง — การจัดสรรพื้นที่และโซน GPP</span></div>
+        <div class="tb-row"><span class="tb-key">พื้นที่รวม</span><span class="tb-val">40 ตร.ม. (กว้าง 4.0 ม. × ลึก 10.0 ม.)</span></div>
+        <div class="tb-row"><span class="tb-key">มาตราส่วน (ประมาณ)</span><span class="tb-val">1 : 50 (แบบแผนผัง SVG — ผู้รับเหมาต้องตรวจสอบหน้างาน)</span></div>
+        <div class="tb-row"><span class="tb-key">เลขที่แบบ</span><span class="tb-val">RPC-FP-001 ฉบับ C</span></div>
+        <div class="tb-row"><span class="tb-key">มาตรฐาน</span><span class="tb-val">หลักเกณฑ์วิธีปฏิบัติทางเภสัชกรรมชุมชน (GPP) — พ.ร.บ. ยา พ.ศ. 2510</span></div>
+        <div class="tb-row"><span class="tb-key">สถานะ</span><span class="tb-val" style="font-weight:bold;color:#c0392b">เพื่อให้ผู้รับเหมาตรวจสอบ — ห้ามใช้เพื่องานก่อสร้าง</span></div>
       </div>
       <div class="tb-col">
-        <div class="tb-row"><span class="tb-key">งบประมาณ (Option B)</span><span class="tb-val">120,000 บาท (สำหรับงานต่อเติม/ตกแต่ง)</span></div>
-        <div class="tb-row"><span class="tb-key">เครื่องปรับอากาศ</span><span class="tb-val">2 × 12,000 BTU (โซน 1-2 และ โซน 3-5) ติดผนังด้านซ้าย</span></div>
-        <div class="tb-row"><span class="tb-key">ตู้เย็นแช่ยา</span><span class="tb-val">1 × 300 ลิตร แบบ Dual-zone (2–8 °C)</span></div>
-        <div class="tb-row"><span class="tb-key">กล้องวงจรปิด (CCTV)</span><span class="tb-val">4 ตัว — ดูตามผัง (CAM-1 ถึง CAM-4)</span></div>
-        <div class="tb-row"><span class="tb-key">อุณหภูมิเก็บรักษาสูงสุด</span><span class="tb-val">≤ 25 °C</span></div>
+        <div class="tb-row"><span class="tb-key">งบประมาณ (ตัวเลือก B)</span><span class="tb-val">฿120,000</span></div>
+        <div class="tb-row"><span class="tb-key">เครื่องปรับอากาศที่ต้องการ</span><span class="tb-val">2 เครื่อง × 12,000 BTU (ติดผนังซ้าย)</span></div>
+        <div class="tb-row"><span class="tb-key">ตู้เย็นยา</span><span class="tb-val">1 ตู้ × 300 ลิตร สองช่อง (2–8 °C)</span></div>
+        <div class="tb-row"><span class="tb-key">อุณหภูมิเก็บสูงสุด</span><span class="tb-val">≤ 25 °C</span></div>
         <div class="tb-row"><span class="tb-key">ความชื้นสูงสุด</span><span class="tb-val">≤ 60 % RH</span></div>
-        <div class="tb-row"><span class="tb-key">วันที่</span><span class="tb-val">26 พฤษภาคม 2026</span></div>
+        <div class="tb-row"><span class="tb-key">วันที่</span><span class="tb-val">2026-05-26</span></div>
+        <div class="tb-row"><span class="tb-key">การแก้ไข</span><span class="tb-val">ฉบับ C — รวมโซนเป็น 4 โซน ไม่มีส่วนโค้งประตูในแผน</span></div>
       </div>
     </div>
   </div>
 
+  <!-- FLOOR PLAN + SIDE PANEL -->
   <div class="main-layout">
     <div class="fp-svg-wrap">
+      <!--
+        Room: 4.0 m wide x 10.0 m deep = 40 sqm
+        Scale: 90 px / m  |  x=80..440 (360px=4m)  |  y=65..965 (900px=10m)
+        LEFT  col x=80..260 (2m): Rest Room (top 2m) | Consultation+Dispensing (bottom 8m)
+        RIGHT col x=260..440 (2m): Activity Zone (top 3m) | OTC + Shelf (bottom 7m)
+      -->
       <svg viewBox="0 0 530 1060" width="380" style="display:block;border:1px solid #bbb">
+        <defs>
+          <marker id="a1" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+            <polygon points="0,0 7,3.5 0,7" fill="#444"/>
+          </marker>
+          <marker id="a2" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse">
+            <polygon points="0,0 7,3.5 0,7" fill="#444"/>
+          </marker>
+        </defs>
+
         <rect width="530" height="1060" fill="#f2f2ec"/>
-        <!-- โซนต่างๆ -->
-        <rect x="80" y="65" width="135" height="180" fill="#eeeeee"/>
-        <rect x="215" y="65" width="90" height="180" fill="#e0f7fa"/>
-        <rect x="305" y="65" width="135" height="180" fill="#fafafa"/>
-        <rect x="80" y="245" width="180" height="180" fill="#fce4ec"/>
-        <rect x="260" y="245" width="180" height="180" fill="#f3e5f5"/>
-        <rect x="80" y="425" width="360" height="135" fill="#fff8e1"/>
-        <rect x="80" y="560" width="360" height="180" fill="#e3edf8"/>
-        <rect x="80" y="740" width="360" height="225" fill="#e8f5e9"/>
 
-        <!-- เส้นผนัง -->
-        <line x1="80" y1="65" x2="440" y2="65" stroke="#111" stroke-width="4"/>
-        <line x1="80" y1="965" x2="440" y2="965" stroke="#111" stroke-width="4"/>
-        <line x1="80" y1="65" x2="80" y2="965" stroke="#111" stroke-width="4"/>
-        <line x1="440" y1="65" x2="440" y2="840" stroke="#111" stroke-width="4"/>
-        <line x1="440" y1="930" x2="440" y2="965" stroke="#111" stroke-width="4"/>
-        
-        <line x1="80" y1="245" x2="440" y2="245" stroke="#333" stroke-width="2"/>
-        <line x1="215" y1="65" x2="215" y2="245" stroke="#333" stroke-width="2"/>
-        <line x1="305" y1="65" x2="305" y2="245" stroke="#333" stroke-width="2"/>
-        <line x1="260" y1="245" x2="260" y2="425" stroke="#333" stroke-width="2"/>
-        <line x1="80" y1="425" x2="365" y2="425" stroke="#333" stroke-width="2"/>
-        <line x1="410" y1="425" x2="440" y2="425" stroke="#333" stroke-width="2"/>
-        <line x1="80" y1="560" x2="440" y2="560" stroke="#333" stroke-width="2"/>
-        <line x1="80" y1="740" x2="440" y2="740" stroke="#333" stroke-width="2"/>
+        <rect x="80"  y="65"  width="180" height="180" fill="#f0f0ee"/>
+        <rect x="260" y="65"  width="180" height="270" fill="#e0f2f1"/>
+        <rect x="80"  y="245" width="180" height="720" fill="#e8edf8"/>
+        <rect x="260" y="335" width="180" height="630" fill="#f9fbe7"/>
 
-        <line x1="440" y1="840" x2="350" y2="840" stroke="#2e7d32" stroke-width="1.5"/>
-        <path d="M440,930 A90,90 0 0,1 350,840" fill="none" stroke="#2e7d32" stroke-width="1" stroke-dasharray="5,3"/>
-        <text x="412" y="898" text-anchor="middle" font-size="10" fill="#1b5e20" font-weight="bold">ทางเข้า</text>
-        
-        <!-- Text for Zones -->
-        <text x="147" y="150" text-anchor="middle" font-size="12" fill="#555">Z6: สนง./เอกสาร (3m²)</text>
-        <text x="260" y="150" text-anchor="middle" font-size="12" fill="#006064">Z7: ตู้เย็น (2m²)</text>
-        <text x="372" y="150" text-anchor="middle" font-size="12" fill="#555">Z8: พนักงาน/สาธารณูปโภค (3m²)</text>
-        <text x="170" y="335" text-anchor="middle" font-size="12" fill="#c62828">Z4: ยาควบคุมพิเศษ/อันตราย (4m²)</text>
-        <text x="350" y="335" text-anchor="middle" font-size="12" fill="#4a148c">Z5: พื้นที่ให้คำปรึกษา (4m²)</text>
-        <text x="260" y="492" text-anchor="middle" font-size="12" fill="#f57f17">Z3: พื้นที่เก็บยาทั่วไป (6m²)</text>
-        <text x="260" y="650" text-anchor="middle" font-size="12" fill="#1565c0">Z2: เคาน์เตอร์จ่ายยา (8m²)</text>
-        <text x="260" y="852" text-anchor="middle" font-size="12" fill="#2e7d32">Z1: พื้นที่แสดงสินค้า OTC (10m²)</text>
+        <line x1="80"  y1="65"  x2="440" y2="65"  stroke="#111" stroke-width="4"/>
+        <line x1="80"  y1="965" x2="440" y2="965" stroke="#111" stroke-width="4"/>
+        <line x1="80"  y1="65"  x2="80"  y2="965" stroke="#111" stroke-width="4"/>
+        <line x1="440" y1="65"  x2="440" y2="965" stroke="#111" stroke-width="4"/>
+
+        <line x1="260" y1="65"  x2="260" y2="965" stroke="#333" stroke-width="2"/>
+        <line x1="80"  y1="245" x2="260" y2="245" stroke="#333" stroke-width="2"/>
+        <line x1="260" y1="335" x2="440" y2="335" stroke="#333" stroke-width="2"/>
+        <line x1="80"  y1="460" x2="260" y2="460" stroke="#7986cb" stroke-width="1" stroke-dasharray="6,3" opacity=".6"/>
+
+        <rect x="83" y="68" width="38" height="17" fill="#424242" rx="2"/>
+        <text x="102" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m&#178;</text>
+        <text x="170" y="160" text-anchor="middle" font-size="10" font-weight="bold" fill="#424242">&#3627;&#3657;&#3629;&#3591;&#3609;&#3657;&#3635;</text>
+        <text x="170" y="174" text-anchor="middle" font-size="8.5" fill="#616161">Rest Room</text>
+
+        <rect x="263" y="68" width="38" height="17" fill="#00796b" rx="2"/>
+        <text x="282" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">6 m&#178;</text>
+        <text x="349" y="160" text-anchor="middle" font-size="10" font-weight="bold" fill="#00695c">โซนกิจกรรม</text>
+        <text x="349" y="174" text-anchor="middle" font-size="8.5" fill="#00796b">Activity Zone</text>
+        <text x="349" y="188" text-anchor="middle" font-size="7.5" fill="#00796b">Shelving + Health Events</text>
+        <text x="349" y="202" text-anchor="middle" font-size="7" fill="#888">3 shelf rows | Event table | 2 chairs</text>
+
+        <rect x="83" y="248" width="68" height="14" fill="#3949ab" rx="2"/>
+        <text x="117" y="259" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">CONSULTATION</text>
+        <rect x="155" y="248" width="38" height="17" fill="#1a237e" rx="2"/>
+        <text x="174" y="260" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m&#178;</text>
+        <rect x="83" y="470" width="60" height="14" fill="#1a237e" rx="2"/>
+        <text x="113" y="480" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">DISPENSING</text>
+        <rect x="150" y="470" width="38" height="17" fill="#1a237e" rx="2"/>
+        <text x="169" y="483" text-anchor="middle" font-size="9" fill="white" font-weight="bold">12 m&#178;</text>
+
+        <rect x="400"  y="980" transform="rotate(-90,173,970)" width="150" height="68" fill="#c5cae9" stroke="#3949ab" stroke-width="1" rx="2"/>
+        <text x="470" y="1015" transform="rotate(-90,173,970)" text-anchor="middle" font-size="8" font-weight="bold" fill="#1a237e">PHARMACIST</text>
+        <text x="470" y="1025" transform="rotate(-90,173,970)" text-anchor="middle" font-size="7.5" fill="#1a237e">WORKSTATION</text>
+        <rect x="190"  y="1010" transform="rotate(-90,173,970)" width="200" height="36" fill="#7986cb" stroke="#283593" stroke-width="1.5" rx="2"/>
+        <text x="290" y="1025" transform="rotate(-90,173,970)" text-anchor="middle" font-size="9" font-weight="bold" fill="white">&#3648;&#3588;&#3634;&#3609;&#3660;&#3648;&#3605;&#3629;&#3619;&#3660;&#3592;&#3656;&#3634;&#3618;&#3618;&#3634;</text>
+        <text x="290" y="1035" transform="rotate(-90,173,970)" text-anchor="middle" font-size="7.5" fill="white">Dispensing Counter</text>
+
+        <rect x="90"  y="842" width="65" height="100" fill="#fce4ec" stroke="#b71c1c" stroke-width="2" rx="2"/>
+        <text x="123" y="854" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">LOCKED</text>
+        <text x="123" y="865" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">CABINET</text>
+        <text x="123" y="876" text-anchor="middle" font-size="7" fill="#b71c1c">Sch A/B Rx</text>
+        <rect x="119" y="883" width="10" height="8" rx="2" fill="#b71c1c"/>
+        <path d="M121,883 Q124,877 127,883" fill="none" stroke="#b71c1c" stroke-width="1.5"/>
+
+        <rect x="90" y="720" width="78" height="110" fill="#b2ebf2" stroke="#0097a7" stroke-width="2" rx="3"/>
+        <text x="130" y="758" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">PHARMA</text>
+        <text x="130" y="769" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">FRIDGE</text>
+        <text x="130" y="780" text-anchor="middle" font-size="8.5" fill="#006064" font-weight="bold">2&#8211;8 &#176;C</text>
+        <text x="130" y="791" text-anchor="middle" font-size="6.5" fill="#006064">300 L</text>
+
+        <rect x="83" y="248" width="0" height="0"/>
+        <text x="170" y="350" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">&#3650;ซ&#3609;&#3651;&#3627;&#3657;&#3588;&#3635;&#3611;&#3619;&#3638;&#3585;&#3625;&#3634;</text>
+        <text x="170" y="365" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Consultation</text>
+        <text x="170" y="540" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">&#3650;ซ&#3609;&#3592;&#3656;&#3634;&#3618;&#3618;&#3634;</text>
+        <text x="170" y="550" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Dispensing</text>
+
+        <rect x="408" y="338" width="30" height="20" fill="white" stroke="#f57c00" stroke-width="1"/>
+        <text x="423" y="347" text-anchor="middle" font-size="5.5" fill="#e65100" font-weight="bold">THERMO</text>
+        <text x="423" y="355" text-anchor="middle" font-size="5.5" fill="#e65100">HYGRO</text>
+        <rect x="263" y="338" width="38" height="17" fill="#33691e" rx="2"/>
+        <text x="282" y="350" text-anchor="middle" font-size="9" fill="white" font-weight="bold">14 m&#178;</text>
+        <text x="349" y="580" text-anchor="middle" font-size="11" font-weight="bold" fill="#33691e">&#3594;&#3633;&#3657;&#3609;&#3623;&#3634;&#3591;&#3618;&#3634; + OTC</text>
+        <text x="349" y="594" text-anchor="middle" font-size="8.5" fill="#558b2f">Medicine Shelf + OTC Display</text>
+        <text x="349" y="608" text-anchor="middle" font-size="7.5" fill="#558b2f">Wall shelves | Gondola | Glass cabinet</text>
+        <text x="349" y="622" text-anchor="middle" font-size="7" fill="#888">Signage &#3585;/&#3586;/&#3588;/&#3591; | &#8804;25&#176;C / &#8804;60%RH</text>
+
+        <rect x="80" y="680" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
+        <text x="94" y="698" font-size="6.5" fill="#004d50" font-weight="bold">AC-1</text>
+        <text x="94" y="708" font-size="6" fill="#004d50">12K BTU</text>
+        <rect x="80" y="370" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
+        <text x="94" y="388" font-size="6.5" fill="#004d50" font-weight="bold">AC-2</text>
+        <text x="94" y="398" font-size="6" fill="#004d50">12K BTU</text>
+
+        <line x1="80" y1="44" x2="440" y2="44" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
+        <rect x="204" y="38" width="92" height="14" fill="#f2f2ec"/>
+        <text x="260" y="49" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">4,000 mm</text>
+        <line x1="260" y1="49" x2="260" y2="63" stroke="#999" stroke-width=".75"/>
+        <text x="170" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,000</text>
+        <text x="350" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,000</text>
+        <line x1="460" y1="65" x2="460" y2="965" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
+        <text x="495" y="515" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" transform="rotate(90,495,515)">10,000 mm</text>
+        <line x1="443" y1="245" x2="458" y2="245" stroke="#999" stroke-width=".75"/>
+        <text x="463" y="158" font-size="7.5" fill="#777">2,000</text>
+        <line x1="443" y1="335" x2="458" y2="335" stroke="#999" stroke-width=".75"/>
+        <text x="463" y="293" font-size="7.5" fill="#777">3,000</text>
+        <text x="463" y="655" font-size="7.5" fill="#777">8,000</text>
+        <text x="463" y="855" font-size="7.5" fill="#777">7,000</text>
+
+        <text x="260" y="22"   text-anchor="middle" font-size="9" font-weight="bold" fill="#555">&#9668;&#8212;&#8212; &#3612;&#3609;&#3633;&#3591;&#3619;&#3656;&#3623;&#3617; &#8212; &#3618;&#3641;&#3609;&#3636;&#3605;&#3604;&#3657;&#3634;&#3609;&#3610;&#3609; &#8212;&#8212;&#9658;</text>
+        <text x="260" y="1014" text-anchor="middle" font-size="9" fill="#555">&#9668;&#8212;&#8212; &#3612;&#3609;&#3633;&#3591;&#3619;&#3656;&#3623;&#3617; &#8212; &#3618;&#3641;&#3609;&#3636;&#3605;&#3604;&#3657;&#3634;&#3609;&#3621;&#3656;&#3634;&#3591; / &#3606;&#3609;&#3609; &#8212;&#8212;&#9658;</text>
+        <text x="28"  y="515"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(-90,28,515)">&#3612;&#3609;&#3633;&#3591;&#3609;&#3629;&#3585;</text>
+        <text x="516" y="515"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(90,516,515)">&#3612;&#3609;&#3633;&#3591;&#3609;&#3629;&#3585;</text>
 
       </svg>
-    </div>
+    </div><!-- /fp-svg-wrap -->
 
+    <!-- SIDE PANEL -->
     <div class="side-panel">
-      <div class="section-head">มาตรฐานการจัดพื้นที่ (GPP Zones)</div>
-      <table class="gpp">
-        <thead>
-          <tr>
-            <th>โซน</th>
-            <th>ชื่อพื้นที่ (ตร.ม.)</th>
-            <th>ข้อกำหนดทางกฎหมาย GPP (อย.)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Z1</td>
-            <td>แสดงสินค้า OTC (10)</td>
-            <td>ป้ายแยกประเภทยา ก/ข/ค/ง ชัดเจน แสงสว่าง &ge;300 lux</td>
-          </tr>
-          <tr>
-            <td>Z2</td>
-            <td>เคาน์เตอร์จ่ายยา (8)</td>
-            <td>ป้ายเภสัชกร อ่างล้างมือสำหรับเภสัชกร</td>
-          </tr>
-          <tr>
-            <td>Z3</td>
-            <td>พื้นที่เก็บยาทั่วไป (6)</td>
-            <td>ชั้นวางแยกหมวดหมู่ มีเทอร์โมไฮโกรมิเตอร์ ควบคุมอุณหภูมิ &le;25°C ความชื้น &le;60%</td>
-          </tr>
-          <tr>
-            <td>Z4</td>
-            <td>ยาควบคุม/อันตราย (4)</td>
-            <td>ตู้ล็อคกุญแจสำหรับยาอันตราย (Type A/B) กล้องวงจรปิด (CAM-3) จับภาพตู้ล็อคยา</td>
-          </tr>
-          <tr>
-            <td>Z5</td>
-            <td>ให้คำปรึกษา (4)</td>
-            <td>ฉากกั้นเพื่อความเป็นส่วนตัว โต๊ะและเก้าอี้ 2 ตัว พร้อมตำราอ้างอิง</td>
-          </tr>
-          <tr>
-            <td>Z6</td>
-            <td>สำนักงาน/เอกสาร (3)</td>
-            <td>คอมพิวเตอร์ ระบบบันทึกการจ่ายยา</td>
-          </tr>
-          <tr>
-            <td>Z7</td>
-            <td>เก็บความเย็น (2)</td>
-            <td>ตู้เย็นเก็บยา 2-8°C สมุดจดบันทึกอุณหภูมิประจำวัน</td>
-          </tr>
-          <tr>
-            <td>Z8</td>
-            <td>พนักงาน/อเนกประสงค์ (3)</td>
-            <td>อ่างล้างมือ ถังดับเพลิง ล็อกเกอร์พนักงาน ถังขยะติดเชื้อ</td>
-          </tr>
-        </tbody>
-      </table>
 
-      <div class="section-head">รายการตรวจสอบก่อนส่งมอบงาน (Checklist)</div>
-      <div class="note-box">
-        <div class="nb-head">1. โครงสร้าง ระบบปรับอากาศ และไฟฟ้า</div>
-        <div class="nb-body">
-          <ul>
-            <li>ติดตั้งวงจรไฟฟ้าเฉพาะสำหรับตู้เย็นแช่ยา (สำรองไฟ UPS) 15 A พร้อมบันทึกอุณหภูมิ 2–8 °C</li>
-            <li>ความสว่างที่เคาน์เตอร์จ่ายยาและพื้นที่เก็บยา &ge; 300 lux (ทดสอบด้วยเครื่องวัด)</li>
-            <li>แอร์ 12,000 BTU จำนวน 2 ตัว ใช้งานได้ดี อุณหภูมิโซนเก็บยา &le; 25 °C</li>
-            <li>ตู้ยาอันตราย (Z4) ต้องมีกล้องวงจรปิด (CAM-3) ส่องเห็นชัดเจน และระบบบันทึก (DVR) ทำงาน</li>
-            <li>ทุกวงจรไฟฟ้ามีป้ายกำกับที่ตู้ไฟ และมีการป้องกันไฟรั่ว (RCD/ELCB)</li>
+      <div class="panel-box">
+        <div class="pb-head">คำอธิบายโซน</div>
+        <div class="pb-body">
+          <div class="lg-item"><div class="lg-swatch" style="background:#f0f0ee;border-color:#616161"></div><strong>ห้องน้ำ</strong> — Rest Room (4 ตร.ม.)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#e0f2f1;border-color:#00796b"></div><strong>โซนกิจกรรม</strong> — Activity Zone (6 ตร.ม.)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#e8edf8;border-color:#3949ab"></div><strong>โซนให้คำปรึกษา</strong> — Consultation (4 ตร.ม.)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#dce3f5;border-color:#3949ab"></div><strong>โซนจ่ายยา</strong> — Dispensing (12 ตร.ม.)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#f9fbe7;border-color:#558b2f"></div><strong>ชั้นวางยา + OTC</strong> — Medicine Shelf (14 ตร.ม.)</div>
+          <div style="font-size:10px;margin-top:6px;color:#555;border-top:1px solid #ddd;padding-top:6px"><strong>รวม: 40 ตร.ม.</strong> (กว้าง 4.0 ม. × ลึก 10.0 ม.)</div>
+        </div>
+      </div>
+
+      <div class="panel-box">
+        <div class="pb-head">ทิศทางและตำแหน่ง</div>
+        <div class="pb-body" style="font-size:10.5px;line-height:1.7">
+          <div><strong>ผนังซ้าย/ขวา</strong> — ผนังนอก (ด้านนอกอาคาร)</div>
+          <div><strong>ผนังบน/ล่าง</strong> — ผนังร่วม (ติดกับยูนิตข้างเคียง)</div>
+          <div><strong>คอลัมน์ซ้าย</strong> = ห้องน้ำ (2ม. บน) | ให้คำปรึกษา (~2ม.) + จ่ายยา (~6ม.)</div>
+          <div><strong>คอลัมน์ขวา</strong> = โซนกิจกรรม (3ม. บน) | ชั้นวางยา+OTC (7ม. ล่าง)</div>
+          <div style="margin-top:4px;color:#7b1fa2"><strong>เส้นประสีน้ำเงิน</strong> = เส้นแบ่งอ่อน (ภายในโซนรวม)</div>
+        </div>
+      </div>
+
+      <div class="panel-box">
+        <div class="pb-head">สัญลักษณ์</div>
+        <div class="pb-body">
+          <div class="lg-item"><div style="width:22px;height:15px;background:#80deea;border:1px solid #006064;flex-shrink:0"></div>เครื่องปรับอากาศ (ติดผนังซ้าย)</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#fce4ec;border:2px solid #b71c1c;flex-shrink:0"></div>ตู้ยาล็อก (ยึดกับผนัง)</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#b2ebf2;border:2px solid #0097a7;flex-shrink:0"></div>ตู้เย็นยา 2–8 °C</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#7986cb;flex-shrink:0"></div>เคาน์เตอร์จ่ายยา</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#a5d6a7;border:1px solid #388e3c;flex-shrink:0"></div>ตู้โชว์กระจก / ชั้นวางยา</div>
+        </div>
+      </div>
+
+      <div class="panel-box" style="border-color:#b71c1c">
+        <div class="pb-head" style="background:#b71c1c">รายการบังคับ GPP (อย. ไทย)</div>
+        <div class="pb-body">
+          <ul style="font-size:10.5px;margin-left:15px;line-height:1.8">
+            <li>ป้ายแยกประเภทยา ก/ข/ค/ง ที่ชั้นวาง</li>
+            <li>อ่างล้างมือที่เคาน์เตอร์จ่ายยา</li>
+            <li>กรอบใบอนุญาตเภสัชกร ติดให้มองเห็นที่เคาน์เตอร์</li>
+            <li>ตู้เหล็กล็อกสำหรับยาประเภท ก/ข</li>
+            <li><strong>กล้อง CCTV ครอบคลุมตู้ยาล็อก (CAM-1 บังคับ)</strong></li>
+            <li>ตู้เย็นยา 2–8 °C + บันทึกอุณหภูมิรายวัน</li>
+            <li>เทอร์โมไฮโกรมิเตอร์ในโซน OTC+ชั้นวาง</li>
+            <li>ฉากกั้นความเป็นส่วนตัวในโซนให้คำปรึกษา</li>
+            <li>หนังสืออ้างอิงในโซนให้คำปรึกษา</li>
+            <li>พื้นที่เก็บยาทุกจุด ≤ 25 °C / ≤ 60 % RH</li>
+            <li>เภสัชกรที่มีใบอนุญาตต้องอยู่ตลอดเวลาทำการ</li>
           </ul>
         </div>
       </div>
-      <div class="note-box">
-        <div class="nb-head">2. ระบบประปาและอื่นๆ</div>
-        <div class="nb-body">
-          <ul>
-            <li>อ่างล้างมือใช้งานได้ 2 จุด: ที่เคาน์เตอร์จ่ายยา (Z2) และห้องพนักงาน (Z8)</li>
-            <li>พื้นร้านทั้งหมดต้องเป็นวัสดุไม่ลื่น ไม่ซึมน้ำ และทำความสะอาดง่าย</li>
-            <li>ติดตั้งที่แขวนถังดับเพลิงระดับ 120 ซม. จากพื้น (เจ้าของร้านจะนำถังมาแขวน)</li>
-            <li>ป้ายประเภทยา (ก/ข/ค/ง) และกรอบป้ายใบประกอบวิชาชีพเภสัชกรรมติดตั้งที่ระดับสายตา</li>
-            <li>ทำความสะอาดหน้างานเรียบร้อย พร้อมสำหรับการเข้าตรวจประเมินจาก อย.</li>
-          </ul>
-        </div>
-      </div>
+
+    </div><!-- /side-panel -->
+  </div><!-- /main-layout -->
+
+  <!-- GPP COMPLIANCE TABLE -->
+  <div class="section-head">ตารางความต้องการ GPP ตาม อย. ไทย — รายการตรวจสอบส่งงานผู้รับเหมา</div>
+  <table class="gpp">
+    <thead>
+      <tr>
+        <th style="width:3%">#</th>
+        <th style="width:18%">โซน</th>
+        <th style="width:5%">ตร.ม.</th>
+        <th style="width:32%">ข้อกำหนด GPP อย. ไทย</th>
+        <th style="width:28%">งานที่ผู้รับเหมาต้องดำเนินการ</th>
+        <th style="width:14%">รายการตรวจสอบ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1</strong></td>
+        <td>ห้องน้ำ<br>Rest Room</td>
+        <td>4</td>
+        <td>สุขอนามัยของพนักงาน; การระบายอากาศที่ดี; ประตูล็อกได้; อ่างล้างมือแบบแขวนผนัง; โถส้วม</td>
+        <td>ติดตั้งโถส้วม + ถังพักน้ำ; อ่างล้างมือแขวนผนังพร้อมก๊อกผสม, P-trap; พัดลมระบาย 100 มม.; กระเบื้องผนังสูง 1.5 ม.; กระเบื้องพื้นพร้อมทางลาดสู่ท่อระบาย; ประตูล็อกได้</td>
+        <td class="check">☐ ติดตั้งโถส้วม<br>☐ อ่าง + ก๊อก<br>☐ พัดลมระบาย<br>☐ กระเบื้องผนัง + พื้น<br>☐ ประตูล็อก</td>
+      </tr>
+      <tr>
+        <td><strong>2</strong></td>
+        <td>โซนกิจกรรม<br>Activity Zone</td>
+        <td>6</td>
+        <td>พื้นที่อเนกประสงค์สำหรับกิจกรรมด้านสุขภาพ (วัด BP, เจาะน้ำตาล); ชั้นวางยา; แสงสว่างเพียงพอ; พื้นที่โล่งสำหรับกิจกรรม</td>
+        <td>ชั้นวางแบบปรับระดับ 3 แถว (ผนังขวา + หลัง, เหล็กพ่นสี, สูง 180 ซม.); โต๊ะพับสำหรับกิจกรรม; 2 เก้าอี้; ปลั๊ก 15A × 2 จุด; LED ≥ 300 lux; พื้นที่โล่ง ≥ 2 ตร.ม.</td>
+        <td class="check">☐ ชั้นวาง 3 แถว<br>☐ ปลั๊ก × 2<br>☐ LED ≥300 lux<br>☐ โต๊ะ + เก้าอี้<br>☐ พื้นที่โล่ง ≥2 ตร.ม.</td>
+      </tr>
+      <tr>
+        <td><strong>3a</strong></td>
+        <td>โซนให้คำปรึกษา<br>Consultation</td>
+        <td>4</td>
+        <td>พื้นที่กึ่งส่วนตัว; ฉากกั้น; โต๊ะ + 2 เก้าอี้; หนังสืออ้างอิง (ตาม GPP อย.); ตู้เหล็กล็อกยาประเภท ก/ข; กล้อง CCTV CAM-1 ครอบคลุมตู้ (บังคับ)</td>
+        <td>ผนังยิปซัมเต็มความสูง (12 มม. / สตัด 75 มม.) หรือฉากกั้นตลอดความสูงห้อง; โต๊ะ ~90×60 ซม. + 2 เก้าอี้; ชั้นวางหนังสืออ้างอิง; ตู้ล็อกเหล็กยึดผนัง 2 จุด; CAM-1 หันไปที่ตู้; AC-1 ผนังซ้ายครอบคลุมโซนนี้</td>
+        <td class="check">☐ ฉากกั้น<br>☐ โต๊ะ + เก้าอี้<br>☐ หนังสืออ้างอิง<br>☐ ตู้ล็อกยึดผนัง<br>☐ CAM-1 → ตู้</td>
+      </tr>
+      <tr>
+        <td><strong>3b</strong></td>
+        <td>โซนจ่ายยา<br>Dispensing</td>
+        <td>12</td>
+        <td>แสดงใบอนุญาตเภสัชกร; อ่างล้างมือที่เคาน์เตอร์; พื้นที่จ่ายยา Rx ≥ 1.5 ตร.ม.; ตู้เย็นยา 2–8 °C พร้อมบันทึกอุณหภูมิ; ปลั๊กเพียงพอ + เครือข่าย; กล้อง CCTV CAM-2</td>
+        <td>เคาน์เตอร์จ่ายยาเต็มความกว้าง 165 ซม. × 60 ซม. × สูง 90 ซม.; รวมอ่างล้างมือ P-trap; กรอบใบอนุญาตที่ความสูง 145–155 ซม. (AFF); ปลั๊ก 15A × 4 + Cat6 × 1; ตู้เย็นยา 300 ลิตร บน MCB 15A ต่อ UPS (ว่างรอบ 10 ซม.); CAM-2 ที่ด้านบนโซนจ่ายยา</td>
+        <td class="check">☐ เคาน์เตอร์สูง 90 ซม.<br>☐ อ่างล้างมือ<br>☐ กรอบใบอนุญาต 150 ซม.<br>☐ ตู้เย็นยา MCB แยก<br>☐ ปลั๊ก × 4 + Cat6<br>☐ ติดตั้ง CAM-2</td>
+      </tr>
+      <tr>
+        <td><strong>4</strong></td>
+        <td>ชั้นวางยา + OTC<br>Medicine Shelf</td>
+        <td>14</td>
+        <td>เก็บยาตามประเภท; ≤ 25 °C; ≤ 60 % RH; เทอร์โมไฮโกรมิเตอร์ที่ผ่านการสอบเทียบ; ชั้นวางสูงจากพื้น ≥ 15 ซม.; ไม่โดนแสงแดดโดยตรง; ป้าย ก/ข/ค/ง; ตู้โชว์กระจกสำหรับยา ข/ค; แสงสว่าง ≥ 300 lux</td>
+        <td>ชั้นวางผนัง 4 แถว (ผนังขวา, เหล็กปรับระดับ, แบ่งหมวด); gondola 3 แถว (สองหน้า, สูง 150 ซม. × กว้าง 90 ซม.); ตู้โชว์กระจก 162 ซม. ด้านหน้า; เทอร์โมไฮโกรมิเตอร์ดิจิทัล+บันทึกข้อมูล; AC-2 ผนังซ้าย; ป้ายหมวดยา; LED ≥ 300 lux; พื้นกันลื่น</td>
+        <td class="check">☐ ชั้นวางผนัง 4 แถว<br>☐ gondola 3 แถว<br>☐ ตู้โชว์กระจก<br>☐ เทอร์โมไฮโกรมิเตอร์<br>☐ AC-2 ครอบคลุม<br>☐ ป้าย ก/ข/ค/ง<br>☐ แสงสว่าง ≥300 lux<br>☐ พื้นกันลื่น</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- CONTRACTOR SPEC NOTES -->
+  <div class="section-head">หมายเหตุข้อกำหนดสำหรับผู้รับเหมา</div>
+
+  <div class="note-box">
+    <div class="nb-head">1. งานโครงสร้าง / ผนังกั้น</div>
+    <div class="nb-body">
+      <ul>
+        <li>ผนังขวาโซนให้คำปรึกษา: ยิปซัม 12 มม. บนสตัดโลหะ 75 มม. เต็มความสูง หรือฉากกั้นหนักแน่นตลอดความสูงห้อง; ยืนยันความสูงฝ้าก่อนสั่งวัสดุ; ต้องการความสูงว่าง ≥ 2.7 ม.</li>
+        <li>ห้องน้ำ: กันซึมครบถ้วน (พื้น + ผนังสูง 500 มม. ทุกด้าน); ผิวกระเบื้อง; พัดลมระบายดูดออกนอกอาคาร</li>
+        <li>ไม่คาดว่าต้องรื้อโครงสร้าง — สมมติว่าเป็นยูนิต shell ที่มีอยู่แล้ว; ยืนยันกับนิติบุคคลก่อนเจาะผนังใดๆ</li>
+        <li>รับน้ำหนักชั้นวางสูงสุด: ตรวจสอบความสามารถรับน้ำหนักพื้น; ใช้ rawl bolt ในคอนกรีต ไม่ใช้แอ้งค์ยิปซัม</li>
+      </ul>
     </div>
   </div>
 
-  <div class="doc-footer">
-    <div>Drawing: RPC-FP-001 Rev A | มาตรฐาน GPP อย. ไทย | Scale: 1:50 (schematic)</div>
-    <div>Ratchada Prestige Condo Pharmacy | เอกสารสำหรับผู้รับเหมาพิจารณาเท่านั้น</div>
-    <div>40 m² | 4.0 m × 10.0 m | วันที่: 26 พ.ค. 2026</div>
+  <div class="note-box">
+    <div class="nb-head">2. งานระบบไฟฟ้า</div>
+    <div class="nb-body">
+      <ul>
+        <li>AC-1 (ผนังซ้าย ระดับโซนจ่ายยา): วงจรแยก 20A / 220V; ครอบคลุมโซนให้คำปรึกษา+จ่ายยา</li>
+        <li>AC-2 (ผนังซ้าย ระดับโซน OTC): วงจรแยก 20A / 220V; ครอบคลุมโซน OTC+ชั้นวาง + โซนกิจกรรม</li>
+        <li>ตู้เย็นยา: วงจรแยก 15A / 220V ต่อ UPS; MCB ระบุ "ตู้เย็นยา — ห้ามปิด"</li>
+        <li>เคาน์เตอร์จ่ายยา: ปลั๊ก 15A × 4 + Cat6 RJ45 × 1</li>
+        <li>โซนกิจกรรม: ปลั๊ก 15A × 2 + ไฟเพดาน</li>
+        <li>ห้องน้ำ: ปลั๊กโกนหนวด 15A × 1; พัดลมระบายแยกสวิตช์</li>
+        <li>CCTV: กล้อง 3 ตัวบนผนังซ้าย; Cat6 home run ไปที่ DVR (มุมหลังโซนจ่ายยา)</li>
+        <li>โหลดประมาณ: 2×AC (4,400W) + ตู้เย็น (200W) + ไฟ (400W) + อุปกรณ์ (800W) ≈ 5,800W → MCB หลักขั้นต่ำ 32A</li>
+      </ul>
+    </div>
   </div>
-</div>
+
+  <div class="note-box">
+    <div class="nb-head">3. งานระบบประปา</div>
+    <div class="nb-body">
+      <ul>
+        <li>อ่างล้างมือ 2 จุด: (1) เคาน์เตอร์จ่ายยา — ก๊อกผสม, P-trap; (2) ห้องน้ำ — แขวนผนัง, ก๊อกผสม, P-trap</li>
+        <li>ห้องน้ำ: โถส้วม + ถังพัก, ท่อโสโครก 100 มม.; จ่ายน้ำเย็น; ท่อระบายพื้นพร้อมกันซึม</li>
+        <li>ยืนยันจุดท่อระบายพื้นเดิมก่อนกำหนดตำแหน่งสุดท้าย</li>
+        <li>จ่ายน้ำ: ท่อทองแดง/CPVC 15 มม.; ท่อทิ้ง: PVC 50 มม. (อ่าง) / PVC 100 มม. (โถส้วม)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <div class="nb-head">4. ชั้นวาง, เคาน์เตอร์ และอุปกรณ์ติดตั้ง</div>
+    <div class="nb-body">
+      <ul>
+        <li><strong>โซนชั้นวางยา+OTC:</strong> ชั้นวางผนัง 4 แถว (ผนังขวา, เหล็กปรับระดับ, ห่างพื้น ≥ 15 ซม., แบ่งหมวด); gondola 3 แถว (สูง 150 ซม., สองหน้า, กว้าง 90 ซม.); ตู้โชว์กระจก 162 ซม. ด้านหน้า</li>
+        <li><strong>โซนกิจกรรม:</strong> ชั้นวางผนัง 3 แถว; โต๊ะพับสำหรับกิจกรรม; 2 เก้าอี้; พื้นที่โล่ง ≥ 2 ตร.ม.</li>
+        <li><strong>เคาน์เตอร์จ่ายยา:</strong> custom 165 × 60 × สูง 90 ซม.; ผิว HPL; ช่องร้อยสายไฟ; เจาะอ่าง; ชั้นใน + ลิ้นชัก</li>
+        <li><strong>ตู้ล็อก Rx:</strong> เหล็กหนา, ล็อก 2 จุด, ยึดผนังในโซนให้คำปรึกษา; ≥ 50×35×100 ซม.</li>
+        <li><strong>ตู้เย็นยา:</strong> 300 ลิตร สองช่อง; เว้นว่าง 10 ซม. ทุกด้าน; MCB 15A แยก + UPS</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <div class="nb-head">5. พื้น, ผนัง และงานตกแต่ง</div>
+    <div class="nb-body">
+      <ul>
+        <li><strong>โซนจ่ายยา + OTC:</strong> ไวนิลเชิงพาณิชย์หนา 2 มม. หรือกระเบื้อง 30×30 ซม. — กันลื่น R9+, ทำความสะอาดง่าย</li>
+        <li><strong>เก็บของ + ให้คำปรึกษา + กิจกรรม:</strong> อีพ็อกซีเคลือบหรือไวนิล — ไม่มีร่องกระเบื้อง</li>
+        <li><strong>ห้องน้ำ:</strong> กระเบื้องทั้งห้อง; ท่อระบายพื้น; เมมเบรนกันซึมใต้กระเบื้อง</li>
+        <li><strong>ผนัง:</strong> สีลาเท็กซ์ขาวกึ่งเงา (เช็ดได้); กระเบื้องกันน้ำ 60 ซม. บริเวณอ่างจ่ายยา</li>
+        <li><strong>เพดาน:</strong> ทาสีขาวหรือแผ่นอะคูสติก; ความสูงว่าง ≥ 2.7 ม.; LED 300–500 lux ที่ทุกพื้นที่ทำงาน</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note-box warn-box">
+    <div class="nb-head">6. รายการตรวจสอบก่อนส่งมอบ — พร้อมตรวจจาก อย.</div>
+    <div class="nb-body">
+      <ol>
+        <li>ทั้ง 4 โซนแบ่งและติดป้ายครบตามแผนนี้</li>
+        <li>อ่างล้างมือที่เคาน์เตอร์จ่ายยาใช้งานได้</li>
+        <li>ตู้เหล็กล็อกติดตั้งแล้ว ยึดผนัง ทดสอบกุญแจ</li>
+        <li>CCTV — <strong>CAM-1 ต้องมองเห็นตู้ล็อกชัดเจน</strong>; DVR บันทึกได้</li>
+        <li>ตู้เย็นยาบนวงจรแยก; อุณหภูมิ 2–8 °C; แคลิปบอร์ดบันทึกอุณหภูมิพร้อม</li>
+        <li>เทอร์โมไฮโกรมิเตอร์ในโซน OTC+ชั้นวาง; ≤ 25 °C และ ≤ 60 % RH ยืนยันแล้ว</li>
+        <li>ฉากกั้นโซนให้คำปรึกษาติดตั้งแล้ว; ความเป็นส่วนตัวทางเสียงเพียงพอ</li>
+        <li>เครื่องปรับอากาศ 2 เครื่องทำงาน; โซนเก็บยา ≤ 25 °C ยืนยันแล้ว</li>
+        <li>ป้ายประเภทยา ก/ข/ค/ง ติดตั้งที่ชั้นวาง</li>
+        <li>กรอบใบอนุญาตเภสัชกรที่เคาน์เตอร์ระดับสายตา</li>
+        <li>ห้องน้ำใช้งานได้ (โถส้วม, อ่าง, พัดลมระบาย, ล็อกประตู)</li>
+        <li>แสงสว่าง ≥ 300 lux ที่เคาน์เตอร์จ่ายยาและพื้นที่เก็บยา</li>
+        <li>พื้นทุกพื้นที่กันลื่น, ไม่มีรูพรุน, ทำความสะอาดได้</li>
+        <li>วงจรไฟฟ้าทุกสายระบุที่ DB; ยืนยัน RCD/ELCB</li>
+        <li>รายการแก้ไขเสร็จสิ้น; สถานที่สะอาดพร้อมให้เจ้าหน้าที่ตรวจ</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div>แบบ: RPC-FP-001 ฉบับ C | มาตรฐาน GPP อย. ไทย | มาตราส่วน 1:50 (แบบแผนผัง)</div>
+    <div>ร้านยาราชดาเพรสทีจ คอนโด | เพื่อให้ผู้รับเหมาตรวจสอบเท่านั้น</div>
+    <div>40 ตร.ม. | 4.0 ม. × 10.0 ม. | วันที่: 2026-05-26</div>
+  </div>
+
+</div><!-- /page -->
 </body>
 </html>
