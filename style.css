@@ -1,0 +1,162 @@
+/* ── Base ────────────────────────────────────────── */
+body { font-family: 'Sarabun', sans-serif; }
+html { scroll-behavior: smooth; }
+
+/* ── Tabs ────────────────────────────────────────── */
+.tab-btn { transition: color 0.15s ease; }
+.tab-btn.active {
+  border-bottom: 3px solid #16a34a;
+  color: #16a34a;
+  font-weight: 600;
+}
+.tab-pane { display: none; }
+.tab-pane.active {
+  display: block;
+  animation: fadeInUp 0.28s ease-out both;
+}
+
+/* ── GPP checklist ───────────────────────────────── */
+.done-item label { text-decoration: line-through; opacity: 0.5; }
+
+/* ── Timeline dot ────────────────────────────────── */
+.tl-dot::before {
+  content: '';
+  position: absolute;
+  left: -1.25rem;
+  top: 0.35rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: #16a34a;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px #16a34a;
+}
+
+/* ── Badge toggle ────────────────────────────────── */
+.badge-toggle { transition: all 0.15s; }
+.badge-toggle.active { background: #16a34a; color: white; }
+
+/* ── GPP progress bar ────────────────────────────── */
+#gpp-bar { transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* ── Keyframe animations ─────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes warnPulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(251,191,36,0.35); }
+  50%       { box-shadow: 0 0 0 8px rgba(251,191,36,0);    }
+}
+
+@keyframes badgePop {
+  0%, 100% { transform: scale(1);    }
+  50%       { transform: scale(1.04); }
+}
+
+@keyframes countBounce {
+  0%   { transform: scale(0.85); opacity: 0.4; }
+  60%  { transform: scale(1.05); opacity: 1;   }
+  100% { transform: scale(1);    opacity: 1;   }
+}
+
+/* ── Scroll-reveal cards ─────────────────────────── */
+.anim-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+.anim-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* stagger siblings */
+.anim-card:nth-child(2) { transition-delay: 0.07s; }
+.anim-card:nth-child(3) { transition-delay: 0.14s; }
+.anim-card:nth-child(4) { transition-delay: 0.21s; }
+
+/* ── KPI card hover ──────────────────────────────── */
+.kpi-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.11);
+}
+.kpi-num-anim {
+  display: inline-block;
+  animation: countBounce 0.6s ease-out both;
+}
+
+/* ── Content card hover ──────────────────────────── */
+.content-card {
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+.content-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+  transform: translateY(-2px);
+}
+
+/* ── Revenue stream row slide ────────────────────── */
+.stream-row {
+  transition: background 0.15s ease, transform 0.15s ease, padding-left 0.15s ease;
+  border-radius: 0.5rem;
+}
+.stream-row:hover {
+  background: #f0fdf4 !important;
+  transform: translateX(5px);
+}
+
+/* ── Ops cost row highlight ──────────────────────── */
+.ops-row { transition: background 0.12s ease; }
+.ops-row:hover { background: #f9fafb; }
+
+/* ── Warning pulse ───────────────────────────────── */
+.warn-pulse { animation: warnPulse 2.8s ease-in-out infinite; }
+
+/* ── Header badge pop ────────────────────────────── */
+.badge-pop { animation: badgePop 4s ease-in-out infinite; }
+
+/* ── Roadmap phase enter ─────────────────────────── */
+.phase-enter {
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+.phase-enter.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Mobile optimisations ────────────────────────── */
+button, input[type="checkbox"], input[type="radio"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+@media (max-width: 640px) {
+  .tab-btn {
+    font-size: 0.78rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  input[type="checkbox"] {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+  /* suppress lift on touch devices */
+  .kpi-card:hover,
+  .content-card:hover {
+    transform: none;
+  }
+  .stream-row:hover {
+    transform: none;
+    padding-left: 0;
+  }
+}

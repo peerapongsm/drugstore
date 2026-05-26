@@ -9,27 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <style>
-    body { font-family: 'Sarabun', sans-serif; }
-    .tab-btn.active { border-bottom: 3px solid #16a34a; color: #16a34a; font-weight: 600; }
-    .tab-pane { display: none; }
-    .tab-pane.active { display: block; }
-    .done-item label { text-decoration: line-through; opacity: 0.5; }
-    .tl-dot::before {
-      content: '';
-      position: absolute;
-      left: -1.25rem;
-      top: 0.35rem;
-      width: 0.75rem;
-      height: 0.75rem;
-      border-radius: 50%;
-      background: #16a34a;
-      border: 2px solid white;
-      box-shadow: 0 0 0 2px #16a34a;
-    }
-    .badge-toggle.active { background: #16a34a; color: white; }
-    .badge-toggle { transition: all 0.15s; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-gray-50 min-h-screen">
 
@@ -46,7 +26,7 @@
     <div class="flex flex-wrap gap-2 text-sm">
       <span class="bg-green-600 px-3 py-1 rounded-full">500 units &middot; ~1,200 residents</span>
       <span class="bg-green-600 px-3 py-1 rounded-full">40 sqm</span>
-      <span class="bg-yellow-400 text-green-900 font-bold px-3 py-1 rounded-full">GPP Compliant</span>
+      <span class="bg-yellow-400 text-green-900 font-bold px-3 py-1 rounded-full badge-pop">GPP Compliant</span>
     </div>
   </div>
 </header>
@@ -63,24 +43,24 @@
 
 <!-- KPI CARDS -->
 <div class="max-w-7xl mx-auto px-4 mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-  <div class="bg-white rounded-xl shadow p-4 border-l-4 border-green-500">
+  <div class="bg-white rounded-xl shadow p-4 border-l-4 border-green-500 kpi-card anim-card">
     <p class="text-xs text-gray-500 uppercase tracking-wide">Investment</p>
     <p id="kpi-budget" class="text-2xl font-bold text-green-700 mt-1">&#xE3F;200,000</p>
     <p class="text-xs text-gray-400 mt-1">Total startup</p>
   </div>
-  <div class="bg-white rounded-xl shadow p-4 border-l-4 border-blue-500">
+  <div class="bg-white rounded-xl shadow p-4 border-l-4 border-blue-500 kpi-card anim-card">
     <p class="text-xs text-gray-500 uppercase tracking-wide">Opening SKUs</p>
     <p id="kpi-sku" class="text-2xl font-bold text-blue-700 mt-1">450</p>
     <p class="text-xs text-gray-400 mt-1">from 831 total</p>
   </div>
-  <div class="bg-white rounded-xl shadow p-4 border-l-4 border-purple-500">
+  <div class="bg-white rounded-xl shadow p-4 border-l-4 border-purple-500 kpi-card anim-card">
     <p class="text-xs text-gray-500 uppercase tracking-wide">Revenue Target Y1</p>
-    <p id="kpi-revenue" class="text-2xl font-bold text-purple-700 mt-1">&#xE3F;130K/mo</p>
-    <p class="text-xs text-gray-400 mt-1">from month 6</p>
+    <p id="kpi-revenue" class="text-2xl font-bold text-purple-700 mt-1">&#xE3F;50K/mo (Y1)</p>
+    <p class="text-xs text-gray-400 mt-1">Year 1 realistic max</p>
   </div>
-  <div class="bg-white rounded-xl shadow p-4 border-l-4 border-orange-500">
+  <div class="bg-white rounded-xl shadow p-4 border-l-4 border-orange-500 kpi-card anim-card">
     <p class="text-xs text-gray-500 uppercase tracking-wide">Break-even</p>
-    <p id="kpi-payback" class="text-2xl font-bold text-orange-700 mt-1">Month 6-7</p>
+    <p id="kpi-payback" class="text-2xl font-bold text-orange-700 mt-1">Yr 2-3 (owner)</p>
     <p class="text-xs text-gray-400 mt-1">estimated</p>
   </div>
 </div>
@@ -98,7 +78,7 @@
   <!-- ===== TAB: SUMMARY ===== -->
   <div id="tab-summary" class="tab-pane active py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6">
+      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
         <h2 class="text-lg font-bold text-gray-800 mb-4">Business Model Overview</h2>
         <div class="grid grid-cols-2 gap-4 mb-6">
           <div class="bg-green-50 rounded-lg p-4">
@@ -108,34 +88,35 @@
           </div>
           <div class="bg-blue-50 rounded-lg p-4">
             <p class="text-xs text-blue-600 font-semibold uppercase">Break-even Revenue</p>
-            <p class="text-3xl font-bold text-blue-700 mt-1">&#xE3F;163K</p>
-            <p class="text-xs text-gray-500 mt-1">Fixed costs &divide; GM% (monthly)</p>
+            <p class="text-3xl font-bold text-blue-700 mt-1">&#xE3F;41K*</p>
+            <p class="text-xs text-gray-500 mt-1">*Owner/partner pharmacist</p>
+            <p class="text-xs text-gray-400">&#xE3F;136K if employed pharmacist</p>
           </div>
         </div>
         <h3 class="font-semibold text-gray-700 mb-3">Revenue Streams (priority order)</h3>
         <div class="space-y-2">
-          <div class="flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
+          <div class="stream-row flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
             <div class="flex items-center gap-3">
               <span class="w-1.5 h-8 bg-green-500 rounded inline-block"></span>
               <div><p class="font-medium text-sm">OTC &amp; Household Drugs</p><p class="text-xs text-gray-500">171 SKUs &bull; Margin 40-50%</p></div>
             </div>
             <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-bold">&#11088; PRIMARY</span>
           </div>
-          <div class="flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
+          <div class="stream-row flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
             <div class="flex items-center gap-3">
               <span class="w-1.5 h-8 bg-blue-500 rounded inline-block"></span>
               <div><p class="font-medium text-sm">Rx Dispensing</p><p class="text-xs text-gray-500">Prescription drugs &bull; Margin 25-35%</p></div>
             </div>
             <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-bold">LOYALTY</span>
           </div>
-          <div class="flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
+          <div class="stream-row flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
             <div class="flex items-center gap-3">
               <span class="w-1.5 h-8 bg-purple-500 rounded inline-block"></span>
               <div><p class="font-medium text-sm">Vitamins &amp; Supplements</p><p class="text-xs text-gray-500">118 SKUs &bull; Margin 35-45%</p></div>
             </div>
             <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-bold">RECURRING</span>
           </div>
-          <div class="flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
+          <div class="stream-row flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
             <div class="flex items-center gap-3">
               <span class="w-1.5 h-8 bg-orange-400 rounded inline-block"></span>
               <div><p class="font-medium text-sm">Pet Corner + Medical Devices</p><p class="text-xs text-gray-500">Differentiation &bull; Margin 20-40%</p></div>
@@ -145,13 +126,13 @@
         </div>
       </div>
       <div class="space-y-6">
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
           <h3 class="font-bold text-gray-800 mb-3">Resident Demographics</h3>
           <div class="relative h-44"><canvas id="demoChart"></canvas></div>
         </div>
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
           <h3 class="font-bold text-gray-800 mb-3">Competitive Moat</h3>
-          <ul class="space-y-2 text-sm text-gray-700" id="moat-list">
+          <ul class="space-y-2 text-sm text-gray-700">
             <li class="flex gap-2"><span class="text-green-500">&#10003;</span>Zero travel (on-site convenience)</li>
             <li class="flex gap-2"><span class="text-green-500">&#10003;</span>Licensed pharmacist consultation</li>
             <li class="flex gap-2"><span class="text-green-500">&#10003;</span>LINE OA refill + pharmacist Q&amp;A</li>
@@ -167,38 +148,67 @@
   <!-- ===== TAB: FINANCE ===== -->
   <div id="tab-finance" class="tab-pane py-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div class="bg-white rounded-xl shadow p-6">
+      <div class="bg-white rounded-xl shadow p-6 content-card anim-card">
         <h2 class="text-lg font-bold text-gray-800 mb-1">Fixed Costs (One-Time)</h2>
         <p id="fin-label" class="text-sm text-gray-500 mb-4">Budget &#xE3F;200,000 &mdash; Lean MVP</p>
         <div class="relative h-56"><canvas id="fixedPieChart"></canvas></div>
         <div id="fixed-rows" class="mt-4 space-y-1 text-sm"></div>
       </div>
-      <div class="bg-white rounded-xl shadow p-6">
+      <div class="bg-white rounded-xl shadow p-6 content-card anim-card">
         <h2 class="text-lg font-bold text-gray-800 mb-1">Inventory Budget</h2>
         <p class="text-sm text-gray-500 mb-4">Wholesale cost &mdash; opening stock allocation</p>
         <div class="relative h-80"><canvas id="invBarChart"></canvas></div>
         <p id="inv-total-line" class="mt-3 text-sm font-bold text-green-700 text-right"></p>
       </div>
-      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">Monthly Revenue Projection (Year 1)</h2>
-        <div class="relative h-52"><canvas id="revenueLineChart"></canvas></div>
-        <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-          <div class="bg-green-50 rounded-lg p-3 text-center">
-            <p class="text-xs text-gray-500">Month 4 (Soft open)</p>
-            <p class="text-xl font-bold text-green-700">&#xE3F;80K</p>
-            <p class="text-xs text-gray-400">~15 txn/day</p>
-          </div>
-          <div class="bg-blue-50 rounded-lg p-3 text-center">
-            <p class="text-xs text-gray-500">Month 6 (Stable)</p>
-            <p class="text-xl font-bold text-blue-700">&#xE3F;180K</p>
-            <p class="text-xs text-gray-400">~30 txn/day</p>
-          </div>
-          <div class="bg-purple-50 rounded-lg p-3 text-center">
-            <p class="text-xs text-gray-500">Month 12 (Target)</p>
-            <p class="text-xl font-bold text-purple-700">&#xE3F;320K</p>
-            <p class="text-xs text-gray-400">~52 txn/day</p>
+
+      <!-- Monthly Operating Costs -->
+      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
+        <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+          <h2 class="text-lg font-bold text-gray-800">Monthly Operating Costs</h2>
+          <div class="flex rounded-lg border border-gray-300 overflow-hidden text-sm">
+            <button id="ops-owner" onclick="switchOpsMode('owner')" class="badge-toggle active px-3 py-1.5 text-gray-700">Owner / Partner</button>
+            <button id="ops-employee" onclick="switchOpsMode('employee')" class="badge-toggle px-3 py-1.5 text-gray-700">Employed Pharmacist</button>
           </div>
         </div>
+        <div id="monthly-ops-rows" class="space-y-1 text-sm"></div>
+        <div id="monthly-ops-summary" class="mt-4 grid grid-cols-2 gap-3 text-sm"></div>
+      </div>
+
+      <!-- 5-Year Revenue Projection -->
+      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
+        <h2 class="text-lg font-bold text-gray-800 mb-1">5-Year Revenue Projection (Conservative)</h2>
+        <p class="text-xs text-gray-400 mb-3">Based on pharmacist advice (max &#xE3F;50K/mo in Y1-Y2) &bull; Pantip data: Day 1 sales &#xE3F;308-582 (3-6 customers)</p>
+        <div class="relative h-56"><canvas id="revenueLineChart"></canvas></div>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+          <div class="bg-yellow-50 rounded-lg p-3 text-center">
+            <p class="text-xs text-gray-500">Year 1 End (Month 12)</p>
+            <p class="text-xl font-bold text-yellow-700">&#xE3F;50K</p>
+            <p class="text-xs text-gray-400">~16 txn/day</p>
+          </div>
+          <div class="bg-blue-50 rounded-lg p-3 text-center">
+            <p class="text-xs text-gray-500">Year 3 End (Month 36)</p>
+            <p class="text-xl font-bold text-blue-700">&#xE3F;105K</p>
+            <p class="text-xs text-gray-400">~35 txn/day</p>
+          </div>
+          <div class="bg-green-50 rounded-lg p-3 text-center">
+            <p class="text-xs text-gray-500">Year 5 End (Month 60)</p>
+            <p class="text-xl font-bold text-green-700">&#xE3F;170K</p>
+            <p class="text-xs text-gray-400">~55 txn/day</p>
+          </div>
+        </div>
+        <p class="text-xs text-gray-400 mt-2">Break-even lines: amber = owner/partner (&#xE3F;41K), red = employed pharmacist (&#xE3F;136K)</p>
+      </div>
+
+      <!-- Cash Flow Reality Check -->
+      <div class="lg:col-span-2 bg-amber-50 border border-amber-200 rounded-xl p-6 warn-pulse anim-card">
+        <h2 class="text-lg font-bold text-amber-800 mb-3">&#9888;&#65039; Cash Flow Reality Check</h2>
+        <div id="cashflow-reality" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+      </div>
+
+      <!-- Revenue Acceleration Strategies -->
+      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
+        <h2 class="text-lg font-bold text-gray-800 mb-4">Revenue Acceleration Strategies</h2>
+        <div id="advisory-tips" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
       </div>
     </div>
   </div>
@@ -206,15 +216,15 @@
   <!-- ===== TAB: INVENTORY ===== -->
   <div id="tab-inventory" class="tab-pane py-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div class="bg-white rounded-xl shadow p-6">
+      <div class="bg-white rounded-xl shadow p-6 content-card anim-card">
         <h2 class="text-lg font-bold text-gray-800 mb-4">Inventory by Category (SKU count)</h2>
         <div class="relative h-80"><canvas id="catBarChart"></canvas></div>
       </div>
-      <div class="bg-white rounded-xl shadow p-6">
+      <div class="bg-white rounded-xl shadow p-6 content-card anim-card">
         <h2 class="text-lg font-bold text-gray-800 mb-4">Wholesale Price Distribution</h2>
         <div class="relative h-72"><canvas id="priceBucketChart"></canvas></div>
       </div>
-      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6">
+      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
         <h2 class="text-lg font-bold text-gray-800 mb-4">All 14 Categories &mdash; 831 SKUs from drug_list.xlsx</h2>
         <div class="overflow-x-auto">
           <table class="w-full text-sm">
@@ -239,49 +249,41 @@
   <div id="tab-gpp" class="tab-pane py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <!-- Floor Plan SVG -->
-      <div class="bg-white rounded-xl shadow p-6">
+      <div class="bg-white rounded-xl shadow p-6 content-card anim-card">
         <h2 class="text-lg font-bold text-gray-800 mb-4">40 sqm GPP Floor Plan</h2>
         <div class="border-2 border-gray-300 rounded-lg bg-gray-50 overflow-hidden" style="aspect-ratio:1">
           <svg viewBox="0 0 400 400" class="w-full h-full">
             <rect x="10" y="10" width="380" height="380" fill="none" stroke="#374151" stroke-width="3"/>
-            <!-- Entry + OTC 10sqm -->
             <rect x="10" y="10" width="190" height="100" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
             <text x="105" y="45" text-anchor="middle" font-size="11" fill="#166534" font-weight="600">Entry + OTC Display</text>
             <text x="105" y="62" text-anchor="middle" font-size="10" fill="#15803d">10 sqm</text>
             <text x="105" y="79" text-anchor="middle" font-size="9" fill="#4ade80">Drug classification signs</text>
-            <!-- Dispensing Counter 8sqm -->
             <rect x="200" y="10" width="190" height="100" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
             <text x="295" y="45" text-anchor="middle" font-size="11" fill="#1e40af" font-weight="600">Dispensing Counter</text>
             <text x="295" y="62" text-anchor="middle" font-size="10" fill="#1d4ed8">8 sqm</text>
             <text x="295" y="79" text-anchor="middle" font-size="9" fill="#60a5fa">Pharmacist + Sink</text>
-            <!-- Controlled Storage 4sqm -->
             <rect x="10" y="110" width="95" height="95" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
             <text x="57" y="147" text-anchor="middle" font-size="10" fill="#92400e" font-weight="600">Controlled</text>
             <text x="57" y="162" text-anchor="middle" font-size="10" fill="#92400e" font-weight="600">Storage</text>
             <text x="57" y="178" text-anchor="middle" font-size="9" fill="#d97706">4 sqm</text>
             <text x="57" y="192" text-anchor="middle" font-size="8" fill="#b45309">Locked + CCTV</text>
-            <!-- General Drug Storage 6sqm -->
             <rect x="105" y="110" width="140" height="95" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
             <text x="175" y="150" text-anchor="middle" font-size="11" fill="#4c1d95" font-weight="600">Drug Storage</text>
             <text x="175" y="166" text-anchor="middle" font-size="10" fill="#6d28d9">6 sqm</text>
             <text x="175" y="181" text-anchor="middle" font-size="9" fill="#8b5cf6">25C / 60% RH max</text>
-            <!-- Cold Storage 2sqm -->
             <rect x="245" y="110" width="145" height="95" fill="#cffafe" stroke="#0891b2" stroke-width="1.5"/>
             <text x="317" y="150" text-anchor="middle" font-size="11" fill="#164e63" font-weight="600">Cold Storage</text>
             <text x="317" y="165" text-anchor="middle" font-size="10" fill="#0e7490">2 sqm</text>
             <text x="317" y="180" text-anchor="middle" font-size="9" fill="#06b6d4">2-8C Fridge</text>
             <text x="317" y="194" text-anchor="middle" font-size="8" fill="#0891b2">Daily temp log</text>
-            <!-- Consultation 4sqm -->
             <rect x="10" y="205" width="190" height="95" fill="#fce7f3" stroke="#be185d" stroke-width="1.5"/>
             <text x="105" y="243" text-anchor="middle" font-size="11" fill="#831843" font-weight="600">Consultation Area</text>
             <text x="105" y="259" text-anchor="middle" font-size="10" fill="#9d174d">4 sqm</text>
             <text x="105" y="274" text-anchor="middle" font-size="9" fill="#ec4899">Privacy screen + 2 seats</text>
-            <!-- Office 3sqm -->
             <rect x="200" y="205" width="190" height="95" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
             <text x="295" y="243" text-anchor="middle" font-size="11" fill="#14532d" font-weight="600">Office + Records</text>
             <text x="295" y="259" text-anchor="middle" font-size="10" fill="#15803d">3 sqm</text>
             <text x="295" y="274" text-anchor="middle" font-size="9" fill="#22c55e">PC + dispensing logs</text>
-            <!-- Staff + Utilities -->
             <rect x="10" y="300" width="380" height="90" fill="#f9fafb" stroke="#6b7280" stroke-width="1.5"/>
             <text x="200" y="335" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Staff + Utilities</text>
             <text x="200" y="352" text-anchor="middle" font-size="10" fill="#6b7280">3 sqm | Sink, Fire Extinguisher, Locker</text>
@@ -299,29 +301,29 @@
 
       <!-- Checklists -->
       <div class="lg:col-span-2 space-y-4">
-        <div class="bg-white rounded-xl shadow p-4">
+        <div class="bg-white rounded-xl shadow p-4 anim-card">
           <div class="flex items-center justify-between mb-2">
             <h3 class="font-bold text-gray-800">GPP Compliance Progress</h3>
             <span id="gpp-count" class="text-sm font-semibold text-green-600">0 / 28</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-3">
-            <div id="gpp-bar" class="bg-green-500 h-3 rounded-full transition-all duration-300" style="width:0%"></div>
+            <div id="gpp-bar" class="bg-green-500 h-3 rounded-full" style="width:0%"></div>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="bg-white rounded-xl shadow p-5">
+          <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
             <h3 class="font-semibold text-gray-700 mb-3">&#127959; Premises</h3>
             <div id="cl-premises" class="space-y-2"></div>
           </div>
-          <div class="bg-white rounded-xl shadow p-5">
+          <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
             <h3 class="font-semibold text-gray-700 mb-3">&#128300; Equipment</h3>
             <div id="cl-equipment" class="space-y-2"></div>
           </div>
-          <div class="bg-white rounded-xl shadow p-5">
+          <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
             <h3 class="font-semibold text-gray-700 mb-3">&#128203; Licensing</h3>
             <div id="cl-legal" class="space-y-2"></div>
           </div>
-          <div class="bg-white rounded-xl shadow p-5">
+          <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
             <h3 class="font-semibold text-gray-700 mb-3">&#128193; Documentation</h3>
             <div id="cl-docs" class="space-y-2"></div>
           </div>
@@ -333,20 +335,20 @@
   <!-- ===== TAB: ROADMAP ===== -->
   <div id="tab-roadmap" class="tab-pane py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6">
+      <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
         <h2 class="text-lg font-bold text-gray-800 mb-6">Launch Roadmap</h2>
         <div class="relative pl-6 border-l-2 border-green-200 space-y-8" id="roadmap-phases"></div>
       </div>
       <div class="space-y-5">
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
           <h3 class="font-bold text-gray-800 mb-4">Financial Milestones</h3>
           <div class="space-y-3 text-sm" id="milestones-list"></div>
         </div>
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
           <h3 class="font-bold text-gray-800 mb-3">Risk Register</h3>
           <div class="space-y-2 text-sm" id="risk-list"></div>
         </div>
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
           <h3 class="font-bold text-gray-800 mb-3">Tech Stack</h3>
           <div class="space-y-2 text-sm" id="tech-list"></div>
         </div>
@@ -358,453 +360,9 @@
 
 <footer class="max-w-7xl mx-auto px-4 py-6 mt-8 border-t border-gray-200 text-xs text-gray-400 flex flex-col sm:flex-row justify-between gap-1">
   <span>Ratchada Prestige Community Drugstore &mdash; Business Intelligence Dashboard</span>
-  <span>Source: drug_list.xlsx (831 SKUs parsed) &bull; law.pdf (Thai FDA GPP) &bull; Generated 2026-05-25</span>
+  <span>Source: drug_list.xlsx (831 SKUs) &bull; law.pdf (Thai FDA GPP) &bull; Updated 2026-05-26</span>
 </footer>
 
-<script>
-'use strict';
-
-// ── DATA (all hardcoded constants — no user input rendered) ──────────────────
-
-const INV = [
-  { cat:'OTC Household Drugs',      sku:171, cost:15416, avg:99,  priority:'Highest', strategy:'All x 1-2 units' },
-  { cat:'Topical / Cream / Steroid',sku:112, cost:10520, avg:97,  priority:'High',    strategy:'80% x 1 unit' },
-  { cat:'Respiratory',              sku: 58, cost: 8179, avg:149, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'Cardiovascular',           sku: 54, cost:15101, avg:321, priority:'High',    strategy:'60% x 1 (Rx)' },
-  { cat:'Vitamin & Supplement',     sku: 54, cost:12796, avg:237, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'Vitamins (Tonic)',         sku: 64, cost: 3473, avg: 57, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'Antibiotics',              sku: 44, cost: 7468, avg:187, priority:'Medium',  strategy:'60% x 1 (Rx)' },
-  { cat:'Diabetes',                 sku: 43, cost:15175, avg:353, priority:'High',    strategy:'50% x 1 (Rx)' },
-  { cat:'Pain / Antipyretic',       sku: 45, cost:10763, avg:263, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'GI / Digestive',           sku: 42, cost: 4590, avg:115, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'Traditional Medicine',     sku: 46, cost: 2519, avg: 55, priority:'Low-Med', strategy:'70% x 1 unit' },
-  { cat:'Eye / Ear / Nose / Throat',sku: 35, cost: 3858, avg:117, priority:'Medium',  strategy:'All x 1 unit' },
-  { cat:'Hormones / Contraceptive', sku: 29, cost: 5196, avg:179, priority:'Medium',  strategy:'60% x 1 unit' },
-  { cat:'Medical Devices',          sku: 34, cost: 1448, avg: 54, priority:'Medium',  strategy:'80% x 1 unit' },
-];
-
-const BUDGETS = {
-  200: {
-    tag: 'Lean MVP',
-    kpiSku:'450', kpiRev:'฿130K/mo', kpiPayback:'Month 6-7',
-    fixed:[
-      ['GPP Renovation (Minimal)',       55000],
-      ['Pharmaceutical Refrigerator',     8000],
-      ['Security Deposit (3 months)',    24000],
-      ['Pharmacy License + Biz Reg',     8000],
-      ['POS + Scanner + Label Printer',  18000],
-      ['Computer + Monitor + UPS',       18000],
-    ],
-    inv:55000, working:14000, total:200000,
-    invScale: 0.5,
-  },
-  400: {
-    tag: 'Recommended',
-    kpiSku:'700+', kpiRev:'฿180K/mo', kpiPayback:'Month 5-6',
-    fixed:[
-      ['GPP Renovation (Full)',           120000],
-      ['Pharmaceutical Refrigerator 300L', 15000],
-      ['Air Conditioning (2 units)',       25000],
-      ['Security Deposit (3 months)',      24000],
-      ['Pharmacy License + Legal',         12000],
-      ['POS + 2x Barcode Scanners',        20000],
-      ['Label + Receipt Printers',          8000],
-      ['Computer + Network + UPS',         22000],
-      ['CCTV (4 cameras)',                 12000],
-      ['Marketing Launch',                 12000],
-    ],
-    inv:110000, working:20000, total:400000,
-    invScale: 1,
-  },
-};
-
-const GPP_CHECKS = {
-  premises:[
-    'Dispensing area min 8 sqm, clearly demarcated',
-    'Drug classification signage A/B/C/D posted',
-    'Consultation zone with privacy screen',
-    'Floor and walls smooth, easy to clean',
-    'Lighting >= 500 lux at dispensing counter',
-    'Temperature control (AC) keeping <= 25 deg C',
-    'Hand-washing sink adjacent to dispensing area',
-    'Fire extinguisher per building code',
-  ],
-  equipment:[
-    'Pharmaceutical refrigerator 2-8 deg C + daily temp log',
-    'Thermometer + hygrometer in storage area',
-    'Locked cabinet for Controlled/Type-A drugs',
-    'Labelled shelving by drug category, no direct sunlight',
-    'Dispensing tools (scale, pill counter, label printer)',
-    'CCTV covering dispensing counter and controlled cabinet',
-    'Pharmacy POS computer system',
-    'Receipt / label printer',
-  ],
-  legal:[
-    'Modern Drug Sales License (FDA)',
-    'GPP Self-Assessment submitted to FDA',
-    'Commercial Registration (DBD)',
-    'Pharmacist license certificate displayed at counter',
-    'Landlord written consent letter',
-    'Business insurance policy',
-  ],
-  docs:[
-    'Dispensing record system for Type-A (controlled) drugs',
-    'Purchase invoices and drug inventory records',
-    'Expired drug disposal / return procedure',
-    'ADR (Adverse Drug Reaction) reporting form',
-    'Drug Recall response plan',
-    'Pharmacist CPD (Continuing Education) records',
-  ],
-};
-
-const ROADMAP_PHASES = [
-  {
-    period:'Month 1-2', color:'green', label:'Phase 0 — Pre-Launch Prep',
-    tasks:[
-      'Register business entity (Commercial Registration)',
-      'Submit FDA pharmacy license application',
-      'Sign lease + collect keys',
-      'Design 40 sqm GPP layout + hire renovation contractor',
-    ],
-  },
-  {
-    period:'Month 2-3', color:'blue', label:'Phase 1 — Renovation & Build-Out',
-    tasks:[
-      'Renovation (6 weeks): shelving, counter, lighting, AC',
-      'Install pharmaceutical fridge + temperature monitoring',
-      'Install CCTV + IT infrastructure (network, POS, printer)',
-      'Schedule FDA inspector site visit',
-    ],
-  },
-  {
-    period:'Month 3-4', color:'purple', label:'Phase 2 — Procurement & Setup',
-    tasks:[
-      'Source opening inventory from GPO + licensed distributors',
-      'Load all SKUs into POS with barcodes and reorder points',
-      'Set up LINE Official Account + social profiles',
-      'Staff GPP training (dispensing, ADR reporting, documentation)',
-    ],
-  },
-  {
-    period:'Month 4', color:'yellow', label:'Phase 3 — Soft Launch',
-    tasks:[
-      'Receive pharmacy license — open OTC + Vitamin sales',
-      'Deliver flyers to all 500 units + post in condo LINE group',
-      'Host first Health Check event (free BP screening)',
-    ],
-  },
-  {
-    period:'Month 4+', color:'green', label:'Phase 4 — Full Operations',
-    tasks:[
-      'Full Rx (prescription) dispensing activated',
-      'Launch Loyalty Card program',
-      'Target 25 transactions/day by Month 6',
-      'Monthly inventory review: add fast-movers, cut slow-movers',
-    ],
-  },
-];
-
-const MILESTONES = [
-  { period:'Month 4 (Soft)', rev:'฿80,000',  txn:'15',  note:'OTC only', accent:'text-green-600' },
-  { period:'Month 5',        rev:'฿130,000', txn:'22',  note:'+Rx starts', accent:'text-green-600' },
-  { period:'Month 6 ★',      rev:'฿180,000', txn:'30',  note:'Break-even', accent:'text-blue-600', bold:true },
-  { period:'Month 9',        rev:'฿250,000', txn:'40',  note:'Established', accent:'text-green-600' },
-  { period:'Month 12',       rev:'฿320,000', txn:'52',  note:'Year 1 target', accent:'text-green-600' },
-];
-
-const RISKS = [
-  { level:'red',  title:'FDA License Delay', fix:'Pre-consult FDA; use OTC soft-open period' },
-  { level:'yel',  title:'Renovation Overrun', fix:'Fixed-price contract with contractor' },
-  { level:'yel',  title:'Low Year-1 Foot Traffic', fix:'LINE group marketing + health events' },
-  { level:'blue', title:'Drug Expiry Losses', fix:'90-day tracking; minimum 1-unit orders' },
-];
-
-const TECH = [
-  { icon:'🖥️', title:'POS System', desc:'PharmaSys SaaS or custom Supabase + React' },
-  { icon:'💚', title:'LINE Official Account', desc:'Refills, pharmacist Q&A, loyalty points' },
-  { icon:'📊', title:'Analytics Dashboard', desc:'Expiry alerts, sales velocity, reorder' },
-];
-
-// ── STATE ────────────────────────────────────────────────────────────────────
-let currentBudget = 200;
-let chartFixed, chartInvBar, chartRevLine, chartCat, chartPrice, chartDemo;
-
-// ── DOM HELPERS (safe — no untrusted input, all from hardcoded constants) ────
-function el(tag, cls, text) {
-  const e = document.createElement(tag);
-  if (cls) e.className = cls;
-  if (text !== undefined) e.textContent = text;
-  return e;
-}
-function append(parent, ...children) { children.forEach(c => parent.appendChild(c)); return parent; }
-function clearEl(id) { const e = document.getElementById(id); while (e.firstChild) e.removeChild(e.firstChild); return e; }
-
-// ── TABS ─────────────────────────────────────────────────────────────────────
-function showTab(name, btn) {
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
-  btn.classList.add('active');
-  if (name === 'finance') renderFinance();
-  if (name === 'inventory') renderInventoryTab();
-}
-
-// ── BUDGET SWITCH ─────────────────────────────────────────────────────────────
-function switchBudget(b) {
-  currentBudget = b;
-  const d = BUDGETS[b];
-  document.querySelectorAll('.badge-toggle').forEach(bt => bt.classList.remove('active'));
-  document.getElementById('btn' + b).classList.add('active');
-  document.getElementById('budget-tag').textContent = d.tag;
-  document.getElementById('kpi-budget').textContent = '฿' + (b * 1000).toLocaleString();
-  document.getElementById('kpi-sku').textContent = d.kpiSku;
-  document.getElementById('kpi-revenue').textContent = d.kpiRev;
-  document.getElementById('kpi-payback').textContent = d.kpiPayback;
-  document.getElementById('fin-label').textContent = 'Budget ฿' + b.toLocaleString() + ',000 — ' + d.tag;
-  renderFinance();
-}
-
-// ── FINANCE TAB ───────────────────────────────────────────────────────────────
-function renderFinance() {
-  const d = BUDGETS[currentBudget];
-  const COLORS = ['#16a34a','#15803d','#1a7a3c','#2d9e3f','#4bc057','#60c96b','#77d17e','#22c55e','#dc2626','#ea580c','#d97706','#7c3aed'];
-
-  // Fixed cost donut
-  const fLabels = [...d.fixed.map(x => x[0]), 'Inventory', 'Working Capital'];
-  const fVals   = [...d.fixed.map(x => x[1]), d.inv, d.working];
-  if (chartFixed) chartFixed.destroy();
-  chartFixed = new Chart(document.getElementById('fixedPieChart'), {
-    type: 'doughnut',
-    data: { labels: fLabels, datasets: [{ data: fVals, backgroundColor: COLORS, borderWidth: 2, borderColor: '#fff' }] },
-    options: { responsive:true, maintainAspectRatio:false, cutout:'58%', plugins:{ legend:{ position:'bottom', labels:{ font:{size:10}, boxWidth:12, padding:8 } } } },
-  });
-
-  // Fixed cost rows
-  const rows = clearEl('fixed-rows');
-  fLabels.forEach((lbl, i) => {
-    const row = el('div', 'flex justify-between items-center text-xs py-1 border-b border-gray-100');
-    append(row, el('span','text-gray-600', lbl), el('span','font-semibold text-gray-800', '฿' + fVals[i].toLocaleString()));
-    rows.appendChild(row);
-  });
-  const total = el('div','flex justify-between items-center text-sm py-2 font-bold text-green-700');
-  append(total, el('span',null,'TOTAL'), el('span',null,'฿' + d.total.toLocaleString()));
-  rows.appendChild(total);
-
-  // Inventory bar
-  const invAlloc = [22000,8400,8200,9100,16300,3473,4500,7600,10800,4600,1800,3900,3100,1200];
-  const invVals  = invAlloc.map(v => Math.round(v * d.invScale));
-  const totalInv = invVals.reduce((a,b) => a+b, 0);
-  if (chartInvBar) chartInvBar.destroy();
-  chartInvBar = new Chart(document.getElementById('invBarChart'), {
-    type:'bar',
-    data:{ labels: INV.map(x => x.cat), datasets:[{ label:'Wholesale Budget (THB)', data: invVals, backgroundColor:'#4ade80', borderRadius:3 }] },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      indexAxis:'y',
-      plugins:{ legend:{display:false} },
-      scales:{ x:{ grid:{display:false}, ticks:{font:{size:9}} }, y:{ ticks:{font:{size:9}} } },
-    },
-  });
-  document.getElementById('inv-total-line').textContent = 'Total inventory budget: ฿' + totalInv.toLocaleString();
-
-  // Revenue line chart
-  const months   = ['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10','M11','M12'];
-  const revenues = [0,0,0,80,130,180,210,230,250,280,300,320];
-  const breakEven= Array(12).fill(163);
-  if (chartRevLine) chartRevLine.destroy();
-  chartRevLine = new Chart(document.getElementById('revenueLineChart'), {
-    type:'line',
-    data:{
-      labels: months,
-      datasets:[
-        { label:'Revenue (฿K)', data:revenues, borderColor:'#16a34a', backgroundColor:'#dcfce7', fill:true, tension:0.4, pointRadius:4 },
-        { label:'Break-even ฿163K', data:breakEven, borderColor:'#dc2626', borderDash:[5,5], pointRadius:0, fill:false },
-      ],
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{ position:'top', labels:{font:{size:11}} } },
-      scales:{ y:{ beginAtZero:true, ticks:{ callback: v => '฿'+v+'K' } } },
-    },
-  });
-}
-
-// ── INVENTORY TAB ─────────────────────────────────────────────────────────────
-function renderInventoryTab() {
-  // Category bar
-  if (chartCat) chartCat.destroy();
-  chartCat = new Chart(document.getElementById('catBarChart'), {
-    type:'bar',
-    data:{
-      labels: INV.map(x => x.cat),
-      datasets:[ { label:'SKU Count', data:INV.map(x=>x.sku), backgroundColor:'#4ade80', borderRadius:3 } ],
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      indexAxis:'y',
-      plugins:{ legend:{display:false} },
-      scales:{ y:{ ticks:{font:{size:9}} } },
-    },
-  });
-
-  // Price bucket chart
-  const pLabels = ['฿0-50','฿51-100','฿101-200','฿201-400','฿401-700','฿700+'];
-  const pCounts  = [168,214,191,123,85,50];
-  const pColors  = ['#86efac','#4ade80','#22c55e','#16a34a','#15803d','#166534'];
-  if (chartPrice) chartPrice.destroy();
-  chartPrice = new Chart(document.getElementById('priceBucketChart'), {
-    type:'bar',
-    data:{ labels:pLabels, datasets:[{ label:'SKU Count', data:pCounts, backgroundColor:pColors, borderRadius:4 }] },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, title:{display:true,text:'Wholesale Price per Box/Bottle',font:{size:12}} },
-      scales:{ y:{ title:{display:true,text:'# of SKUs'} } },
-    },
-  });
-
-  // Table rows
-  const PRIORITY_CLS = { Highest:'bg-red-100 text-red-700', High:'bg-green-100 text-green-700', Medium:'bg-blue-100 text-blue-700', 'Low-Med':'bg-yellow-100 text-yellow-700' };
-  const tbody = clearEl('inv-tbody');
-  INV.forEach(row => {
-    const tr = document.createElement('tr');
-    tr.className = 'hover:bg-gray-50';
-    [
-      el('td','px-4 py-2.5 text-gray-800', row.cat),
-      el('td','px-4 py-2.5 text-right font-medium', String(row.sku)),
-      el('td','px-4 py-2.5 text-right font-medium text-green-700', '฿' + row.cost.toLocaleString()),
-      el('td','px-4 py-2.5 text-right text-gray-600', '฿' + row.avg),
-    ].forEach(td => tr.appendChild(td));
-    const tdP = el('td','px-4 py-2.5');
-    tdP.appendChild(el('span','text-xs px-2 py-0.5 rounded-full font-semibold ' + (PRIORITY_CLS[row.priority]||'bg-gray-100 text-gray-600'), row.priority));
-    tr.appendChild(tdP);
-    tr.appendChild(el('td','px-4 py-2.5 text-gray-500 text-xs', row.strategy));
-    tbody.appendChild(tr);
-  });
-}
-
-// ── GPP CHECKLIST ─────────────────────────────────────────────────────────────
-function buildChecklist() {
-  let totalItems = 0;
-  Object.entries(GPP_CHECKS).forEach(([key, items]) => {
-    const container = clearEl('cl-' + key);
-    items.forEach((text, i) => {
-      totalItems++;
-      const wrapper = el('div','flex items-start gap-2 text-sm');
-      const cb = document.createElement('input');
-      cb.type = 'checkbox';
-      cb.className = 'mt-0.5 accent-green-600 flex-shrink-0';
-      cb.id = 'gpp-' + key + '-' + i;
-      cb.addEventListener('change', updateGPP);
-      const lbl = el('label','text-gray-700 cursor-pointer leading-snug', text);
-      lbl.htmlFor = cb.id;
-      append(wrapper, cb, lbl);
-      container.appendChild(wrapper);
-    });
-  });
-  document.getElementById('gpp-count').textContent = '0 / ' + totalItems;
-}
-
-function updateGPP() {
-  const all    = document.querySelectorAll('[id^="gpp-"]');
-  const done   = [...all].filter(c => c.checked).length;
-  const total  = all.length;
-  document.getElementById('gpp-count').textContent = done + ' / ' + total;
-  document.getElementById('gpp-bar').style.width = (done / total * 100) + '%';
-  all.forEach(cb => {
-    const wrapper = cb.closest('div');
-    if (cb.checked) wrapper.classList.add('done-item');
-    else wrapper.classList.remove('done-item');
-  });
-}
-
-// ── ROADMAP ───────────────────────────────────────────────────────────────────
-function buildRoadmap() {
-  const BADGE_CLS = {
-    green:'bg-green-100 text-green-700',
-    blue: 'bg-blue-100 text-blue-700',
-    purple:'bg-purple-100 text-purple-700',
-    yellow:'bg-yellow-100 text-yellow-700',
-  };
-  const container = clearEl('roadmap-phases');
-  ROADMAP_PHASES.forEach(phase => {
-    const item = el('div','tl-dot relative');
-    const header = el('div','flex items-center gap-3 mb-2');
-    header.appendChild(el('span','text-xs font-bold px-2 py-1 rounded ' + (BADGE_CLS[phase.color]||'bg-gray-100'), phase.period));
-    header.appendChild(el('h3','font-bold text-gray-800', phase.label));
-    item.appendChild(header);
-    const ul = el('ul','text-sm text-gray-600 space-y-1 ml-2');
-    phase.tasks.forEach(task => {
-      const li = el('li','flex items-start gap-2');
-      const cb = document.createElement('input');
-      cb.type = 'checkbox';
-      cb.className = 'mt-1 accent-green-600 flex-shrink-0';
-      li.appendChild(cb);
-      li.appendChild(el('span',null, task));
-      ul.appendChild(li);
-    });
-    item.appendChild(ul);
-    container.appendChild(item);
-  });
-
-  // Milestones
-  const mlist = clearEl('milestones-list');
-  MILESTONES.forEach((m, i) => {
-    const row = el('div','flex items-center justify-between ' + (i < MILESTONES.length-1 ? 'border-b pb-2' : ''));
-    const left = el('span', m.bold ? 'font-medium ' + m.accent : 'text-gray-500', m.period);
-    const right = el('div','text-right');
-    right.appendChild(el('p','font-bold ' + m.accent, m.rev));
-    right.appendChild(el('p','text-xs text-gray-400', m.txn + ' txn/day · ' + m.note));
-    append(row, left, right);
-    mlist.appendChild(row);
-  });
-
-  // Risks
-  const RISK_CLS = { red:'bg-red-50', yel:'bg-yellow-50', blue:'bg-blue-50' };
-  const RISK_TC  = { red:'text-red-700', yel:'text-yellow-700', blue:'text-blue-700' };
-  const RISK_SC  = { red:'text-red-500', yel:'text-yellow-600', blue:'text-blue-600' };
-  const rlist = clearEl('risk-list');
-  RISKS.forEach(r => {
-    const row = el('div','flex items-start gap-2 rounded-lg p-2 ' + (RISK_CLS[r.level]||'bg-gray-50'));
-    row.appendChild(el('span','mt-0.5 flex-shrink-0', r.level === 'blue' ? 'ℹ️' : '⚠️'));
-    const info = el('div');
-    info.appendChild(el('p','font-medium ' + (RISK_TC[r.level]||'text-gray-700'), r.title));
-    info.appendChild(el('p','text-xs ' + (RISK_SC[r.level]||'text-gray-500'), r.fix));
-    row.appendChild(info);
-    rlist.appendChild(row);
-  });
-
-  // Tech
-  const tlist = clearEl('tech-list');
-  TECH.forEach(t => {
-    const row = el('div','flex items-center gap-2 bg-gray-50 rounded px-3 py-2');
-    row.appendChild(el('span','flex-shrink-0', t.icon));
-    const info = el('div');
-    info.appendChild(el('p','font-medium', t.title));
-    info.appendChild(el('p','text-xs text-gray-500', t.desc));
-    row.appendChild(info);
-    tlist.appendChild(row);
-  });
-}
-
-// ── DEMOGRAPHICS CHART ────────────────────────────────────────────────────────
-function buildDemoChart() {
-  chartDemo = new Chart(document.getElementById('demoChart'), {
-    type:'doughnut',
-    data:{
-      labels:['Working Adults 30-59','Children under 18','Seniors 60+','Pet Owners'],
-      datasets:[{ data:[500,250,200,250], backgroundColor:['#4ade80','#60a5fa','#f59e0b','#a78bfa'], borderWidth:2, borderColor:'#fff' }],
-    },
-    options:{ responsive:true, maintainAspectRatio:false, cutout:'55%', plugins:{ legend:{ position:'bottom', labels:{ font:{size:9}, boxWidth:10, padding:6 } } } },
-  });
-}
-
-// ── INIT ──────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', function() {
-  buildDemoChart();
-  buildChecklist();
-  buildRoadmap();
-  renderFinance();
-});
-</script>
+<script src="script.js" defer></script>
 </body>
 </html>
