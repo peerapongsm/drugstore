@@ -3,51 +3,51 @@
 // ── DATA (all hardcoded constants — no user input rendered) ──────────────────
 
 const INV = [
-  { cat:'OTC Household Drugs',      sku:171, cost:15416, avg:99,  priority:'Highest', strategy:'All x 1-2 units' },
-  { cat:'Topical / Cream / Steroid',sku:112, cost:10520, avg:97,  priority:'High',    strategy:'80% x 1 unit' },
-  { cat:'Respiratory',              sku: 58, cost: 8179, avg:149, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'Cardiovascular',           sku: 54, cost:15101, avg:321, priority:'High',    strategy:'60% x 1 (Rx)' },
-  { cat:'Vitamin & Supplement',     sku: 54, cost:12796, avg:237, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'Vitamins (Tonic)',         sku: 64, cost: 3473, avg: 57, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'Antibiotics',              sku: 44, cost: 7468, avg:187, priority:'Medium',  strategy:'60% x 1 (Rx)' },
-  { cat:'Diabetes',                 sku: 43, cost:15175, avg:353, priority:'High',    strategy:'50% x 1 (Rx)' },
-  { cat:'Pain / Antipyretic',       sku: 45, cost:10763, avg:263, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'GI / Digestive',           sku: 42, cost: 4590, avg:115, priority:'High',    strategy:'All x 1 unit' },
-  { cat:'Traditional Medicine',     sku: 46, cost: 2519, avg: 55, priority:'Low-Med', strategy:'70% x 1 unit' },
-  { cat:'Eye / Ear / Nose / Throat',sku: 35, cost: 3858, avg:117, priority:'Medium',  strategy:'All x 1 unit' },
-  { cat:'Hormones / Contraceptive', sku: 29, cost: 5196, avg:179, priority:'Medium',  strategy:'60% x 1 unit' },
-  { cat:'Medical Devices',          sku: 34, cost: 1448, avg: 54, priority:'Medium',  strategy:'80% x 1 unit' },
+  { cat:'ยา OTC และของใช้ในบ้าน',          sku:171, cost:15416, avg:99,  priority:'สูงสุด',        strategy:'ทุกรายการ x 1-2 ชิ้น' },
+  { cat:'ยาทา / ครีม / สเตียรอยด์',        sku:112, cost:10520, avg:97,  priority:'สูง',            strategy:'80% x 1 ชิ้น' },
+  { cat:'ยาระบบทางเดินหายใจ',               sku: 58, cost: 8179, avg:149, priority:'สูง',            strategy:'ทุกรายการ x 1 ชิ้น' },
+  { cat:'ยาหัวใจและหลอดเลือด',              sku: 54, cost:15101, avg:321, priority:'สูง',            strategy:'60% x 1 ชิ้น (Rx)' },
+  { cat:'วิตามินและอาหารเสริม',             sku: 54, cost:12796, avg:237, priority:'สูง',            strategy:'ทุกรายการ x 1 ชิ้น' },
+  { cat:'วิตามิน (บำรุงร่างกาย)',           sku: 64, cost: 3473, avg: 57, priority:'สูง',            strategy:'ทุกรายการ x 1 ชิ้น' },
+  { cat:'ยาปฏิชีวนะ',                       sku: 44, cost: 7468, avg:187, priority:'ปานกลาง',       strategy:'60% x 1 ชิ้น (Rx)' },
+  { cat:'ยาเบาหวาน',                        sku: 43, cost:15175, avg:353, priority:'สูง',            strategy:'50% x 1 ชิ้น (Rx)' },
+  { cat:'ยาแก้ปวด / ลดไข้',                sku: 45, cost:10763, avg:263, priority:'สูง',            strategy:'ทุกรายการ x 1 ชิ้น' },
+  { cat:'ยาระบบทางเดินอาหาร',               sku: 42, cost: 4590, avg:115, priority:'สูง',            strategy:'ทุกรายการ x 1 ชิ้น' },
+  { cat:'ยาสมุนไพร / ยาแผนโบราณ',          sku: 46, cost: 2519, avg: 55, priority:'ต่ำ-ปานกลาง',   strategy:'70% x 1 ชิ้น' },
+  { cat:'ยาตา / หู / จมูก / คอ',           sku: 35, cost: 3858, avg:117, priority:'ปานกลาง',       strategy:'ทุกรายการ x 1 ชิ้น' },
+  { cat:'ฮอร์โมน / ยาคุมกำเนิด',           sku: 29, cost: 5196, avg:179, priority:'ปานกลาง',       strategy:'60% x 1 ชิ้น' },
+  { cat:'อุปกรณ์การแพทย์',                  sku: 34, cost: 1448, avg: 54, priority:'ปานกลาง',       strategy:'80% x 1 ชิ้น' },
 ];
 
 const BUDGETS = {
   200: {
-    tag: 'Lean MVP',
-    kpiSku:'450', kpiRev:'฿50K/mo (Y1)', kpiPayback:'Yr 2-3 (owner)',
+    tag: 'ประหยัดสุด',
+    kpiSku:'450', kpiRev:'฿50K/เดือน (ปี 1)', kpiPayback:'ปีที่ 2-3 (เจ้าของ)',
     fixed:[
-      ['GPP Renovation (Minimal)',       55000],
-      ['Pharmaceutical Refrigerator',     8000],
-      ['Security Deposit (3 months)',    24000],
-      ['Pharmacy License + Biz Reg',     8000],
-      ['POS + Scanner + Label Printer',  18000],
-      ['Computer + Monitor + UPS',       18000],
+      ['ปรับปรุงร้านตาม GPP (ขั้นต่ำ)',           55000],
+      ['ตู้เย็นเก็บยา',                              8000],
+      ['เงินมัดจำ (3 เดือน)',                       24000],
+      ['ใบอนุญาตร้านยา + จดทะเบียนธุรกิจ',         8000],
+      ['POS + เครื่องสแกน + เครื่องพิมพ์ฉลาก',    18000],
+      ['คอมพิวเตอร์ + จอ + UPS',                   18000],
     ],
     inv:55000, working:14000, total:200000,
     invScale: 0.5,
   },
   400: {
-    tag: 'Recommended',
-    kpiSku:'700+', kpiRev:'฿50K/mo (Y1)', kpiPayback:'Yr 2-3 (owner)',
+    tag: 'แนะนำ',
+    kpiSku:'700+', kpiRev:'฿50K/เดือน (ปี 1)', kpiPayback:'ปีที่ 2-3 (เจ้าของ)',
     fixed:[
-      ['GPP Renovation (Full)',           120000],
-      ['Pharmaceutical Refrigerator 300L', 15000],
-      ['Air Conditioning (2 units)',       25000],
-      ['Security Deposit (3 months)',      24000],
-      ['Pharmacy License + Legal',         12000],
-      ['POS + 2x Barcode Scanners',        20000],
-      ['Label + Receipt Printers',          8000],
-      ['Computer + Network + UPS',         22000],
-      ['CCTV (4 cameras)',                 12000],
-      ['Marketing Launch',                 12000],
+      ['ปรับปรุงร้านตาม GPP (เต็มรูปแบบ)',         120000],
+      ['ตู้เย็นเก็บยา 300 ลิตร',                    15000],
+      ['เครื่องปรับอากาศ (2 เครื่อง)',              25000],
+      ['เงินมัดจำ (3 เดือน)',                        24000],
+      ['ใบอนุญาตร้านยา + ค่าดำเนินการกฎหมาย',      12000],
+      ['POS + เครื่องสแกนบาร์โค้ด 2 เครื่อง',      20000],
+      ['เครื่องพิมพ์ฉลากและใบเสร็จ',                 8000],
+      ['คอมพิวเตอร์ + ระบบเครือข่าย + UPS',        22000],
+      ['กล้อง CCTV (4 ตัว)',                        12000],
+      ['ค่าการตลาดเปิดตัว',                          12000],
     ],
     inv:110000, working:20000, total:400000,
     invScale: 1,
@@ -55,140 +55,140 @@ const BUDGETS = {
 };
 
 const MONTHLY_OPS = [
-  { item:'Rent',                                           owner:8000,  emp:8000  },
-  { item:'Pharmacist Salary',                              owner:0,     emp:38000 },
-  { item:'Electricity (2×AC + Pharma Fridge + Lights)', owner:5000, emp:5000  },
-  { item:'Water',                                          owner:400,   emp:400   },
-  { item:'Internet / Fiber 100 Mbps',                      owner:700,   emp:700   },
-  { item:'LINE OA Premium (monthly)',                      owner:400,   emp:400   },
-  { item:'Consumables (bags, labels, cleaning)',           owner:2000,  emp:2000  },
+  { item:'ค่าเช่า',                                              owner:8000,  emp:8000  },
+  { item:'เงินเดือนเภสัชกร',                                    owner:0,     emp:38000 },
+  { item:'ค่าไฟฟ้า (แอร์ 2 เครื่อง + ตู้เย็นยา + แสงสว่าง)', owner:5000, emp:5000  },
+  { item:'ค่าน้ำ',                                               owner:400,   emp:400   },
+  { item:'อินเทอร์เน็ต / Fiber 100 Mbps',                       owner:700,   emp:700   },
+  { item:'LINE OA Premium (รายเดือน)',                            owner:400,   emp:400   },
+  { item:'วัสดุสิ้นเปลือง (ถุง, ฉลาก, ทำความสะอาด)',           owner:2000,  emp:2000  },
 ];
-// Owner total: 16,500 | Break-even at 40% GM: 41,250
-// Employee total: 54,500 | Break-even at 40% GM: 136,250
+// เจ้าของรวม: 16,500 | จุดคุ้มทุน GM 40%: 41,250
+// จ้างเภสัชกรรวม: 54,500 | จุดคุ้มทุน GM 40%: 136,250
 
 const ADVISORY_TIPS = [
-  { icon:'⚠️', color:'amber',  title:'Pharmacist as Owner is Critical',
-    desc:'Employee pharmacist (฿38K+/mo salary) pushes break-even to Year 4-5 and requires ฿1.1M+ extra capital. As founding partner with equity stake, break-even is achievable by Month 8-10.' },
-  { icon:'💰', color:'red',    title:'Cash Reserve: Employee Scenario Needs ฿1.1M+',
-    desc:'Owner scenario: ฿400K startup is sufficient — profitable from Year 2. Employee scenario: budget ฿1.1M+ extra cash to survive 4 years of operating losses before any net profit.' },
-  { icon:'🤝', color:'blue',   title:'Negotiate 30-60 Day Supplier Credit',
-    desc:'GPO and licensed distributors offer payment terms to licensed pharmacies. Use the credit float to reduce working capital pressure, especially when revenue is low in Year 1.' },
-  { icon:'📦', color:'purple', title:'Start with Top 100-150 Fast Movers Only',
-    desc:'Year 1: focus on high-velocity OTC items. Do not stock all 831 SKUs immediately. Every slow-moving SKU ties up cash and risks expiry losses. Expand from operating cash flow.' },
-  { icon:'🏢', color:'green',  title:'One B2B Contract = ฿10-30K/Month',
-    desc:'Approach nearby offices, schools, or construction sites for corporate medication supply contracts. One B2B account can equal 1-3 weeks of retail sales with predictable volume.' },
-  { icon:'📱', color:'indigo', title:'LINE OA Rx Refill Service (Build from Day 1)',
-    desc:'Set up the refill workflow from Day 1 even if unused. Once Rx loyalty builds in Year 2+, LINE OA refill orders from condo residents add ฿8-15K/month with near-zero overhead.' },
+  { icon:'⚠️', color:'amber',  title:'เภสัชกรต้องเป็นเจ้าของ — สำคัญมาก',
+    desc:'การจ้างเภสัชกร (เงินเดือน ฿38K+/เดือน) ทำให้จุดคุ้มทุนเลื่อนไปปีที่ 4-5 และต้องใช้เงินสำรองเพิ่มกว่า ฿1.1M หากเภสัชกรเป็นหุ้นส่วนผู้ก่อตั้ง จุดคุ้มทุนจะอยู่ที่เดือนที่ 8-10' },
+  { icon:'💰', color:'red',    title:'เงินสำรอง: กรณีจ้างเภสัชกรต้องการกว่า ฿1.1M',
+    desc:'กรณีเจ้าของ: เงินทุน ฿400K เพียงพอ — ทำกำไรได้ตั้งแต่ปีที่ 2 กรณีจ้าง: ต้องสำรองเงินเพิ่มกว่า ฿1.1M เพื่อรองรับการขาดทุน 4 ปีก่อนถึงจุดคุ้มทุน' },
+  { icon:'🤝', color:'blue',   title:'ต่อรองเครดิตจากซัพพลายเออร์ 30-60 วัน',
+    desc:'GPO และผู้จัดจำหน่ายที่ได้รับอนุญาตมักให้เครดิตเทอมแก่ร้านยาที่มีใบอนุญาต ใช้ประโยชน์จากช่วงเครดิตเพื่อลดแรงกดดันด้านเงินทุนหมุนเวียน โดยเฉพาะในปีแรกที่รายได้ยังน้อย' },
+  { icon:'📦', color:'purple', title:'เริ่มจากสินค้าขายดี 100-150 รายการก่อน',
+    desc:'ปีที่ 1 เน้นสินค้า OTC ที่หมุนเวียนเร็ว อย่าเปิดตัว 831 SKUs พร้อมกัน สินค้าหมุนช้าจะดูดเงินสดและเสี่ยงสินค้าหมดอายุ ขยายสต็อกจากกำไรที่ทำได้' },
+  { icon:'🏢', color:'green',  title:'สัญญา B2B 1 ฉบับ = ฿10-30K/เดือน',
+    desc:'ติดต่อออฟฟิศ โรงเรียน หรือแคมป์ก่อสร้างใกล้เคียงเพื่อเป็นผู้จัดหายาองค์กร บัญชี B2B หนึ่งราย อาจเท่ากับยอดขายปลีก 1-3 สัปดาห์ โดยมีปริมาณที่คาดการณ์ได้' },
+  { icon:'📱', color:'indigo', title:'บริการสั่งยา Rx ซ้ำผ่าน LINE OA (เริ่มวันแรกเลย)',
+    desc:'ตั้งระบบสั่งยาซ้ำตั้งแต่วันแรก แม้ยังไม่มีคนใช้ เมื่อลูกค้า Rx เริ่มสะสมในปีที่ 2+ คำสั่งซื้อจาก LINE OA ของผู้อยู่อาศัยในคอนโดจะเพิ่มรายรับ ฿8-15K/เดือน โดยแทบไม่มีต้นทุนเพิ่ม' },
 ];
 
 const GPP_CHECKS = {
   premises:[
-    'Dispensing area min 8 sqm, clearly demarcated (Critical Defect)',
-    'Floor plan submitted to FDA matches current physical layout (Critical Defect)',
-    'Consultation zone clearly separated with privacy screen (visible + recorded)',
-    'Premises clean, hygienic, orderly — walls/floor smooth & scrubbable (Critical Defect)',
-    'Adequate lighting & ventilation during all operating hours',
-    'Pest/animal prevention measures in place',
-    'Temperature control: storage area ≤30 °C per Thai FDA GPP (Critical Defect)',
-    'Daily temperature + humidity log maintained for storage area (Critical Defect)',
+    'พื้นที่ขายให้คำปรึกษาและแนะนำการใช้ยา ต่อเนื่องกันไม่น้อยกว่า 8 ตร.ม. ด้านที่สั้นที่สุดไม่น้อยกว่า 2 เมตร (ข้อบกพร่องร้ายแรง)',
+    'สถานที่มีทะเบียนบ้านถูกต้อง กรณีอาคารชุดต้องได้รับอนุญาตประกอบกิจการ ไม่ใช่พื้นที่พักอาศัย (ข้อบกพร่องร้ายแรง)',
+    'บริเวณให้คำปรึกษาและแนะนำการใช้ยา แยกเป็นสัดส่วนจากส่วนบริการอื่นอย่างชัดเจน มีโต๊ะ-เก้าอี้และป้ายแสดง',
+    'สถานที่ถูกสุขลักษณะ สะอาด เป็นระเบียบเรียบร้อย มีการควบคุมป้องกันสัตว์แมลง ไม่มีสัตว์เลี้ยงในบริเวณขายยา (ข้อบกพร่องร้ายแรง)',
+    'มีแสงสว่างเพียงพอในการอ่านเอกสาร อ่านฉลากผลิตภัณฑ์ยาและป้ายแสดงต่างๆ ได้อย่างชัดเจน',
+    'มีการควบคุมป้องกันสัตว์และแมลงรบกวน อากาศถ่ายเทสะดวก',
+    'สามารถควบคุมอุณหภูมิในพื้นที่ขายและเก็บยาไม่เกิน 30 องศาเซลเซียส ป้องกันแสงแดดส่องถึงผลิตภัณฑ์ยาโดยตรง (ข้อบกพร่องร้ายแรง)',
+    'บันทึกอุณหภูมิและความชื้นในพื้นที่เก็บยาทุกวัน (ข้อบกพร่องร้ายแรง)',
   ],
   equipment:[
-    'Pharmaceutical refrigerator 2–8 °C — 1 unit, standard-grade (Critical Defect)',
-    'Dispensing scales — min 2 calibrated types, standard-grade (Critical Defect)',
-    'Thermometer + hygrometer in storage area — 1 unit, standard-grade (Critical Defect)',
-    'Weight measuring equipment — 1 unit, standard-grade',
-    'Light-protection containers for photosensitive drugs (Critical Defect)',
-    'Dispensing equipment: counting tray, spatula, mortar & pestle (Critical Defect)',
-    'Locked steel cabinet for Schedule A/B (controlled) drugs — wall-anchored',
-    'CCTV covering dispensing counter and controlled cabinet',
+    'ตู้เย็นเก็บยาที่ต้องอุณหภูมิต่ำกว่าห้อง 1 เครื่อง ใช้งานได้ตามมาตรฐาน มีพื้นที่เพียงพอและแยกเก็บเป็นสัดส่วน (ข้อบกพร่องร้ายแรง)',
+    'ถาดนับเม็ดยาอย่างน้อย 2 ถาด ใช้งานได้ดี และแยกถาดสำหรับยา Penicillin/Sulfonamide/NSAID อย่างเด็ดขาด (ข้อบกพร่องร้ายแรง)',
+    'เครื่องวัดความดันโลหิตชนิดอัตโนมัติ 1 เครื่อง ใช้งานได้ตามมาตรฐาน (ข้อบกพร่องร้ายแรง)',
+    'เครื่องชั่งน้ำหนักสำหรับผู้มารับบริการ 1 เครื่อง ใช้งานได้ดี',
+    'เลือกภาชนะบรรจุที่เหมาะสมเพื่อป้องกันยาเสื่อมสภาพ รวมถึงภาชนะทึบแสงสำหรับยาที่ไวต่อแสง (ข้อบกพร่องร้ายแรง)',
+    'อุปกรณ์นับเม็ดยา ไม้พาย โกร่งบด ครบตามมาตรฐาน (ข้อบกพร่องร้ายแรง)',
+    'มีวัสดุทึบปิดบังบริเวณยาอันตรายและยาควบคุมพิเศษเมื่อเภสัชกรไม่อยู่ปฏิบัติหน้าที่ พร้อมป้ายแจ้ง (ข้อบกพร่องร้ายแรง)',
+    'ติดตั้ง CCTV ครอบคลุมเคาน์เตอร์จ่ายยาและตู้เก็บยาควบคุม',
   ],
   legal:[
-    'Modern Drug Sales License (FDA)',
-    'Current floor plan attached to license application & approved',
-    'Commercial Registration (DBD)',
-    'Pharmacist license certificate framed & displayed at counter (Critical Defect)',
-    'Pharmacist work schedule posted at pharmacy',
-    'Landlord written consent letter on file',
-    'GPP Self-Assessment form submitted to FDA',
+    'ใบอนุญาตขายยาแผนปัจจุบัน (อย.) ยังอยู่ในอายุและติดตั้งถูกต้อง',
+    'ผังพื้นที่ร้านยาปัจจุบันตรงกับที่ยื่นขออนุญาตและได้รับอนุมัติ',
+    'จดทะเบียนพาณิชย์ (กรมพัฒนาธุรกิจการค้า)',
+    'ติดใบประกอบวิชาชีพเภสัชกรรมของเภสัชกรผู้มีหน้าที่ปฏิบัติการไว้ที่เคาน์เตอร์อย่างชัดเจน (ข้อบกพร่องร้ายแรง)',
+    'ติดตารางเวลาปฏิบัติงานของเภสัชกรไว้ที่ร้านขายยา',
+    'มีหนังสือยินยอมเป็นลายลักษณ์อักษรจากเจ้าของสถานที่',
+    'ส่งแบบประเมินตนเอง GPP ให้ อย. แล้ว',
   ],
   docs:[
-    'Dispensing labels include: drug name, dose, instructions, warnings, pharmacist sig (Critical Defect)',
-    'Dispensing record system for Schedule A/B (controlled) drugs',
-    'Purchase invoices and drug procurement records from licensed sources (Critical Defect)',
-    'Expired drug disposal / return-to-supplier procedure',
-    'ADR (Adverse Drug Reaction) reporting form + submission process',
-    'Drug recall & counterfeit drug response plan',
-    'Drug abuse prevention procedure for high-risk items',
+    'ฉลากยาที่ส่งมอบระบุ: ชื่อยา ขนาดและวิธีใช้ คำเตือน ลายมือชื่อเภสัชกร (ข้อบกพร่องร้ายแรง)',
+    'มีระบบบัญชียาอันตรายและยาควบคุมพิเศษ (ขย.5, ขย.11) บันทึกถูกต้อง (ข้อบกพร่องร้ายแรง)',
+    'มีใบกำกับภาษีและบันทึกการจัดซื้อยาจากแหล่งที่ได้รับอนุญาตตามกฎหมาย (ข้อบกพร่องร้ายแรง)',
+    'มีระบบการส่งคืนหรือทำลายยาหมดอายุหรือยาเสื่อมคุณภาพที่ถูกต้องตามหลักวิชาการ',
+    'มีแบบฟอร์มรายงานอาการไม่พึงประสงค์จากยา (ADR) และกระบวนการส่งรายงาน',
+    'มีแผนรับมือการเรียกคืนยาและยาปลอม',
+    'มีกระบวนการเฝ้าระวังพฤติกรรมการใช้ยาไม่เหมาะสมและยาที่มีความเสี่ยงสูง',
   ],
 };
 
 const ROADMAP_PHASES = [
   {
-    period:'Month 1-2', color:'green', label:'Phase 0 — Pre-Launch Prep',
+    period:'เดือน 1-2', color:'green', label:'Phase 0 — เตรียมความพร้อมก่อนเปิด',
     tasks:[
-      'Register business entity (Commercial Registration)',
-      'Submit FDA pharmacy license application',
-      'Sign lease + collect keys',
-      'Design 40 sqm GPP layout + hire renovation contractor',
+      'จดทะเบียนธุรกิจ (จดทะเบียนพาณิชย์)',
+      'ยื่นขอใบอนุญาตร้านยาต่อ อย.',
+      'เซ็นสัญญาเช่าและรับกุญแจ',
+      'ออกแบบผัง GPP 40 ตร.ม. + จ้างผู้รับเหมาปรับปรุง',
     ],
   },
   {
-    period:'Month 2-3', color:'blue', label:'Phase 1 — Renovation & Build-Out',
+    period:'เดือน 2-3', color:'blue', label:'Phase 1 — ปรับปรุงและก่อสร้าง',
     tasks:[
-      'Renovation (6 weeks): shelving, counter, lighting, AC',
-      'Install pharmaceutical fridge + temperature monitoring',
-      'Install CCTV + IT infrastructure (network, POS, printer)',
-      'Schedule FDA inspector site visit',
+      'ปรับปรุงร้าน (6 สัปดาห์): ชั้นวาง เคาน์เตอร์ แสงสว่าง แอร์',
+      'ติดตั้งตู้เย็นยา + ระบบตรวจสอบอุณหภูมิ',
+      'ติดตั้ง CCTV + โครงสร้างพื้นฐาน IT (เครือข่าย POS เครื่องพิมพ์)',
+      'นัดเจ้าหน้าที่ อย. ตรวจสถานที่',
     ],
   },
   {
-    period:'Month 3-4', color:'purple', label:'Phase 2 — Procurement & Setup',
+    period:'เดือน 3-4', color:'purple', label:'Phase 2 — จัดซื้อสินค้าและเตรียมระบบ',
     tasks:[
-      'Source opening inventory from GPO + licensed distributors',
-      'Load all SKUs into POS with barcodes and reorder points',
-      'Set up LINE Official Account + social profiles',
-      'Staff GPP training (dispensing, ADR reporting, documentation)',
+      'สั่งสินค้าเปิดตัวจาก GPO + ผู้จัดจำหน่ายที่ได้รับอนุญาต',
+      'นำ SKU ทั้งหมดเข้าระบบ POS พร้อมบาร์โค้ดและจุดสั่งซื้อซ้ำ',
+      'เปิด LINE Official Account + โซเชียลมีเดีย',
+      'อบรม GPP พนักงาน (การจ่ายยา รายงาน ADR เอกสาร)',
     ],
   },
   {
-    period:'Month 4', color:'yellow', label:'Phase 3 — Soft Launch',
+    period:'เดือน 4', color:'yellow', label:'Phase 3 — Soft Launch',
     tasks:[
-      'Receive pharmacy license — open OTC + Vitamin sales',
-      'Deliver flyers to all 500 units + post in condo LINE group',
-      'Host first Health Check event (free BP screening)',
+      'รับใบอนุญาตร้านยา — เปิดขาย OTC + วิตามิน',
+      'แจกใบปลิวทุก 500 ยูนิต + โพสต์ในกลุ่ม LINE คอนโด',
+      'จัดกิจกรรมตรวจสุขภาพครั้งแรก (วัดความดันฟรี)',
     ],
   },
   {
-    period:'Month 4+', color:'green', label:'Phase 4 — Full Operations',
+    period:'เดือน 4+', color:'green', label:'Phase 4 — เปิดเต็มรูปแบบ',
     tasks:[
-      'Full Rx (prescription) dispensing activated',
-      'Launch Loyalty Card program',
-      'Target 25 transactions/day by Month 6',
-      'Monthly inventory review: add fast-movers, cut slow-movers',
+      'เปิดให้บริการจ่ายยาตามใบสั่งแพทย์ (Rx) เต็มรูปแบบ',
+      'เปิดตัวโปรแกรมบัตรสะสมแต้ม',
+      'ตั้งเป้า 25 ธุรกรรม/วัน ภายในเดือนที่ 6',
+      'ทบทวนสินค้าคงคลังรายเดือน: เพิ่มสินค้าขายดี ตัดสินค้าขายช้า',
     ],
   },
 ];
 
 const MILESTONES = [
-  { period:'Y1 M1-3 (Opening)',  rev:'฿10-25K',  txn:'3-8',  note:'Discovery phase',           accent:'text-red-600' },
-  { period:'Y1 M12',             rev:'฿50K',      txn:'16',   note:'Year 1 realistic max',      accent:'text-yellow-600' },
-  { period:'Y2 avg',             rev:'฿62K',      txn:'20',   note:'Word-of-mouth builds',      accent:'text-yellow-600' },
-  { period:'Y3 M12 ★',      rev:'฿105K',     txn:'35',   note:'Near break-even (owner)',   accent:'text-blue-600', bold:true },
-  { period:'Y4 M12 ★★',rev:'฿140K',     txn:'46',   note:'Break-even (if employee)',  accent:'text-green-600', bold:true },
-  { period:'Y5 M12',             rev:'฿170K',     txn:'55',   note:'Profitable',                accent:'text-green-600' },
+  { period:'ปีที่ 1 เดือน 1-3 (เปิดตัว)', rev:'฿10-25K',  txn:'3-8',  note:'ช่วงสำรวจตลาด',              accent:'text-red-600' },
+  { period:'ปีที่ 1 เดือน 12',             rev:'฿50K',      txn:'16',   note:'สูงสุดที่เป็นจริงปีที่ 1',   accent:'text-yellow-600' },
+  { period:'ปีที่ 2 เฉลี่ย',               rev:'฿62K',      txn:'20',   note:'บอกต่อเริ่มทำงาน',           accent:'text-yellow-600' },
+  { period:'ปีที่ 3 เดือน 12 ★',      rev:'฿105K',     txn:'35',   note:'ใกล้จุดคุ้มทุน (เจ้าของ)',   accent:'text-blue-600', bold:true },
+  { period:'ปีที่ 4 เดือน 12 ★★',rev:'฿140K',     txn:'46',   note:'จุดคุ้มทุน (กรณีจ้างเภสัชกร)', accent:'text-green-600', bold:true },
+  { period:'ปีที่ 5 เดือน 12',             rev:'฿170K',     txn:'55',   note:'ทำกำไรได้',                  accent:'text-green-600' },
 ];
 
 const RISKS = [
-  { level:'red',  title:'FDA License Delay',       fix:'Pre-consult FDA; use OTC soft-open period' },
-  { level:'yel',  title:'Renovation Overrun',      fix:'Fixed-price contract with contractor' },
-  { level:'yel',  title:'Low Year-1 Foot Traffic', fix:'LINE group marketing + health events' },
-  { level:'blue', title:'Drug Expiry Losses',      fix:'90-day tracking; minimum 1-unit orders' },
+  { level:'red',  title:'ใบอนุญาต อย. ล่าช้า',          fix:'ปรึกษา อย. ล่วงหน้า; ใช้ช่วง Soft Open ขาย OTC ก่อน' },
+  { level:'yel',  title:'งานปรับปรุงร้านบานปลาย',        fix:'ทำสัญญาราคาคงที่กับผู้รับเหมา' },
+  { level:'yel',  title:'ลูกค้าน้อยในปีแรก',             fix:'การตลาดผ่านกลุ่ม LINE + จัดกิจกรรมสุขภาพ' },
+  { level:'blue', title:'ยาหมดอายุสร้างความเสียหาย',     fix:'ติดตามอายุยา 90 วัน; สั่งขั้นต่ำ 1 หน่วย' },
 ];
 
 const TECH = [
-  { icon:'🖥️', title:'POS System',             desc:'PharmaSys SaaS or custom Supabase + React' },
-  { icon:'💚',       title:'LINE Official Account',  desc:'Refills, pharmacist Q&A, loyalty points' },
-  { icon:'📊',       title:'Analytics Dashboard',    desc:'Expiry alerts, sales velocity, reorder' },
+  { icon:'🖥️', title:'ระบบ POS',                    desc:'PharmaSys SaaS หรือพัฒนาเองด้วย Supabase + React' },
+  { icon:'💚',       title:'LINE Official Account',  desc:'สั่งยาซ้ำ ถามเภสัชกร สะสมแต้ม' },
+  { icon:'📊',       title:'แดชบอร์ดวิเคราะห์ข้อมูล', desc:'แจ้งเตือนยาหมดอายุ ความเร็วขาย สั่งซื้อซ้ำ' },
 ];
 
 // ── STATE ────────────────────────────────────────────────────────────────────
@@ -273,9 +273,13 @@ function switchBudget(b) {
   document.getElementById('kpi-sku').textContent     = d.kpiSku;
   document.getElementById('kpi-revenue').textContent = d.kpiRev;
   document.getElementById('kpi-payback').textContent = d.kpiPayback;
-  document.getElementById('fin-label').textContent   = 'Budget ฿' + b.toLocaleString() + ',000 — ' + d.tag;
+  document.getElementById('fin-label').textContent   = 'งบ ฿' + b.toLocaleString() + ',000 — ' + d.tag;
   animateNum('kpi-budget', b * 1000, '฿', '');
   renderFinance();
+}
+
+function handleFloorPlanClick() {
+  window.open('floorplan-th.html', '_blank');
 }
 
 // ── FINANCE TAB ───────────────────────────────────────────────────────────────
@@ -284,7 +288,7 @@ function renderFinance() {
   var COLORS = ['#16a34a','#15803d','#1a7a3c','#2d9e3f','#4bc057','#60c96b','#77d17e','#22c55e','#dc2626','#ea580c','#d97706','#7c3aed'];
 
   // Fixed cost donut
-  var fLabels = d.fixed.map(function(x) { return x[0]; }).concat(['Inventory', 'Working Capital']);
+  var fLabels = d.fixed.map(function(x) { return x[0]; }).concat(['สินค้าคงคลัง', 'เงินทุนหมุนเวียน']);
   var fVals   = d.fixed.map(function(x) { return x[1]; }).concat([d.inv, d.working]);
   if (chartFixed) chartFixed.destroy();
   chartFixed = new Chart(document.getElementById('fixedPieChart'), {
@@ -301,7 +305,7 @@ function renderFinance() {
     rows.appendChild(row);
   });
   var total = el('div','flex justify-between items-center text-sm py-2 font-bold text-green-700');
-  append(total, el('span',null,'TOTAL'), el('span',null,'฿' + d.total.toLocaleString()));
+  append(total, el('span',null,'รวมทั้งหมด'), el('span',null,'฿' + d.total.toLocaleString()));
   rows.appendChild(total);
 
   // Inventory bar
@@ -311,14 +315,14 @@ function renderFinance() {
   if (chartInvBar) chartInvBar.destroy();
   chartInvBar = new Chart(document.getElementById('invBarChart'), {
     type:'bar',
-    data:{ labels: INV.map(function(x) { return x.cat; }), datasets:[{ label:'Wholesale Budget (THB)', data: invVals, backgroundColor:'#4ade80', borderRadius:3 }] },
+    data:{ labels: INV.map(function(x) { return x.cat; }), datasets:[{ label:'งบขายส่ง (บาท)', data: invVals, backgroundColor:'#4ade80', borderRadius:3 }] },
     options:{
       responsive:true, maintainAspectRatio:false, indexAxis:'y',
       plugins:{ legend:{display:false} },
       scales:{ x:{ grid:{display:false}, ticks:{font:{size:9}} }, y:{ ticks:{font:{size:9}} } },
     },
   });
-  document.getElementById('inv-total-line').textContent = 'Total inventory budget: ฿' + totalInv.toLocaleString();
+  document.getElementById('inv-total-line').textContent = 'รวมงบสินค้าคงคลัง: ฿' + totalInv.toLocaleString();
 
   // 5-Year Revenue line chart (60 months, conservative)
   var REV5 = [
@@ -330,12 +334,12 @@ function renderFinance() {
   ];
   var MONTHS5 = Array.from({length:60}, function(_,i) {
     var m = i + 1;
-    if (m===1)  return 'Y1 M1';
-    if (m===12) return 'Y1 M12';
-    if (m===24) return 'Y2 M12';
-    if (m===36) return 'Y3 M12';
-    if (m===48) return 'Y4 M12';
-    if (m===60) return 'Y5 M12';
+    if (m===1)  return 'ปี1 ด.1';
+    if (m===12) return 'ปี1 ด.12';
+    if (m===24) return 'ปี2 ด.12';
+    if (m===36) return 'ปี3 ด.12';
+    if (m===48) return 'ปี4 ด.12';
+    if (m===60) return 'ปี5 ด.12';
     return '';
   });
   if (chartRevLine) chartRevLine.destroy();
@@ -344,9 +348,9 @@ function renderFinance() {
     data:{
       labels: MONTHS5,
       datasets:[
-        { label:'Monthly Revenue (฿K)', data:REV5, borderColor:'#16a34a', backgroundColor:'rgba(22,163,74,0.07)', fill:true, tension:0.4, pointRadius:0, borderWidth:2 },
-        { label:'Owner break-even ฿41K', data:Array(60).fill(41), borderColor:'#f59e0b', borderDash:[4,4], pointRadius:0, fill:false, borderWidth:1.5 },
-        { label:'Employee break-even ฿136K', data:Array(60).fill(136), borderColor:'#dc2626', borderDash:[4,4], pointRadius:0, fill:false, borderWidth:1.5 },
+        { label:'รายรับรายเดือน (฿K)', data:REV5, borderColor:'#16a34a', backgroundColor:'rgba(22,163,74,0.07)', fill:true, tension:0.4, pointRadius:0, borderWidth:2 },
+        { label:'จุดคุ้มทุน (เจ้าของ) ฿41K', data:Array(60).fill(41), borderColor:'#f59e0b', borderDash:[4,4], pointRadius:0, fill:false, borderWidth:1.5 },
+        { label:'จุดคุ้มทุน (จ้างเภสัชกร) ฿136K', data:Array(60).fill(136), borderColor:'#dc2626', borderDash:[4,4], pointRadius:0, fill:false, borderWidth:1.5 },
       ],
     },
     options:{
@@ -380,11 +384,11 @@ function renderMonthlyOps(mode) {
     var row = el('div','flex justify-between items-center text-xs py-1.5 border-b border-gray-100 ops-row');
     row.appendChild(el('span','text-gray-600', r.item));
     row.appendChild(el('span', val === 0 ? 'font-semibold text-green-600' : 'font-semibold text-gray-800',
-      val === 0 ? '฿0 (equity partner)' : '฿' + val.toLocaleString()));
+      val === 0 ? '฿0 (หุ้นส่วน)' : '฿' + val.toLocaleString()));
     rows.appendChild(row);
   });
   var totalRow = el('div','flex justify-between items-center text-sm py-2 font-bold text-green-700');
-  totalRow.appendChild(el('span',null,'TOTAL / month'));
+  totalRow.appendChild(el('span',null,'รวม / เดือน'));
   totalRow.appendChild(el('span',null,'฿' + total.toLocaleString()));
   rows.appendChild(totalRow);
 
@@ -392,12 +396,12 @@ function renderMonthlyOps(mode) {
   var summary   = clearEl('monthly-ops-summary');
   var isOwner   = mode === 'owner';
   var s1 = el('div', (isOwner ? 'bg-green-50' : 'bg-red-50') + ' rounded-lg p-3');
-  s1.appendChild(el('p','text-xs text-gray-500','Monthly Fixed Cost'));
+  s1.appendChild(el('p','text-xs text-gray-500','ต้นทุนคงที่รายเดือน'));
   s1.appendChild(el('p','text-xl font-bold ' + (isOwner ? 'text-green-700' : 'text-red-700'), '฿' + total.toLocaleString()));
   var s2 = el('div', (isOwner ? 'bg-blue-50' : 'bg-orange-50') + ' rounded-lg p-3');
-  s2.appendChild(el('p','text-xs text-gray-500','Break-even Revenue (at 40% GM)'));
-  s2.appendChild(el('p','text-xl font-bold ' + (isOwner ? 'text-blue-700' : 'text-orange-700'), '฿' + breakEven.toLocaleString() + '/mo'));
-  s2.appendChild(el('p','text-xs text-gray-400 mt-1', isOwner ? 'Achievable by Month 8-10' : 'Achievable by Month 45-50 (Year 4)'));
+  s2.appendChild(el('p','text-xs text-gray-500','รายรับจุดคุ้มทุน (GM 40%)'));
+  s2.appendChild(el('p','text-xl font-bold ' + (isOwner ? 'text-blue-700' : 'text-orange-700'), '฿' + breakEven.toLocaleString() + '/เดือน'));
+  s2.appendChild(el('p','text-xs text-gray-400 mt-1', isOwner ? 'ทำได้ภายในเดือนที่ 8-10' : 'ทำได้ภายในเดือนที่ 45-50 (ปีที่ 4)'));
   summary.appendChild(s1);
   summary.appendChild(s2);
 }
@@ -408,9 +412,9 @@ function renderAdvisory() {
 
   var cf = clearEl('cashflow-reality');
   [
-    { label:'Owner / Partner Scenario',     value:'Break-even M8-10', detail:'฿400K startup sufficient. Profitable from Year 2. ~฿16.5K/mo fixed costs.', cls:'text-green-700', bg:'bg-green-50' },
-    { label:'Employed Pharmacist Scenario', value:'Break-even M45-50', detail:'Need ฿1.1M+ extra capital. Only profitable from Year 5. ~฿54.5K/mo fixed costs.', cls:'text-red-700', bg:'bg-red-50' },
-    { label:'Real Opening Days (Pantip data)', value:'฿300-600/day', detail:'3-6 customers on Day 1-2. Month 1 revenue: ~฿10-18K. Plan cash reserves accordingly.', cls:'text-gray-700', bg:'bg-gray-50' },
+    { label:'กรณีเจ้าของ/หุ้นส่วน',          value:'จุดคุ้มทุนเดือนที่ 8-10', detail:'เงินทุน ฿400K เพียงพอ ทำกำไรตั้งแต่ปีที่ 2 ต้นทุนคงที่ ~฿16.5K/เดือน', cls:'text-green-700', bg:'bg-green-50' },
+    { label:'กรณีจ้างเภสัชกร',                value:'จุดคุ้มทุนเดือนที่ 45-50', detail:'ต้องใช้เงินสำรองเพิ่มกว่า ฿1.1M ทำกำไรได้ตั้งแต่ปีที่ 5 ต้นทุนคงที่ ~฿54.5K/เดือน', cls:'text-red-700', bg:'bg-red-50' },
+    { label:'ยอดขายวันเปิดจริง (ข้อมูล Pantip)', value:'฿300-600/วัน', detail:'3-6 ราย ใน 1-2 วันแรก รายรับเดือน 1: ~฿10-18K วางแผนเงินสำรองให้พอ', cls:'text-gray-700', bg:'bg-gray-50' },
   ].forEach(function(item) {
     var card = el('div', item.bg + ' rounded-lg p-4 anim-card');
     card.appendChild(el('p','text-xs text-gray-500 font-semibold uppercase mb-1', item.label));
@@ -440,7 +444,7 @@ function renderInventoryTab() {
     type:'bar',
     data:{
       labels: INV.map(function(x) { return x.cat; }),
-      datasets:[{ label:'SKU Count', data:INV.map(function(x){ return x.sku; }), backgroundColor:'#4ade80', borderRadius:3 }],
+      datasets:[{ label:'จำนวน SKU', data:INV.map(function(x){ return x.sku; }), backgroundColor:'#4ade80', borderRadius:3 }],
     },
     options:{
       responsive:true, maintainAspectRatio:false, indexAxis:'y',
@@ -456,16 +460,16 @@ function renderInventoryTab() {
   if (chartPrice) chartPrice.destroy();
   chartPrice = new Chart(document.getElementById('priceBucketChart'), {
     type:'bar',
-    data:{ labels:pLabels, datasets:[{ label:'SKU Count', data:pCounts, backgroundColor:pColors, borderRadius:4 }] },
+    data:{ labels:pLabels, datasets:[{ label:'จำนวน SKU', data:pCounts, backgroundColor:pColors, borderRadius:4 }] },
     options:{
       responsive:true, maintainAspectRatio:false,
       animation:{ duration:600 },
-      plugins:{ legend:{display:false}, title:{display:true,text:'Wholesale Price per Box/Bottle',font:{size:12}} },
-      scales:{ y:{ title:{display:true,text:'# of SKUs'} } },
+      plugins:{ legend:{display:false}, title:{display:true,text:'ราคาขายส่งต่อกล่อง/ขวด',font:{size:12}} },
+      scales:{ y:{ title:{display:true,text:'จำนวน SKU'} } },
     },
   });
 
-  var PRIORITY_CLS = { Highest:'bg-red-100 text-red-700', High:'bg-green-100 text-green-700', Medium:'bg-blue-100 text-blue-700', 'Low-Med':'bg-yellow-100 text-yellow-700' };
+  var PRIORITY_CLS = { 'สูงสุด':'bg-red-100 text-red-700', 'สูง':'bg-green-100 text-green-700', 'ปานกลาง':'bg-blue-100 text-blue-700', 'ต่ำ-ปานกลาง':'bg-yellow-100 text-yellow-700' };
   var tbody = clearEl('inv-tbody');
   INV.forEach(function(row) {
     var tr = document.createElement('tr');
@@ -554,7 +558,7 @@ function buildRoadmap() {
     var left = el('span', m.bold ? 'font-medium ' + m.accent : 'text-gray-500', m.period);
     var right = el('div','text-right');
     right.appendChild(el('p','font-bold ' + m.accent, m.rev));
-    right.appendChild(el('p','text-xs text-gray-400', m.txn + ' txn/day · ' + m.note));
+    right.appendChild(el('p','text-xs text-gray-400', m.txn + ' ธุรกรรม/วัน · ' + m.note));
     append(row, left, right);
     mlist.appendChild(row);
   });
@@ -592,7 +596,7 @@ function buildDemoChart() {
   chartDemo = new Chart(document.getElementById('demoChart'), {
     type:'doughnut',
     data:{
-      labels:['Working Adults 30-59','Children under 18','Seniors 60+','Pet Owners'],
+      labels:['วัยทำงาน 30-59 ปี','เด็กอายุต่ำกว่า 18 ปี','ผู้สูงอายุ 60+ ปี','เจ้าของสัตว์เลี้ยง'],
       datasets:[{ data:[500,250,200,250], backgroundColor:['#4ade80','#60a5fa','#f59e0b','#a78bfa'], borderWidth:2, borderColor:'#fff' }],
     },
     options:{ responsive:true, maintainAspectRatio:false, cutout:'55%', plugins:{ legend:{ position:'bottom', labels:{ font:{size:9}, boxWidth:10, padding:6 } } } },

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ratchada Prestige Drugstore — Business Dashboard</title>
+  <title>ร้านยา รัชดา เพรสทีจ — แดชบอร์ดธุรกิจ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -19,127 +19,126 @@
     <div class="flex items-center gap-3">
       <span class="text-3xl" aria-hidden="true">&#128138;</span>
       <div>
-        <h1 class="text-xl font-bold leading-tight">Ratchada Prestige Community Drugstore</h1>
+        <h1 class="text-xl font-bold leading-tight">ร้านยาชุมชน รัชดา เพรสทีจ</h1>
         <p class="text-green-200 text-sm">ร้านยาชุมชน &middot; รัชดา เพรสทีจ คอนโดมิเนียม &middot; กรุงเทพฯ</p>
       </div>
     </div>
     <div class="flex flex-wrap gap-2 text-sm">
-      <span class="bg-green-600 px-3 py-1 rounded-full">500 units &middot; ~1,200 residents</span>
-      <span class="bg-green-600 px-3 py-1 rounded-full">40 sqm</span>
-      <span class="bg-yellow-400 text-green-900 font-bold px-3 py-1 rounded-full badge-pop">GPP Compliant</span>
+      <span class="bg-green-600 px-3 py-1 rounded-full">500 ยูนิต &middot; ~1,200 คน</span>
+      <span class="bg-green-600 px-3 py-1 rounded-full">40 ตร.ม.</span>
+      <span class="bg-yellow-400 text-green-900 font-bold px-3 py-1 rounded-full badge-pop">ผ่านมาตรฐาน GPP</span>
     </div>
   </div>
 </header>
 
 <!-- BUDGET TOGGLE -->
 <div class="max-w-7xl mx-auto px-4 mt-5 flex items-center gap-3">
-  <span class="text-sm font-semibold text-gray-600">Budget Scenario:</span>
+  <span class="text-sm font-semibold text-gray-600">งบประมาณ:</span>
   <div class="flex rounded-lg border border-gray-300 overflow-hidden">
     <button id="btn200" onclick="switchBudget(200)" class="badge-toggle active px-4 py-2 text-sm font-medium text-gray-700">&#xE3F;200,000</button>
     <button id="btn400" onclick="switchBudget(400)" class="badge-toggle px-4 py-2 text-sm font-medium text-gray-700">&#xE3F;400,000 &#x2605;</button>
   </div>
-  <span id="budget-tag" class="text-xs text-gray-400">Lean MVP</span>
+  <span id="budget-tag" class="text-xs text-gray-400">ประหยัดสุด</span>
 </div>
 
 <!-- KPI CARDS -->
 <div class="max-w-7xl mx-auto px-4 mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
   <div class="bg-white rounded-xl shadow p-4 border-l-4 border-green-500 kpi-card anim-card">
-    <p class="text-xs text-gray-500 uppercase tracking-wide">Investment</p>
+    <p class="text-xs text-gray-500 uppercase tracking-wide">เงินลงทุน</p>
     <p id="kpi-budget" class="text-2xl font-bold text-green-700 mt-1">&#xE3F;200,000</p>
-    <p class="text-xs text-gray-400 mt-1">Total startup</p>
+    <p class="text-xs text-gray-400 mt-1">รวมเปิดกิจการ</p>
   </div>
   <div class="bg-white rounded-xl shadow p-4 border-l-4 border-blue-500 kpi-card anim-card">
-    <p class="text-xs text-gray-500 uppercase tracking-wide">Opening SKUs</p>
+    <p class="text-xs text-gray-500 uppercase tracking-wide">SKU เปิดตัว</p>
     <p id="kpi-sku" class="text-2xl font-bold text-blue-700 mt-1">450</p>
-    <p class="text-xs text-gray-400 mt-1">from 831 total</p>
+    <p class="text-xs text-gray-400 mt-1">จาก 831 รายการ</p>
   </div>
   <div class="bg-white rounded-xl shadow p-4 border-l-4 border-purple-500 kpi-card anim-card">
-    <p class="text-xs text-gray-500 uppercase tracking-wide">Revenue Target Y1</p>
-    <p id="kpi-revenue" class="text-2xl font-bold text-purple-700 mt-1">&#xE3F;50K/mo (Y1)</p>
-    <p class="text-xs text-gray-400 mt-1">Year 1 realistic max</p>
+    <p class="text-xs text-gray-500 uppercase tracking-wide">เป้ารายรับปีที่ 1</p>
+    <p id="kpi-revenue" class="text-2xl font-bold text-purple-700 mt-1">&#xE3F;50K/เดือน (ปี 1)</p>
+    <p class="text-xs text-gray-400 mt-1">สูงสุดที่เป็นไปได้ปีแรก</p>
   </div>
   <div class="bg-white rounded-xl shadow p-4 border-l-4 border-orange-500 kpi-card anim-card">
-    <p class="text-xs text-gray-500 uppercase tracking-wide">Break-even</p>
-    <p id="kpi-payback" class="text-2xl font-bold text-orange-700 mt-1">Yr 2-3 (owner)</p>
-    <p class="text-xs text-gray-400 mt-1">estimated</p>
+    <p class="text-xs text-gray-500 uppercase tracking-wide">จุดคุ้มทุน</p>
+    <p id="kpi-payback" class="text-2xl font-bold text-orange-700 mt-1">ปีที่ 2-3 (เจ้าของ)</p>
+    <p class="text-xs text-gray-400 mt-1">ประมาณการ</p>
   </div>
 </div>
 
 <!-- TABS NAV -->
 <div class="max-w-7xl mx-auto px-4 mt-6">
   <div class="flex border-b border-gray-200 overflow-x-auto gap-0 -mb-px">
-    <button onclick="showTab('summary',this)" class="tab-btn active px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128202; Summary</button>
-    <button onclick="showTab('finance',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128176; Finance</button>
-    <button onclick="showTab('inventory',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128230; Inventory</button>
+    <button onclick="showTab('summary',this)" class="tab-btn active px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128202; ภาพรวม</button>
+    <button onclick="showTab('finance',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128176; การเงิน</button>
+    <button onclick="showTab('inventory',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128230; สินค้าคงคลัง</button>
     <button onclick="showTab('gpp',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#9989; GPP</button>
-    <button onclick="showTab('roadmap',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128197; Roadmap</button>
-    <a href="floorplan.html" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0" style="text-decoration:none">&#128207; Floor Plan</a>
+    <button onclick="showTab('roadmap',this)" class="tab-btn px-3 py-3 min-h-[44px] text-sm whitespace-nowrap text-gray-600 hover:text-green-600 flex-shrink-0">&#128197; แผนงาน</button>
   </div>
 
   <!-- ===== TAB: SUMMARY ===== -->
   <div id="tab-summary" class="tab-pane active py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">Business Model Overview</h2>
+        <h2 class="text-lg font-bold text-gray-800 mb-4">ภาพรวมโมเดลธุรกิจ</h2>
         <div class="grid grid-cols-2 gap-4 mb-6">
           <div class="bg-green-50 rounded-lg p-4">
-            <p class="text-xs text-green-600 font-semibold uppercase">Blended Gross Margin</p>
+            <p class="text-xs text-green-600 font-semibold uppercase">กำไรขั้นต้นรวม</p>
             <p class="text-3xl font-bold text-green-700 mt-1">40%</p>
-            <p class="text-xs text-gray-500 mt-1">OTC 45% &bull; Rx 30% &bull; Vit 42%</p>
+            <p class="text-xs text-gray-500 mt-1">OTC 45% &bull; Rx 30% &bull; วิตามิน 42%</p>
           </div>
           <div class="bg-blue-50 rounded-lg p-4">
-            <p class="text-xs text-blue-600 font-semibold uppercase">Break-even Revenue</p>
+            <p class="text-xs text-blue-600 font-semibold uppercase">รายรับจุดคุ้มทุน</p>
             <p class="text-3xl font-bold text-blue-700 mt-1">&#xE3F;41K*</p>
-            <p class="text-xs text-gray-500 mt-1">*Owner/partner pharmacist</p>
-            <p class="text-xs text-gray-400">&#xE3F;136K if employed pharmacist</p>
+            <p class="text-xs text-gray-500 mt-1">*เภสัชกรเจ้าของ/หุ้นส่วน</p>
+            <p class="text-xs text-gray-400">&#xE3F;136K ถ้าจ้างเภสัชกร</p>
           </div>
         </div>
-        <h3 class="font-semibold text-gray-700 mb-3">Revenue Streams (priority order)</h3>
+        <h3 class="font-semibold text-gray-700 mb-3">แหล่งรายได้ (เรียงตามความสำคัญ)</h3>
         <div class="space-y-2">
           <div class="stream-row flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
             <div class="flex items-center gap-3">
               <span class="w-1.5 h-8 bg-green-500 rounded inline-block"></span>
-              <div><p class="font-medium text-sm">OTC &amp; Household Drugs</p><p class="text-xs text-gray-500">171 SKUs &bull; Margin 40-50%</p></div>
+              <div><p class="font-medium text-sm">ยา OTC และของใช้ในบ้าน</p><p class="text-xs text-gray-500">171 SKUs &bull; กำไร 40-50%</p></div>
             </div>
-            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-bold">&#11088; PRIMARY</span>
+            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-bold">&#11088; หลัก</span>
           </div>
           <div class="stream-row flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
             <div class="flex items-center gap-3">
               <span class="w-1.5 h-8 bg-blue-500 rounded inline-block"></span>
-              <div><p class="font-medium text-sm">Rx Dispensing</p><p class="text-xs text-gray-500">Prescription drugs &bull; Margin 25-35%</p></div>
+              <div><p class="font-medium text-sm">จ่ายยาตามใบสั่ง</p><p class="text-xs text-gray-500">ยาตามใบสั่งแพทย์ &bull; กำไร 25-35%</p></div>
             </div>
-            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-bold">LOYALTY</span>
+            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-bold">สร้างลูกค้าประจำ</span>
           </div>
           <div class="stream-row flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
             <div class="flex items-center gap-3">
               <span class="w-1.5 h-8 bg-purple-500 rounded inline-block"></span>
-              <div><p class="font-medium text-sm">Vitamins &amp; Supplements</p><p class="text-xs text-gray-500">118 SKUs &bull; Margin 35-45%</p></div>
+              <div><p class="font-medium text-sm">วิตามินและอาหารเสริม</p><p class="text-xs text-gray-500">118 SKUs &bull; กำไร 35-45%</p></div>
             </div>
-            <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-bold">RECURRING</span>
+            <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-bold">รายได้ประจำ</span>
           </div>
           <div class="stream-row flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3">
             <div class="flex items-center gap-3">
               <span class="w-1.5 h-8 bg-orange-400 rounded inline-block"></span>
-              <div><p class="font-medium text-sm">Pet Corner + Medical Devices</p><p class="text-xs text-gray-500">Differentiation &bull; Margin 20-40%</p></div>
+              <div><p class="font-medium text-sm">มุมสัตว์เลี้ยง + อุปกรณ์การแพทย์</p><p class="text-xs text-gray-500">จุดขายต่างจากคู่แข่ง &bull; กำไร 20-40%</p></div>
             </div>
-            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-bold">NICHE</span>
+            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-bold">เฉพาะกลุ่ม</span>
           </div>
         </div>
       </div>
       <div class="space-y-6">
         <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
-          <h3 class="font-bold text-gray-800 mb-3">Resident Demographics</h3>
+          <h3 class="font-bold text-gray-800 mb-3">ข้อมูลประชากรในคอนโด</h3>
           <div class="relative h-44"><canvas id="demoChart"></canvas></div>
         </div>
         <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
-          <h3 class="font-bold text-gray-800 mb-3">Competitive Moat</h3>
+          <h3 class="font-bold text-gray-800 mb-3">จุดแข็งเทียบคู่แข่ง</h3>
           <ul class="space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>Zero travel (on-site convenience)</li>
-            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>Licensed pharmacist consultation</li>
-            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>LINE OA refill + pharmacist Q&amp;A</li>
-            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>Condo-exclusive loyalty card</li>
-            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>Free monthly BP/glucose screening</li>
-            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>Pet care corner (rare in pharmacies)</li>
+            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>ไม่ต้องเดินทาง (อยู่ในคอนโด)</li>
+            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>ให้คำปรึกษาโดยเภสัชกรที่ได้รับใบอนุญาต</li>
+            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>สั่งยาซ้ำผ่าน LINE OA + ถามเภสัชกรได้</li>
+            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>บัตรสะสมแต้มสำหรับผู้อยู่อาศัยเท่านั้น</li>
+            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>ตรวจความดัน-น้ำตาลฟรีทุกเดือน</li>
+            <li class="flex gap-2"><span class="text-green-500">&#10003;</span>มุมสัตว์เลี้ยง (หาได้ยากในร้านยา)</li>
           </ul>
         </div>
       </div>
@@ -150,14 +149,14 @@
   <div id="tab-finance" class="tab-pane py-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <div class="bg-white rounded-xl shadow p-6 content-card anim-card">
-        <h2 class="text-lg font-bold text-gray-800 mb-1">Fixed Costs (One-Time)</h2>
-        <p id="fin-label" class="text-sm text-gray-500 mb-4">Budget &#xE3F;200,000 &mdash; Lean MVP</p>
+        <h2 class="text-lg font-bold text-gray-800 mb-1">ต้นทุนคงที่ (ครั้งเดียว)</h2>
+        <p id="fin-label" class="text-sm text-gray-500 mb-4">งบ &#xE3F;200,000 &mdash; ประหยัดสุด</p>
         <div class="relative h-56"><canvas id="fixedPieChart"></canvas></div>
         <div id="fixed-rows" class="mt-4 space-y-1 text-sm"></div>
       </div>
       <div class="bg-white rounded-xl shadow p-6 content-card anim-card">
-        <h2 class="text-lg font-bold text-gray-800 mb-1">Inventory Budget</h2>
-        <p class="text-sm text-gray-500 mb-4">Wholesale cost &mdash; opening stock allocation</p>
+        <h2 class="text-lg font-bold text-gray-800 mb-1">งบสินค้าคงคลัง</h2>
+        <p class="text-sm text-gray-500 mb-4">ต้นทุนขายส่ง &mdash; สินค้าเปิดตัว</p>
         <div class="relative h-80"><canvas id="invBarChart"></canvas></div>
         <p id="inv-total-line" class="mt-3 text-sm font-bold text-green-700 text-right"></p>
       </div>
@@ -165,10 +164,10 @@
       <!-- Monthly Operating Costs -->
       <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
         <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
-          <h2 class="text-lg font-bold text-gray-800">Monthly Operating Costs</h2>
+          <h2 class="text-lg font-bold text-gray-800">ต้นทุนดำเนินงานรายเดือน</h2>
           <div class="flex rounded-lg border border-gray-300 overflow-hidden text-sm">
-            <button id="ops-owner" onclick="switchOpsMode('owner')" class="badge-toggle active px-3 py-1.5 text-gray-700">Owner / Partner</button>
-            <button id="ops-employee" onclick="switchOpsMode('employee')" class="badge-toggle px-3 py-1.5 text-gray-700">Employed Pharmacist</button>
+            <button id="ops-owner" onclick="switchOpsMode('owner')" class="badge-toggle active px-3 py-1.5 text-gray-700">เจ้าของ/หุ้นส่วน</button>
+            <button id="ops-employee" onclick="switchOpsMode('employee')" class="badge-toggle px-3 py-1.5 text-gray-700">จ้างเภสัชกร</button>
           </div>
         </div>
         <div id="monthly-ops-rows" class="space-y-1 text-sm"></div>
@@ -177,38 +176,38 @@
 
       <!-- 5-Year Revenue Projection -->
       <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
-        <h2 class="text-lg font-bold text-gray-800 mb-1">5-Year Revenue Projection (Conservative)</h2>
-        <p class="text-xs text-gray-400 mb-3">Based on pharmacist advice (max &#xE3F;50K/mo in Y1-Y2) &bull; Pantip data: Day 1 sales &#xE3F;308-582 (3-6 customers)</p>
+        <h2 class="text-lg font-bold text-gray-800 mb-1">ประมาณการรายรับ 5 ปี (แบบอนุรักษ์นิยม)</h2>
+        <p class="text-xs text-gray-400 mb-3">อ้างอิงคำแนะนำเภสัชกร (สูงสุด &#xE3F;50K/เดือน ปีที่ 1-2) &bull; ข้อมูล Pantip: ยอดขายวันแรก &#xE3F;308-582 (3-6 ราย)</p>
         <div class="relative h-56"><canvas id="revenueLineChart"></canvas></div>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
           <div class="bg-yellow-50 rounded-lg p-3 text-center">
-            <p class="text-xs text-gray-500">Year 1 End (Month 12)</p>
+            <p class="text-xs text-gray-500">สิ้นปีที่ 1 (เดือน 12)</p>
             <p class="text-xl font-bold text-yellow-700">&#xE3F;50K</p>
-            <p class="text-xs text-gray-400">~16 txn/day</p>
+            <p class="text-xs text-gray-400">~16 ธุรกรรม/วัน</p>
           </div>
           <div class="bg-blue-50 rounded-lg p-3 text-center">
-            <p class="text-xs text-gray-500">Year 3 End (Month 36)</p>
+            <p class="text-xs text-gray-500">สิ้นปีที่ 3 (เดือน 36)</p>
             <p class="text-xl font-bold text-blue-700">&#xE3F;105K</p>
-            <p class="text-xs text-gray-400">~35 txn/day</p>
+            <p class="text-xs text-gray-400">~35 ธุรกรรม/วัน</p>
           </div>
           <div class="bg-green-50 rounded-lg p-3 text-center">
-            <p class="text-xs text-gray-500">Year 5 End (Month 60)</p>
+            <p class="text-xs text-gray-500">สิ้นปีที่ 5 (เดือน 60)</p>
             <p class="text-xl font-bold text-green-700">&#xE3F;170K</p>
-            <p class="text-xs text-gray-400">~55 txn/day</p>
+            <p class="text-xs text-gray-400">~55 ธุรกรรม/วัน</p>
           </div>
         </div>
-        <p class="text-xs text-gray-400 mt-2">Break-even lines: amber = owner/partner (&#xE3F;41K), red = employed pharmacist (&#xE3F;136K)</p>
+        <p class="text-xs text-gray-400 mt-2">เส้นจุดคุ้มทุน: สีเหลือง = เจ้าของ/หุ้นส่วน (&#xE3F;41K), สีแดง = จ้างเภสัชกร (&#xE3F;136K)</p>
       </div>
 
       <!-- Cash Flow Reality Check -->
       <div class="lg:col-span-2 bg-amber-50 border border-amber-200 rounded-xl p-6 warn-pulse anim-card">
-        <h2 class="text-lg font-bold text-amber-800 mb-3">&#9888;&#65039; Cash Flow Reality Check</h2>
+        <h2 class="text-lg font-bold text-amber-800 mb-3">&#9888;&#65039; ตรวจสอบความเป็นจริงด้านกระแสเงินสด</h2>
         <div id="cashflow-reality" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
       </div>
 
       <!-- Revenue Acceleration Strategies -->
       <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">Revenue Acceleration Strategies</h2>
+        <h2 class="text-lg font-bold text-gray-800 mb-4">กลยุทธ์เร่งรายรับ</h2>
         <div id="advisory-tips" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
       </div>
     </div>
@@ -218,25 +217,25 @@
   <div id="tab-inventory" class="tab-pane py-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <div class="bg-white rounded-xl shadow p-6 content-card anim-card">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">Inventory by Category (SKU count)</h2>
+        <h2 class="text-lg font-bold text-gray-800 mb-4">สินค้าแยกตามหมวด (จำนวน SKU)</h2>
         <div class="relative h-80"><canvas id="catBarChart"></canvas></div>
       </div>
       <div class="bg-white rounded-xl shadow p-6 content-card anim-card">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">Wholesale Price Distribution</h2>
+        <h2 class="text-lg font-bold text-gray-800 mb-4">การกระจายราคาขายส่ง</h2>
         <div class="relative h-72"><canvas id="priceBucketChart"></canvas></div>
       </div>
       <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">All 14 Categories &mdash; 831 SKUs from drug_list.xlsx</h2>
+        <h2 class="text-lg font-bold text-gray-800 mb-4">14 หมวด &mdash; 831 SKUs จาก drug_list.xlsx</h2>
         <div class="overflow-x-auto">
           <table class="w-full text-sm">
             <thead>
               <tr class="bg-green-50 text-left">
-                <th class="px-4 py-3 font-semibold text-gray-700">Category</th>
-                <th class="px-4 py-3 font-semibold text-gray-700 text-right">SKUs</th>
-                <th class="px-4 py-3 font-semibold text-gray-700 text-right">Cost @1 unit</th>
-                <th class="px-4 py-3 font-semibold text-gray-700 text-right">Avg Price</th>
-                <th class="px-4 py-3 font-semibold text-gray-700">Priority</th>
-                <th class="px-4 py-3 font-semibold text-gray-700">Order Strategy</th>
+                <th class="px-4 py-3 font-semibold text-gray-700">หมวดหมู่</th>
+                <th class="px-4 py-3 font-semibold text-gray-700 text-right">SKU</th>
+                <th class="px-4 py-3 font-semibold text-gray-700 text-right">ต้นทุน/หน่วย</th>
+                <th class="px-4 py-3 font-semibold text-gray-700 text-right">ราคาเฉลี่ย</th>
+                <th class="px-4 py-3 font-semibold text-gray-700">ความสำคัญ</th>
+                <th class="px-4 py-3 font-semibold text-gray-700">กลยุทธ์สั่งซื้อ</th>
               </tr>
             </thead>
             <tbody id="inv-tbody" class="divide-y divide-gray-100"></tbody>
@@ -250,10 +249,170 @@
   <div id="tab-gpp" class="tab-pane py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <!-- Checklists -->
+       <div class="space-y-6" onClick="handleFloorPlanClick()">
+        <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
+          <h3 class="font-bold text-gray-800 mb-3">Floor plan</h3>
+          <div class="main-layout">
+            <div class="fp-svg-wrap">
+              <!--
+                Room: 5.0 m wide × 8.0 m deep = 40 sqm
+                Scale: 90 px / m  |  x=80..530 (450px=5m)  |  y=65..785 (720px=8m)
+                LEFT  col x=80..305 (2.5m): Rest Room (top 1.6m) | Consultation+Dispensing (bottom 6.4m)
+                RIGHT col x=305..530 (2.5m): Activity Zone (top 2.4m) | OTC + Shelf (bottom 5.6m)
+                No door swing arcs on this plan.
+              -->
+              <svg viewBox="0 0 640 880" style="display:block;border:1px solid #bbb">
+                <defs>
+                  <marker id="a1" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+                    <polygon points="0,0 7,3.5 0,7" fill="#444"/>
+                  </marker>
+                  <marker id="a2" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse">
+                    <polygon points="0,0 7,3.5 0,7" fill="#444"/>
+                  </marker>
+                </defs>
+
+                <!-- Page background -->
+                <rect width="640" height="880" fill="#f2f2ec"/>
+
+                <!-- ── ZONE FILLS ── -->
+                <!-- Rest Room  (x=80..305, y=65..209)  2.5m×1.6m = 4 m² -->
+                <rect x="80"  y="65"  width="225" height="144" fill="#f0f0ee"/>
+                <!-- Activity Zone  (x=305..530, y=65..281)  2.5m×2.4m = 6 m² -->
+                <rect x="305" y="65"  width="225" height="216" fill="#e0f2f1"/>
+                <!-- Consultation + Dispensing  (x=80..305, y=209..785)  2.5m×6.4m = 16 m² -->
+                <rect x="80"  y="209" width="225" height="576" fill="#e8edf8"/>
+                <!-- OTC + Medicine Shelf  (x=305..530, y=281..785)  2.5m×5.6m = 14 m² -->
+                <rect x="305" y="281" width="225" height="504" fill="#f9fbe7"/>
+
+                <!-- ── OUTER WALLS (solid — no door gaps) ── -->
+                <line x1="80"  y1="65"  x2="530" y2="65"  stroke="#111" stroke-width="4"/>
+                <line x1="80"  y1="785" x2="530" y2="785" stroke="#111" stroke-width="4"/>
+                <line x1="80"  y1="65"  x2="80"  y2="785" stroke="#111" stroke-width="4"/>
+                <line x1="530" y1="65"  x2="530" y2="785" stroke="#111" stroke-width="4"/>
+
+                <!-- ── INTERNAL DIVIDERS ── -->
+                <!-- Center vertical (full height) -->
+                <line x1="305" y1="65"  x2="305" y2="785" stroke="#333" stroke-width="2"/>
+                <!-- y=209: Rest Room / Consultation+Dispensing boundary (left col only) -->
+                <line x1="80"  y1="209" x2="305" y2="209" stroke="#333" stroke-width="2"/>
+                <!-- y=281: Activity / OTC boundary (right col only) -->
+                <line x1="305" y1="281" x2="530" y2="281" stroke="#333" stroke-width="2"/>
+                <!-- Visual sub-divider: consultation / dispensing soft line (dashed) -->
+                <line x1="80"  y1="353" x2="305" y2="353" stroke="#7986cb" stroke-width="1" stroke-dasharray="6,3" opacity=".6"/>
+
+                <!-- ── REST ROOM furniture ── -->
+                <rect x="83" y="68" width="38" height="17" fill="#424242" rx="2"/>
+                <text x="102" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m²</text>
+                <text x="193" y="140" text-anchor="middle" font-size="10" font-weight="bold" fill="#424242">ห้องน้ำ</text>
+                <text x="193" y="154" text-anchor="middle" font-size="8.5" fill="#616161">Rest Room</text>
+
+                <!-- ── ACTIVITY ZONE furniture (y=65..281) ── -->
+                <rect x="308" y="68" width="38" height="17" fill="#00796b" rx="2"/>
+                <text x="327" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">6 m²</text>
+                <text x="418" y="160" text-anchor="middle" font-size="10" font-weight="bold" fill="#00695c">โซนกิจกรรม</text>
+                <text x="418" y="174" text-anchor="middle" font-size="8.5" fill="#00796b">Activity Zone</text>
+                <text x="418" y="188" text-anchor="middle" font-size="7.5" fill="#00796b">Shelving + Health Events</text>
+                <text x="418" y="202" text-anchor="middle" font-size="7" fill="#888">3 shelf rows | Event table | 2 chairs</text>
+
+                <!-- ── CONSULTATION + DISPENSING (y=209..785) ── -->
+                <!-- Sub-zone label: CONSULTATION (upper, y=209..353) -->
+                <rect x="83" y="212" width="68" height="14" fill="#3949ab" rx="2"/>
+                <text x="117" y="223" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">CONSULTATION</text>
+                <rect x="155" y="212" width="38" height="17" fill="#1a237e" rx="2"/>
+                <text x="174" y="224" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m²</text>
+                <!-- Sub-zone label: DISPENSING (lower, y=353..785) -->
+                <rect x="83" y="356" width="60" height="14" fill="#1a237e" rx="2"/>
+                <text x="113" y="367" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">DISPENSING</text>
+                <rect x="150" y="356" width="38" height="17" fill="#1a237e" rx="2"/>
+                <text x="169" y="368" text-anchor="middle" font-size="9" fill="white" font-weight="bold">12 m²</text>
+
+                <!-- Pharmacist workstation -->
+                <rect x="83" y="655" width="80" height="85" fill="#c5cae9" stroke="#3949ab" stroke-width="1" rx="2"/>
+                <text x="123" y="691" text-anchor="middle" font-size="8" font-weight="bold" fill="#1a237e">PHARMACIST</text>
+                <text x="123" y="703" text-anchor="middle" font-size="7.5" fill="#1a237e">WORKSTATION</text>
+
+                <!-- Dispensing counter (vertical barrier between dispensing and OTC zones) -->
+                <rect x="275" y="353" width="30" height="432" fill="#7986cb" stroke="#283593" stroke-width="1.5" rx="2"/>
+                <text x="290" y="528" text-anchor="middle" font-size="9" font-weight="bold" fill="white" transform="rotate(-90,290,530)">เคาน์เตอร์จ่ายยา</text>
+                <text x="290" y="535" text-anchor="middle" font-size="7.5" fill="white" transform="rotate(-90,290,530)">Dispensing Counter</text>
+
+
+
+                <!-- Zone area labels -->
+                <text x="193" y="242" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">โซนให้คำปรึกษา</text>
+                <text x="193" y="253" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Consultation</text>
+
+                <!-- Pharma fridge (in Consultation zone) -->
+                <rect x="95" y="258" width="78" height="80" fill="#b2ebf2" stroke="#0097a7" stroke-width="2" rx="3"/>
+                <text x="135" y="278" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">PHARMA</text>
+                <text x="135" y="289" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">FRIDGE</text>
+                <text x="135" y="300" text-anchor="middle" font-size="8.5" fill="#006064" font-weight="bold">2–8 °C</text>
+                <text x="135" y="311" text-anchor="middle" font-size="6.5" fill="#006064">300 L</text>
+
+                <!-- Locked Rx cabinet (in Consultation zone) -->
+                <rect x="180" y="258" width="65" height="80" fill="#fce4ec" stroke="#b71c1c" stroke-width="2" rx="2"/>
+                <text x="212" y="274" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">LOCKED</text>
+                <text x="212" y="285" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">CABINET</text>
+                <text x="212" y="296" text-anchor="middle" font-size="7" fill="#b71c1c">Sch A/B Rx</text>
+                <rect x="208" y="303" width="10" height="8" rx="2" fill="#b71c1c"/>
+                <path d="M210,297 Q213,291 216,297" fill="none" stroke="#b71c1c" stroke-width="1.5"/>
+
+                <text x="170" y="490" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">โซนจ่ายยา</text>
+                <text x="170" y="503" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Dispensing</text>
+
+                <!-- ── OTC + MEDICINE SHELF (y=281..785) ── -->
+                <!-- Thermo-hygrometer -->
+                <rect x="498" y="284" width="30" height="20" fill="white" stroke="#f57c00" stroke-width="1"/>
+                <text x="513" y="293" text-anchor="middle" font-size="5.5" fill="#e65100" font-weight="bold">THERMO</text>
+                <text x="513" y="301" text-anchor="middle" font-size="5.5" fill="#e65100">HYGRO</text>
+                <!-- Zone label -->
+                <rect x="308" y="284" width="38" height="17" fill="#33691e" rx="2"/>
+                <text x="327" y="296" text-anchor="middle" font-size="9" fill="white" font-weight="bold">14 m²</text>
+                <text x="418" y="540" text-anchor="middle" font-size="11" font-weight="bold" fill="#33691e">ชั้นวางยา + OTC</text>
+                <text x="418" y="554" text-anchor="middle" font-size="8.5" fill="#558b2f">Medicine Shelf + OTC Display</text>
+                <text x="418" y="568" text-anchor="middle" font-size="7.5" fill="#558b2f">Wall shelves | Gondola | Glass cabinet</text>
+                <text x="418" y="582" text-anchor="middle" font-size="7" fill="#888">Signage ก/ข/ค/ง | ≤30°C / ≤60%RH</text>
+
+                <!-- ── AC units (left wall) ── -->
+                <rect x="80" y="580" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
+                <text x="94" y="598" font-size="6.5" fill="#004d50" font-weight="bold">AC-1</text>
+                <text x="94" y="608" font-size="6" fill="#004d50">12K BTU</text>
+                <rect x="80" y="300" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
+                <text x="94" y="318" font-size="6.5" fill="#004d50" font-weight="bold">AC-2</text>
+                <text x="94" y="328" font-size="6" fill="#004d50">12K BTU</text>
+
+                <!-- ── DIMENSION LINES ── -->
+                <line x1="80" y1="44" x2="530" y2="44" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
+                <rect x="261" y="38" width="88" height="14" fill="#f2f2ec"/>
+                <text x="305" y="49" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">5,000 mm</text>
+                <line x1="305" y1="49" x2="305" y2="63" stroke="#999" stroke-width=".75"/>
+                <text x="193" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,500</text>
+                <text x="418" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,500</text>
+                <line x1="550" y1="65" x2="550" y2="785" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
+                <text x="585" y="425" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" transform="rotate(90,585,425)">8,000 mm</text>
+                <!-- Zone height ticks -->
+                <line x1="533" y1="209" x2="548" y2="209" stroke="#999" stroke-width=".75"/>
+                <text x="553" y="137" font-size="7.5" fill="#777">1,600</text>
+                <line x1="533" y1="281" x2="548" y2="281" stroke="#999" stroke-width=".75"/>
+                <text x="553" y="173" font-size="7.5" fill="#777">2,400</text>
+                <text x="553" y="497" font-size="7.5" fill="#777">6,400</text>
+                <text x="553" y="533" font-size="7.5" fill="#777">5,600</text>
+
+                <!-- ── WALL LABELS ── -->
+                <text x="305" y="22"   text-anchor="middle" font-size="9" font-weight="bold" fill="#555">◄── PARTY WALL — UPPER UNIT ──►</text>
+                <text x="305" y="830" text-anchor="middle" font-size="9" fill="#555">◄── PARTY WALL — LOWER UNIT / STREET ──►</text>
+                <text x="28"  y="425"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(-90,28,425)">OUTSIDE WALL</text>
+                <text x="616" y="425"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(90,616,425)">OUTSIDE WALL</text>
+
+              </svg>
+            </div><!-- /fp-svg-wrap -->
+          </div>
+        </div>
+      </div>
       <div class="lg:col-span-2 space-y-4">
         <div class="bg-white rounded-xl shadow p-4 anim-card">
           <div class="flex items-center justify-between mb-2">
-            <h3 class="font-bold text-gray-800">GPP Compliance Progress</h3>
+            <h3 class="font-bold text-gray-800">ความคืบหน้า GPP</h3>
             <span id="gpp-count" class="text-sm font-semibold text-green-600">0 / 28</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-3">
@@ -262,19 +421,19 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
-            <h3 class="font-semibold text-gray-700 mb-3">&#127959; Premises</h3>
+            <h3 class="font-semibold text-gray-700 mb-3">&#127959; สถานที่</h3>
             <div id="cl-premises" class="space-y-2"></div>
           </div>
           <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
-            <h3 class="font-semibold text-gray-700 mb-3">&#128300; Equipment</h3>
+            <h3 class="font-semibold text-gray-700 mb-3">&#128300; อุปกรณ์</h3>
             <div id="cl-equipment" class="space-y-2"></div>
           </div>
           <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
-            <h3 class="font-semibold text-gray-700 mb-3">&#128203; Licensing</h3>
+            <h3 class="font-semibold text-gray-700 mb-3">&#128203; ใบอนุญาต</h3>
             <div id="cl-legal" class="space-y-2"></div>
           </div>
           <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
-            <h3 class="font-semibold text-gray-700 mb-3">&#128193; Documentation</h3>
+            <h3 class="font-semibold text-gray-700 mb-3">&#128193; เอกสาร</h3>
             <div id="cl-docs" class="space-y-2"></div>
           </div>
         </div>
@@ -286,20 +445,20 @@
   <div id="tab-roadmap" class="tab-pane py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <div class="lg:col-span-2 bg-white rounded-xl shadow p-6 content-card anim-card">
-        <h2 class="text-lg font-bold text-gray-800 mb-6">Launch Roadmap</h2>
+        <h2 class="text-lg font-bold text-gray-800 mb-6">แผนเปิดกิจการ</h2>
         <div class="relative pl-6 border-l-2 border-green-200 space-y-8" id="roadmap-phases"></div>
       </div>
       <div class="space-y-5">
         <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
-          <h3 class="font-bold text-gray-800 mb-4">Financial Milestones</h3>
+          <h3 class="font-bold text-gray-800 mb-4">เป้าหมายทางการเงิน</h3>
           <div class="space-y-3 text-sm" id="milestones-list"></div>
         </div>
         <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
-          <h3 class="font-bold text-gray-800 mb-3">Risk Register</h3>
+          <h3 class="font-bold text-gray-800 mb-3">ทะเบียนความเสี่ยง</h3>
           <div class="space-y-2 text-sm" id="risk-list"></div>
         </div>
         <div class="bg-white rounded-xl shadow p-5 content-card anim-card">
-          <h3 class="font-bold text-gray-800 mb-3">Tech Stack</h3>
+          <h3 class="font-bold text-gray-800 mb-3">เทคโนโลยีที่ใช้</h3>
           <div class="space-y-2 text-sm" id="tech-list"></div>
         </div>
       </div>
@@ -310,8 +469,8 @@
 </div><!-- end tab container -->
 
 <footer class="max-w-7xl mx-auto px-4 py-6 mt-8 border-t border-gray-200 text-xs text-gray-400 flex flex-col sm:flex-row justify-between gap-1">
-  <span>Ratchada Prestige Community Drugstore &mdash; Business Intelligence Dashboard</span>
-  <span>Source: drug_list.xlsx (831 SKUs) &bull; law.pdf (Thai FDA GPP) &bull; Updated 2026-05-26</span>
+  <span>ร้านยาชุมชน รัชดา เพรสทีจ &mdash; แดชบอร์ดข้อมูลธุรกิจ</span>
+  <span>ที่มา: drug_list.xlsx (831 SKUs) &bull; law.pdf (GPP อย. ไทย) &bull; อัปเดต 26 พ.ค. 2569</span>
 </footer>
 
 <script src="script.js" defer></script>

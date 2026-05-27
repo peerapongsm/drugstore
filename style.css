@@ -15,6 +15,10 @@ html { scroll-behavior: smooth; }
   animation: fadeInUp 0.28s ease-out both;
 }
 
+.main-layout:hover {
+  cursor: pointer;
+}
+
 /* ── GPP checklist ───────────────────────────────── */
 .done-item label { text-decoration: line-through; opacity: 0.5; }
 
