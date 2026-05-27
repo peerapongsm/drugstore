@@ -40,8 +40,21 @@
     .warn-box{border:2px solid #c0392b;background:#fff5f5}
     .warn-box .nb-head{background:#c0392b}
     .doc-footer{margin-top:16px;border-top:2px solid #1a1a1a;padding-top:8px;font-size:9.5px;color:#555;display:flex;justify-content:space-between}
+    .fp-svg-wrap svg{width:100%;max-width:380px;height:auto}
+    @media(max-width:700px){
+      body{padding:10px}
+      .page{padding:12px}
+      .main-layout{flex-direction:column}
+      .side-panel{min-width:0;width:100%}
+      .title-block .tb-body{grid-template-columns:1fr}
+      .tb-col:first-child{border-right:none;border-bottom:1px solid #ccc}
+      .gpp{font-size:9.5px}
+      .gpp th,.gpp td{padding:4px 5px}
+      .section-head{font-size:11px}
+    }
+    .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
     @media print{body{background:white;padding:0}.page{box-shadow:none;border:none;padding:12px;max-width:100%}}
-    .lang-bar{display:flex;gap:8px;justify-content:flex-end;margin-bottom:8px;font-size:11px}
+    .lang-bar{display:flex;gap:8px;justify-content:space-between;margin-bottom:8px;font-size:11px}
     .lang-bar a{padding:4px 10px;border:1px solid #888;text-decoration:none;color:#444;border-radius:3px}
     .lang-bar a.active{background:#1a1a1a;color:white;font-weight:bold;border-color:#1a1a1a}
     .lang-bar a:hover:not(.active){background:#eee}
@@ -52,8 +65,11 @@
 
   <!-- LANGUAGE SWITCHER -->
   <div class="lang-bar">
-    <a href="floorplan.html">EN</a>
-    <a href="floorplan-th.html" class="active">TH</a>
+    <a href="index.html">&#8592; &#3649;&#3604;&#3594;&#3610;&#3629;&#3619;&#3660;&#3604;</a>
+    <div style="display:flex;gap:8px">
+      <a href="floorplan.html">EN</a>
+      <a href="floorplan-th.html" class="active">TH</a>
+    </div>
   </div>
 
   <!-- TITLE BLOCK -->
@@ -73,7 +89,7 @@
         <div class="tb-row"><span class="tb-key">งบประมาณ (ตัวเลือก B)</span><span class="tb-val">฿120,000</span></div>
         <div class="tb-row"><span class="tb-key">เครื่องปรับอากาศที่ต้องการ</span><span class="tb-val">2 เครื่อง × 12,000 BTU (ติดผนังซ้าย)</span></div>
         <div class="tb-row"><span class="tb-key">ตู้เย็นยา</span><span class="tb-val">1 ตู้ × 300 ลิตร สองช่อง (2–8 °C)</span></div>
-        <div class="tb-row"><span class="tb-key">อุณหภูมิเก็บสูงสุด</span><span class="tb-val">≤ 25 °C</span></div>
+        <div class="tb-row"><span class="tb-key">อุณหภูมิเก็บสูงสุด</span><span class="tb-val">≤ 30 °C (Thai FDA GPP)</span></div>
         <div class="tb-row"><span class="tb-key">ความชื้นสูงสุด</span><span class="tb-val">≤ 60 % RH</span></div>
         <div class="tb-row"><span class="tb-key">วันที่</span><span class="tb-val">2026-05-27</span></div>
         <div class="tb-row"><span class="tb-key">การแก้ไข</span><span class="tb-val">ฉบับ D — ปรับขนาด: กว้าง 5.0 ม. × ลึก 8.0 ม. (เดิม 4.0 ม. × 10.0 ม.)</span></div>
@@ -91,7 +107,7 @@
         RIGHT col x=305..530 (2.5m): Activity Zone (top 2.4m) | OTC + Shelf (bottom 5.6m)
         No door swing arcs on this plan.
       -->
-      <svg viewBox="0 0 640 880" width="380" style="display:block;border:1px solid #bbb">
+      <svg viewBox="0 0 640 880" style="display:block;border:1px solid #bbb">
         <defs>
           <marker id="a1" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
             <polygon points="0,0 7,3.5 0,7" fill="#444"/>
@@ -201,7 +217,7 @@
         <text x="418" y="540" text-anchor="middle" font-size="11" font-weight="bold" fill="#33691e">ชั้นวางยา + OTC</text>
         <text x="418" y="554" text-anchor="middle" font-size="8.5" fill="#558b2f">Medicine Shelf + OTC Display</text>
         <text x="418" y="568" text-anchor="middle" font-size="7.5" fill="#558b2f">Wall shelves | Gondola | Glass cabinet</text>
-        <text x="418" y="582" text-anchor="middle" font-size="7" fill="#888">Signage ก/ข/ค/ง | ≤25°C / ≤60%RH</text>
+        <text x="418" y="582" text-anchor="middle" font-size="7" fill="#888">Signage ก/ข/ค/ง | ≤30°C / ≤60%RH</text>
 
         <!-- ── AC units (left wall) ── -->
         <rect x="80" y="580" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
@@ -287,7 +303,8 @@
             <li>Thermo-hygrometer in OTC+shelf zone</li>
             <li>Privacy screen in consultation zone</li>
             <li>Reference books in consultation zone</li>
-            <li>All storage ≤ 25 °C / ≤ 60 % RH</li>
+            <li>All storage ≤ 30 °C / ≤ 60 % RH (Thai FDA GPP)</li>
+            <li>บันทึกอุณหภูมิและความชื้นรายวันสำหรับพื้นที่เก็บยา</li>
             <li>Licensed pharmacist present ALL operating hours</li>
           </ul>
         </div>
@@ -298,6 +315,7 @@
 
   <!-- GPP COMPLIANCE TABLE -->
   <div class="section-head">ตารางความต้องการ GPP ตาม อย. ไทย — รายการตรวจสอบส่งงานผู้รับเหมา</div>
+  <div class="tbl-scroll">
   <table class="gpp">
     <thead>
       <tr>
@@ -346,12 +364,13 @@
         <td><strong>4</strong></td>
         <td>ชั้นวางยา + OTC<br>Medicine Shelf</td>
         <td>14</td>
-        <td>เก็บยาตามประเภท; ≤ 25 °C; ≤ 60 % RH; เทอร์โมไฮโกรมิเตอร์ที่ผ่านการสอบเทียบ; ชั้นวางสูงจากพื้น ≥ 15 ซม.; ไม่โดนแสงแดดโดยตรง; ป้าย ก/ข/ค/ง; ตู้โชว์กระจกสำหรับยา ข/ค; แสงสว่าง ≥ 300 lux</td>
+        <td>เก็บยาตามประเภท; ≤ 30 °C (Thai FDA GPP); ≤ 60 % RH; เทอร์โมไฮโกรมิเตอร์ที่ผ่านการสอบเทียบ; ชั้นวางสูงจากพื้น ≥ 15 ซม.; ไม่โดนแสงแดดโดยตรง; ป้าย ก/ข/ค/ง; ตู้โชว์กระจกสำหรับยา ข/ค; แสงสว่าง ≥ 300 lux</td>
         <td>ชั้นวางผนัง 4 แถว (ผนังขวา, เหล็กปรับระดับ, แบ่งหมวด); gondola 3 แถว (สองหน้า, สูง 150 ซม. × กว้าง 90 ซม.); ตู้โชว์กระจก 162 ซม. ด้านหน้า; เทอร์โมไฮโกรมิเตอร์ดิจิทัล+บันทึกข้อมูล; AC-2 ผนังซ้าย; ป้ายหมวดยา; LED ≥ 300 lux; พื้นกันลื่น</td>
         <td class="check">☐ ชั้นวางผนัง 4 แถว<br>☐ gondola 3 แถว<br>☐ ตู้โชว์กระจก<br>☐ เทอร์โมไฮโกรมิเตอร์<br>☐ AC-2 ครอบคลุม<br>☐ ป้าย ก/ข/ค/ง<br>☐ แสงสว่าง ≥300 lux<br>☐ พื้นกันลื่น</td>
       </tr>
     </tbody>
   </table>
+  </div>
 
   <!-- CONTRACTOR SPEC NOTES -->
   <div class="section-head">หมายเหตุข้อกำหนดสำหรับผู้รับเหมา</div>
@@ -431,9 +450,9 @@
         <li>ตู้เหล็กล็อกติดตั้งแล้ว ยึดผนัง ทดสอบกุญแจ</li>
         <li>CCTV — <strong>CAM-1 ต้องมองเห็นตู้ล็อกชัดเจน</strong>; DVR บันทึกได้</li>
         <li>ตู้เย็นยาบนวงจรแยก; อุณหภูมิ 2–8 °C; แคลิปบอร์ดบันทึกอุณหภูมิพร้อม</li>
-        <li>เทอร์โมไฮโกรมิเตอร์ในโซน OTC+ชั้นวาง; ≤ 25 °C และ ≤ 60 % RH ยืนยันแล้ว</li>
+        <li>เทอร์โมไฮโกรมิเตอร์ในโซน OTC+ชั้นวาง; ≤ 30 °C และ ≤ 60 % RH ยืนยันแล้ว (Thai FDA GPP)</li>
         <li>ฉากกั้นโซนให้คำปรึกษาติดตั้งแล้ว; ความเป็นส่วนตัวทางเสียงเพียงพอ</li>
-        <li>เครื่องปรับอากาศ 2 เครื่องทำงาน; โซนเก็บยา ≤ 25 °C ยืนยันแล้ว</li>
+        <li>เครื่องปรับอากาศ 2 เครื่องทำงาน; โซนเก็บยา ≤ 30 °C ยืนยันแล้ว (Thai FDA GPP)</li>
         <li>ป้ายประเภทยา ก/ข/ค/ง ติดตั้งที่ชั้นวาง</li>
         <li>กรอบใบอนุญาตเภสัชกรที่เคาน์เตอร์ระดับสายตา</li>
         <li>ห้องน้ำใช้งานได้ (โถส้วม, อ่าง, พัดลมระบาย, ล็อกประตู)</li>

@@ -38,8 +38,21 @@
     .warn-box{border:2px solid #c0392b;background:#fff5f5}
     .warn-box .nb-head{background:#c0392b}
     .doc-footer{margin-top:16px;border-top:2px solid #1a1a1a;padding-top:8px;font-size:9.5px;color:#555;display:flex;justify-content:space-between}
+    .fp-svg-wrap svg{width:100%;max-width:380px;height:auto}
+    @media(max-width:700px){
+      body{padding:10px}
+      .page{padding:12px}
+      .main-layout{flex-direction:column}
+      .side-panel{min-width:0;width:100%}
+      .title-block .tb-body{grid-template-columns:1fr}
+      .tb-col:first-child{border-right:none;border-bottom:1px solid #ccc}
+      .gpp{font-size:9.5px}
+      .gpp th,.gpp td{padding:4px 5px}
+      .section-head{font-size:11px}
+    }
+    .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
     @media print{body{background:white;padding:0}.page{box-shadow:none;border:none;padding:12px;max-width:100%}}
-    .lang-bar{display:flex;gap:8px;justify-content:flex-end;margin-bottom:8px;font-size:11px}
+    .lang-bar{display:flex;gap:8px;justify-content:space-between;margin-bottom:8px;font-size:11px}
     .lang-bar a{padding:4px 10px;border:1px solid #888;text-decoration:none;color:#444;border-radius:3px}
     .lang-bar a.active{background:#1a1a1a;color:white;font-weight:bold;border-color:#1a1a1a}
     .lang-bar a:hover:not(.active){background:#eee}
@@ -50,8 +63,11 @@
 
   <!-- LANGUAGE SWITCHER -->
   <div class="lang-bar">
-    <a href="floorplan.html" class="active">EN</a>
-    <a href="floorplan-th.html">TH</a>
+    <a href="index.html">&#8592; Dashboard</a>
+    <div style="display:flex;gap:8px">
+      <a href="floorplan.html" class="active">EN</a>
+      <a href="floorplan-th.html">TH</a>
+    </div>
   </div>
 
   <!-- TITLE BLOCK -->
@@ -71,7 +87,7 @@
         <div class="tb-row"><span class="tb-key">Budget (Reno, Option B)</span><span class="tb-val">฿120,000</span></div>
         <div class="tb-row"><span class="tb-key">AC Units Required</span><span class="tb-val">2 × 12,000 BTU (left wall-mount)</span></div>
         <div class="tb-row"><span class="tb-key">Pharma Fridge</span><span class="tb-val">1 × 300 L dual-zone pharmaceutical (2–8 °C)</span></div>
-        <div class="tb-row"><span class="tb-key">Max Storage Temp</span><span class="tb-val">≤ 25 °C</span></div>
+        <div class="tb-row"><span class="tb-key">Max Storage Temp</span><span class="tb-val">≤ 30 °C (Thai FDA GPP)</span></div>
         <div class="tb-row"><span class="tb-key">Max Humidity</span><span class="tb-val">≤ 60 % RH</span></div>
         <div class="tb-row"><span class="tb-key">Date</span><span class="tb-val">2026-05-27</span></div>
         <div class="tb-row"><span class="tb-key">Revision</span><span class="tb-val">D — Dimensions updated: 5.0 m × 8.0 m (was 4.0 m × 10.0 m)</span></div>
@@ -89,7 +105,7 @@
         RIGHT col x=305..530 (2.5m): Activity Zone (top 2.4m) | OTC + Shelf (bottom 5.6m)
         No door swing arcs on this plan.
       -->
-      <svg viewBox="0 0 640 880" width="380" style="display:block;border:1px solid #bbb">
+      <svg viewBox="0 0 640 880" style="display:block;border:1px solid #bbb">
         <defs>
           <marker id="a1" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
             <polygon points="0,0 7,3.5 0,7" fill="#444"/>
@@ -199,7 +215,7 @@
         <text x="418" y="540" text-anchor="middle" font-size="11" font-weight="bold" fill="#33691e">ชั้นวางยา + OTC</text>
         <text x="418" y="554" text-anchor="middle" font-size="8.5" fill="#558b2f">Medicine Shelf + OTC Display</text>
         <text x="418" y="568" text-anchor="middle" font-size="7.5" fill="#558b2f">Wall shelves | Gondola | Glass cabinet</text>
-        <text x="418" y="582" text-anchor="middle" font-size="7" fill="#888">Signage ก/ข/ค/ง | ≤25°C / ≤60%RH</text>
+        <text x="418" y="582" text-anchor="middle" font-size="7" fill="#888">Signage ก/ข/ค/ง | ≤30°C / ≤60%RH</text>
 
         <!-- ── AC units (left wall) ── -->
         <rect x="80" y="580" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
@@ -285,7 +301,8 @@
             <li>Thermo-hygrometer in OTC+shelf zone</li>
             <li>Privacy screen in consultation zone</li>
             <li>Reference books in consultation zone</li>
-            <li>All storage ≤ 25 °C / ≤ 60 % RH</li>
+            <li>All storage ≤ 30 °C / ≤ 60 % RH (Thai FDA GPP)</li>
+            <li>Daily temperature &amp; humidity log for storage area</li>
             <li>Licensed pharmacist present ALL operating hours</li>
           </ul>
         </div>
@@ -296,6 +313,7 @@
 
   <!-- GPP COMPLIANCE TABLE -->
   <div class="section-head">GPP COMPLIANCE REQUIREMENTS PER ZONE — CONTRACTOR DELIVERY CHECKLIST</div>
+  <div class="tbl-scroll">
   <table class="gpp">
     <thead>
       <tr>
@@ -344,12 +362,13 @@
         <td><strong>4</strong></td>
         <td>OTC + Medicine Shelf<br>ชั้นวางยา + OTC</td>
         <td>14</td>
-        <td>Drugs stored by classification; ≤ 25 °C; ≤ 60 % RH; calibrated thermo-hygrometer displayed; shelving min 15 cm off floor; no direct sunlight; drug classification signage ก/ข/ค/ง; glass display cabinet for ยา ข/ค; adequate lighting ≥ 300 lux</td>
+        <td>Drugs stored by classification; ≤ 30 °C (Thai FDA GPP); ≤ 60 % RH; calibrated thermo-hygrometer displayed; shelving min 15 cm off floor; no direct sunlight; drug classification signage ก/ข/ค/ง; glass display cabinet for ยา ข/ค; adequate lighting ≥ 300 lux</td>
         <td>4 wall-shelf rows (right wall, adjustable heavy-duty metal, label by drug category); 3 gondola runs (double-sided, 150 cm H × 90 cm W bays); glass display cabinet 162 cm W at bottom of zone; wall-mount digital thermo-hygrometer with data logger at top of zone; AC-2 (left wall) covers this zone; signage rail at shelf ends; LED strip lighting ≥ 300 lux; non-slip vinyl/tile floor; sealed epoxy or vinyl — no grout lines</td>
         <td class="check">☐ 4 wall-shelf rows<br>☐ 3 gondola runs<br>☐ Glass display cabinet<br>☐ Thermo-hygrometer<br>☐ AC-2 coverage<br>☐ Signage ก/ข/ค/ง<br>☐ Lighting ≥300 lux<br>☐ Non-slip flooring</td>
       </tr>
     </tbody>
   </table>
+  </div>
 
   <!-- CONTRACTOR SPEC NOTES -->
   <div class="section-head">CONTRACTOR SPECIFICATION NOTES</div>
@@ -429,9 +448,9 @@
         <li>Locked steel cabinet installed, wall-anchored, key tested</li>
         <li>CCTV — <strong>CAM-1 must have clear coverage of locked cabinet</strong>; DVR recording confirmed</li>
         <li>Pharmaceutical fridge on dedicated circuit; temperature 2–8 °C; temp log clipboard in place</li>
-        <li>Thermo-hygrometer installed in OTC+Shelf zone; ≤ 25 °C and ≤ 60 % RH confirmed</li>
+        <li>Thermo-hygrometer installed in OTC+Shelf zone; ≤ 30 °C and ≤ 60 % RH confirmed (Thai FDA GPP)</li>
         <li>Consultation area privacy screen installed; acoustic privacy adequate</li>
-        <li>2 × AC units operational; storage zone ≤ 25 °C confirmed</li>
+        <li>2 × AC units operational; storage zone ≤ 30 °C confirmed (Thai FDA GPP)</li>
         <li>Drug classification signage ก/ข/ค/ง installed on shelving</li>
         <li>Pharmacist licence frame at dispensing counter at eye level</li>
         <li>Rest Room functional (WC, sink, exhaust fan, door lock)</li>
