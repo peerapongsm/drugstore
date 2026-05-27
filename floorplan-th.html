@@ -58,14 +58,14 @@
 
   <!-- TITLE BLOCK -->
   <div class="title-block">
-    <div class="tb-header">ผังพื้นที่ร้านยาและมาตรฐาน GPP — ราชดาเพรสทีจ คอนโด (ฉบับ C)</div>
+    <div class="tb-header">ผังพื้นที่ร้านยาและมาตรฐาน GPP — ราชดาเพรสทีจ คอนโด (ฉบับ D)</div>
     <div class="tb-body">
       <div class="tb-col">
         <div class="tb-row"><span class="tb-key">โครงการ</span><span class="tb-val">ก่อสร้างร้านขายยาใหม่ — ราชดาเพรสทีจ คอนโด</span></div>
         <div class="tb-row"><span class="tb-key">ประเภทแบบ</span><span class="tb-val">ผังแบบแผนผัง — การจัดสรรพื้นที่และโซน GPP</span></div>
-        <div class="tb-row"><span class="tb-key">พื้นที่รวม</span><span class="tb-val">40 ตร.ม. (กว้าง 4.0 ม. × ลึก 10.0 ม.)</span></div>
+        <div class="tb-row"><span class="tb-key">พื้นที่รวม</span><span class="tb-val">40 ตร.ม. (กว้าง 5.0 ม. × ลึก 8.0 ม.)</span></div>
         <div class="tb-row"><span class="tb-key">มาตราส่วน (ประมาณ)</span><span class="tb-val">1 : 50 (แบบแผนผัง SVG — ผู้รับเหมาต้องตรวจสอบหน้างาน)</span></div>
-        <div class="tb-row"><span class="tb-key">เลขที่แบบ</span><span class="tb-val">RPC-FP-001 ฉบับ C</span></div>
+        <div class="tb-row"><span class="tb-key">เลขที่แบบ</span><span class="tb-val">RPC-FP-001 ฉบับ D</span></div>
         <div class="tb-row"><span class="tb-key">มาตรฐาน</span><span class="tb-val">หลักเกณฑ์วิธีปฏิบัติทางเภสัชกรรมชุมชน (GPP) — พ.ร.บ. ยา พ.ศ. 2510</span></div>
         <div class="tb-row"><span class="tb-key">สถานะ</span><span class="tb-val" style="font-weight:bold;color:#c0392b">เพื่อให้ผู้รับเหมาตรวจสอบ — ห้ามใช้เพื่องานก่อสร้าง</span></div>
       </div>
@@ -75,22 +75,23 @@
         <div class="tb-row"><span class="tb-key">ตู้เย็นยา</span><span class="tb-val">1 ตู้ × 300 ลิตร สองช่อง (2–8 °C)</span></div>
         <div class="tb-row"><span class="tb-key">อุณหภูมิเก็บสูงสุด</span><span class="tb-val">≤ 25 °C</span></div>
         <div class="tb-row"><span class="tb-key">ความชื้นสูงสุด</span><span class="tb-val">≤ 60 % RH</span></div>
-        <div class="tb-row"><span class="tb-key">วันที่</span><span class="tb-val">2026-05-26</span></div>
-        <div class="tb-row"><span class="tb-key">การแก้ไข</span><span class="tb-val">ฉบับ C — รวมโซนเป็น 4 โซน ไม่มีส่วนโค้งประตูในแผน</span></div>
+        <div class="tb-row"><span class="tb-key">วันที่</span><span class="tb-val">2026-05-27</span></div>
+        <div class="tb-row"><span class="tb-key">การแก้ไข</span><span class="tb-val">ฉบับ D — ปรับขนาด: กว้าง 5.0 ม. × ลึก 8.0 ม. (เดิม 4.0 ม. × 10.0 ม.)</span></div>
       </div>
     </div>
   </div>
 
-  <!-- FLOOR PLAN + SIDE PANEL -->
+   <!-- FLOOR PLAN + SIDE PANEL -->
   <div class="main-layout">
     <div class="fp-svg-wrap">
       <!--
-        Room: 4.0 m wide x 10.0 m deep = 40 sqm
-        Scale: 90 px / m  |  x=80..440 (360px=4m)  |  y=65..965 (900px=10m)
-        LEFT  col x=80..260 (2m): Rest Room (top 2m) | Consultation+Dispensing (bottom 8m)
-        RIGHT col x=260..440 (2m): Activity Zone (top 3m) | OTC + Shelf (bottom 7m)
+        Room: 5.0 m wide × 8.0 m deep = 40 sqm
+        Scale: 90 px / m  |  x=80..530 (450px=5m)  |  y=65..785 (720px=8m)
+        LEFT  col x=80..305 (2.5m): Rest Room (top 1.6m) | Consultation+Dispensing (bottom 6.4m)
+        RIGHT col x=305..530 (2.5m): Activity Zone (top 2.4m) | OTC + Shelf (bottom 5.6m)
+        No door swing arcs on this plan.
       -->
-      <svg viewBox="0 0 530 1060" width="380" style="display:block;border:1px solid #bbb">
+      <svg viewBox="0 0 640 880" width="380" style="display:block;border:1px solid #bbb">
         <defs>
           <marker id="a1" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
             <polygon points="0,0 7,3.5 0,7" fill="#444"/>
@@ -100,106 +101,138 @@
           </marker>
         </defs>
 
-        <rect width="530" height="1060" fill="#f2f2ec"/>
+        <!-- Page background -->
+        <rect width="640" height="880" fill="#f2f2ec"/>
 
-        <rect x="80"  y="65"  width="180" height="180" fill="#f0f0ee"/>
-        <rect x="260" y="65"  width="180" height="270" fill="#e0f2f1"/>
-        <rect x="80"  y="245" width="180" height="720" fill="#e8edf8"/>
-        <rect x="260" y="335" width="180" height="630" fill="#f9fbe7"/>
+        <!-- ── ZONE FILLS ── -->
+        <!-- Rest Room  (x=80..305, y=65..209)  2.5m×1.6m = 4 m² -->
+        <rect x="80"  y="65"  width="225" height="144" fill="#f0f0ee"/>
+        <!-- Activity Zone  (x=305..530, y=65..281)  2.5m×2.4m = 6 m² -->
+        <rect x="305" y="65"  width="225" height="216" fill="#e0f2f1"/>
+        <!-- Consultation + Dispensing  (x=80..305, y=209..785)  2.5m×6.4m = 16 m² -->
+        <rect x="80"  y="209" width="225" height="576" fill="#e8edf8"/>
+        <!-- OTC + Medicine Shelf  (x=305..530, y=281..785)  2.5m×5.6m = 14 m² -->
+        <rect x="305" y="281" width="225" height="504" fill="#f9fbe7"/>
 
-        <line x1="80"  y1="65"  x2="440" y2="65"  stroke="#111" stroke-width="4"/>
-        <line x1="80"  y1="965" x2="440" y2="965" stroke="#111" stroke-width="4"/>
-        <line x1="80"  y1="65"  x2="80"  y2="965" stroke="#111" stroke-width="4"/>
-        <line x1="440" y1="65"  x2="440" y2="965" stroke="#111" stroke-width="4"/>
+        <!-- ── OUTER WALLS (solid — no door gaps) ── -->
+        <line x1="80"  y1="65"  x2="530" y2="65"  stroke="#111" stroke-width="4"/>
+        <line x1="80"  y1="785" x2="530" y2="785" stroke="#111" stroke-width="4"/>
+        <line x1="80"  y1="65"  x2="80"  y2="785" stroke="#111" stroke-width="4"/>
+        <line x1="530" y1="65"  x2="530" y2="785" stroke="#111" stroke-width="4"/>
 
-        <line x1="260" y1="65"  x2="260" y2="965" stroke="#333" stroke-width="2"/>
-        <line x1="80"  y1="245" x2="260" y2="245" stroke="#333" stroke-width="2"/>
-        <line x1="260" y1="335" x2="440" y2="335" stroke="#333" stroke-width="2"/>
-        <line x1="80"  y1="460" x2="260" y2="460" stroke="#7986cb" stroke-width="1" stroke-dasharray="6,3" opacity=".6"/>
+        <!-- ── INTERNAL DIVIDERS ── -->
+        <!-- Center vertical (full height) -->
+        <line x1="305" y1="65"  x2="305" y2="785" stroke="#333" stroke-width="2"/>
+        <!-- y=209: Rest Room / Consultation+Dispensing boundary (left col only) -->
+        <line x1="80"  y1="209" x2="305" y2="209" stroke="#333" stroke-width="2"/>
+        <!-- y=281: Activity / OTC boundary (right col only) -->
+        <line x1="305" y1="281" x2="530" y2="281" stroke="#333" stroke-width="2"/>
+        <!-- Visual sub-divider: consultation / dispensing soft line (dashed) -->
+        <line x1="80"  y1="353" x2="305" y2="353" stroke="#7986cb" stroke-width="1" stroke-dasharray="6,3" opacity=".6"/>
 
+        <!-- ── REST ROOM furniture ── -->
         <rect x="83" y="68" width="38" height="17" fill="#424242" rx="2"/>
-        <text x="102" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m&#178;</text>
-        <text x="170" y="160" text-anchor="middle" font-size="10" font-weight="bold" fill="#424242">&#3627;&#3657;&#3629;&#3591;&#3609;&#3657;&#3635;</text>
-        <text x="170" y="174" text-anchor="middle" font-size="8.5" fill="#616161">Rest Room</text>
+        <text x="102" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m²</text>
+        <text x="193" y="140" text-anchor="middle" font-size="10" font-weight="bold" fill="#424242">ห้องน้ำ</text>
+        <text x="193" y="154" text-anchor="middle" font-size="8.5" fill="#616161">Rest Room</text>
 
-        <rect x="263" y="68" width="38" height="17" fill="#00796b" rx="2"/>
-        <text x="282" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">6 m&#178;</text>
-        <text x="349" y="160" text-anchor="middle" font-size="10" font-weight="bold" fill="#00695c">โซนกิจกรรม</text>
-        <text x="349" y="174" text-anchor="middle" font-size="8.5" fill="#00796b">Activity Zone</text>
-        <text x="349" y="188" text-anchor="middle" font-size="7.5" fill="#00796b">Shelving + Health Events</text>
-        <text x="349" y="202" text-anchor="middle" font-size="7" fill="#888">3 shelf rows | Event table | 2 chairs</text>
+        <!-- ── ACTIVITY ZONE furniture (y=65..281) ── -->
+        <rect x="308" y="68" width="38" height="17" fill="#00796b" rx="2"/>
+        <text x="327" y="80" text-anchor="middle" font-size="9" fill="white" font-weight="bold">6 m²</text>
+        <text x="418" y="160" text-anchor="middle" font-size="10" font-weight="bold" fill="#00695c">โซนกิจกรรม</text>
+        <text x="418" y="174" text-anchor="middle" font-size="8.5" fill="#00796b">Activity Zone</text>
+        <text x="418" y="188" text-anchor="middle" font-size="7.5" fill="#00796b">Shelving + Health Events</text>
+        <text x="418" y="202" text-anchor="middle" font-size="7" fill="#888">3 shelf rows | Event table | 2 chairs</text>
 
-        <rect x="83" y="248" width="68" height="14" fill="#3949ab" rx="2"/>
-        <text x="117" y="259" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">CONSULTATION</text>
-        <rect x="155" y="248" width="38" height="17" fill="#1a237e" rx="2"/>
-        <text x="174" y="260" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m&#178;</text>
-        <rect x="83" y="470" width="60" height="14" fill="#1a237e" rx="2"/>
-        <text x="113" y="480" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">DISPENSING</text>
-        <rect x="150" y="470" width="38" height="17" fill="#1a237e" rx="2"/>
-        <text x="169" y="483" text-anchor="middle" font-size="9" fill="white" font-weight="bold">12 m&#178;</text>
+        <!-- ── CONSULTATION + DISPENSING (y=209..785) ── -->
+        <!-- Sub-zone label: CONSULTATION (upper, y=209..353) -->
+        <rect x="83" y="212" width="68" height="14" fill="#3949ab" rx="2"/>
+        <text x="117" y="223" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">CONSULTATION</text>
+        <rect x="155" y="212" width="38" height="17" fill="#1a237e" rx="2"/>
+        <text x="174" y="224" text-anchor="middle" font-size="9" fill="white" font-weight="bold">4 m²</text>
+        <!-- Sub-zone label: DISPENSING (lower, y=353..785) -->
+        <rect x="83" y="356" width="60" height="14" fill="#1a237e" rx="2"/>
+        <text x="113" y="367" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold">DISPENSING</text>
+        <rect x="150" y="356" width="38" height="17" fill="#1a237e" rx="2"/>
+        <text x="169" y="368" text-anchor="middle" font-size="9" fill="white" font-weight="bold">12 m²</text>
 
-        <rect x="400"  y="980" transform="rotate(-90,173,970)" width="150" height="68" fill="#c5cae9" stroke="#3949ab" stroke-width="1" rx="2"/>
-        <text x="470" y="1015" transform="rotate(-90,173,970)" text-anchor="middle" font-size="8" font-weight="bold" fill="#1a237e">PHARMACIST</text>
-        <text x="470" y="1025" transform="rotate(-90,173,970)" text-anchor="middle" font-size="7.5" fill="#1a237e">WORKSTATION</text>
-        <rect x="190"  y="1010" transform="rotate(-90,173,970)" width="200" height="36" fill="#7986cb" stroke="#283593" stroke-width="1.5" rx="2"/>
-        <text x="290" y="1025" transform="rotate(-90,173,970)" text-anchor="middle" font-size="9" font-weight="bold" fill="white">&#3648;&#3588;&#3634;&#3609;&#3660;&#3648;&#3605;&#3629;&#3619;&#3660;&#3592;&#3656;&#3634;&#3618;&#3618;&#3634;</text>
-        <text x="290" y="1035" transform="rotate(-90,173,970)" text-anchor="middle" font-size="7.5" fill="white">Dispensing Counter</text>
+        <!-- Pharmacist workstation -->
+        <rect x="83" y="655" width="80" height="85" fill="#c5cae9" stroke="#3949ab" stroke-width="1" rx="2"/>
+        <text x="123" y="691" text-anchor="middle" font-size="8" font-weight="bold" fill="#1a237e">PHARMACIST</text>
+        <text x="123" y="703" text-anchor="middle" font-size="7.5" fill="#1a237e">WORKSTATION</text>
 
-        <rect x="90"  y="842" width="65" height="100" fill="#fce4ec" stroke="#b71c1c" stroke-width="2" rx="2"/>
-        <text x="123" y="854" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">LOCKED</text>
-        <text x="123" y="865" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">CABINET</text>
-        <text x="123" y="876" text-anchor="middle" font-size="7" fill="#b71c1c">Sch A/B Rx</text>
-        <rect x="119" y="883" width="10" height="8" rx="2" fill="#b71c1c"/>
-        <path d="M121,883 Q124,877 127,883" fill="none" stroke="#b71c1c" stroke-width="1.5"/>
+        <!-- Dispensing counter (vertical barrier between dispensing and OTC zones) -->
+        <rect x="275" y="353" width="30" height="432" fill="#7986cb" stroke="#283593" stroke-width="1.5" rx="2"/>
+        <text x="290" y="528" text-anchor="middle" font-size="9" font-weight="bold" fill="white" transform="rotate(-90,290,530)">เคาน์เตอร์จ่ายยา</text>
+        <text x="290" y="535" text-anchor="middle" font-size="7.5" fill="white" transform="rotate(-90,290,530)">Dispensing Counter</text>
 
-        <rect x="90" y="720" width="78" height="110" fill="#b2ebf2" stroke="#0097a7" stroke-width="2" rx="3"/>
-        <text x="130" y="758" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">PHARMA</text>
-        <text x="130" y="769" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">FRIDGE</text>
-        <text x="130" y="780" text-anchor="middle" font-size="8.5" fill="#006064" font-weight="bold">2&#8211;8 &#176;C</text>
-        <text x="130" y="791" text-anchor="middle" font-size="6.5" fill="#006064">300 L</text>
 
-        <rect x="83" y="248" width="0" height="0"/>
-        <text x="170" y="350" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">&#3650;ซ&#3609;&#3651;&#3627;&#3657;&#3588;&#3635;&#3611;&#3619;&#3638;&#3585;&#3625;&#3634;</text>
-        <text x="170" y="365" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Consultation</text>
-        <text x="170" y="540" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">&#3650;ซ&#3609;&#3592;&#3656;&#3634;&#3618;&#3618;&#3634;</text>
-        <text x="170" y="550" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Dispensing</text>
 
-        <rect x="408" y="338" width="30" height="20" fill="white" stroke="#f57c00" stroke-width="1"/>
-        <text x="423" y="347" text-anchor="middle" font-size="5.5" fill="#e65100" font-weight="bold">THERMO</text>
-        <text x="423" y="355" text-anchor="middle" font-size="5.5" fill="#e65100">HYGRO</text>
-        <rect x="263" y="338" width="38" height="17" fill="#33691e" rx="2"/>
-        <text x="282" y="350" text-anchor="middle" font-size="9" fill="white" font-weight="bold">14 m&#178;</text>
-        <text x="349" y="580" text-anchor="middle" font-size="11" font-weight="bold" fill="#33691e">&#3594;&#3633;&#3657;&#3609;&#3623;&#3634;&#3591;&#3618;&#3634; + OTC</text>
-        <text x="349" y="594" text-anchor="middle" font-size="8.5" fill="#558b2f">Medicine Shelf + OTC Display</text>
-        <text x="349" y="608" text-anchor="middle" font-size="7.5" fill="#558b2f">Wall shelves | Gondola | Glass cabinet</text>
-        <text x="349" y="622" text-anchor="middle" font-size="7" fill="#888">Signage &#3585;/&#3586;/&#3588;/&#3591; | &#8804;25&#176;C / &#8804;60%RH</text>
+        <!-- Zone area labels -->
+        <text x="193" y="242" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">โซนให้คำปรึกษา</text>
+        <text x="193" y="253" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Consultation</text>
 
-        <rect x="80" y="680" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
-        <text x="94" y="698" font-size="6.5" fill="#004d50" font-weight="bold">AC-1</text>
-        <text x="94" y="708" font-size="6" fill="#004d50">12K BTU</text>
-        <rect x="80" y="370" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
-        <text x="94" y="388" font-size="6.5" fill="#004d50" font-weight="bold">AC-2</text>
-        <text x="94" y="398" font-size="6" fill="#004d50">12K BTU</text>
+        <!-- Pharma fridge (in Consultation zone) -->
+        <rect x="95" y="258" width="78" height="80" fill="#b2ebf2" stroke="#0097a7" stroke-width="2" rx="3"/>
+        <text x="135" y="278" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">PHARMA</text>
+        <text x="135" y="289" text-anchor="middle" font-size="7.5" fill="#006064" font-weight="bold">FRIDGE</text>
+        <text x="135" y="300" text-anchor="middle" font-size="8.5" fill="#006064" font-weight="bold">2–8 °C</text>
+        <text x="135" y="311" text-anchor="middle" font-size="6.5" fill="#006064">300 L</text>
 
-        <line x1="80" y1="44" x2="440" y2="44" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
-        <rect x="204" y="38" width="92" height="14" fill="#f2f2ec"/>
-        <text x="260" y="49" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">4,000 mm</text>
-        <line x1="260" y1="49" x2="260" y2="63" stroke="#999" stroke-width=".75"/>
-        <text x="170" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,000</text>
-        <text x="350" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,000</text>
-        <line x1="460" y1="65" x2="460" y2="965" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
-        <text x="495" y="515" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" transform="rotate(90,495,515)">10,000 mm</text>
-        <line x1="443" y1="245" x2="458" y2="245" stroke="#999" stroke-width=".75"/>
-        <text x="463" y="158" font-size="7.5" fill="#777">2,000</text>
-        <line x1="443" y1="335" x2="458" y2="335" stroke="#999" stroke-width=".75"/>
-        <text x="463" y="293" font-size="7.5" fill="#777">3,000</text>
-        <text x="463" y="655" font-size="7.5" fill="#777">8,000</text>
-        <text x="463" y="855" font-size="7.5" fill="#777">7,000</text>
+        <!-- Locked Rx cabinet (in Consultation zone) -->
+        <rect x="180" y="258" width="65" height="80" fill="#fce4ec" stroke="#b71c1c" stroke-width="2" rx="2"/>
+        <text x="212" y="274" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">LOCKED</text>
+        <text x="212" y="285" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#b71c1c">CABINET</text>
+        <text x="212" y="296" text-anchor="middle" font-size="7" fill="#b71c1c">Sch A/B Rx</text>
+        <rect x="208" y="303" width="10" height="8" rx="2" fill="#b71c1c"/>
+        <path d="M210,297 Q213,291 216,297" fill="none" stroke="#b71c1c" stroke-width="1.5"/>
 
-        <text x="260" y="22"   text-anchor="middle" font-size="9" font-weight="bold" fill="#555">&#9668;&#8212;&#8212; &#3612;&#3609;&#3633;&#3591;&#3619;&#3656;&#3623;&#3617; &#8212; &#3618;&#3641;&#3609;&#3636;&#3605;&#3604;&#3657;&#3634;&#3609;&#3610;&#3609; &#8212;&#8212;&#9658;</text>
-        <text x="260" y="1014" text-anchor="middle" font-size="9" fill="#555">&#9668;&#8212;&#8212; &#3612;&#3609;&#3633;&#3591;&#3619;&#3656;&#3623;&#3617; &#8212; &#3618;&#3641;&#3609;&#3636;&#3605;&#3604;&#3657;&#3634;&#3609;&#3621;&#3656;&#3634;&#3591; / &#3606;&#3609;&#3609; &#8212;&#8212;&#9658;</text>
-        <text x="28"  y="515"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(-90,28,515)">&#3612;&#3609;&#3633;&#3591;&#3609;&#3629;&#3585;</text>
-        <text x="516" y="515"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(90,516,515)">&#3612;&#3609;&#3633;&#3591;&#3609;&#3629;&#3585;</text>
+        <text x="170" y="490" text-anchor="middle" font-size="11" font-weight="bold" fill="#283593">โซนจ่ายยา</text>
+        <text x="170" y="503" text-anchor="middle" font-size="7.5" fill="#5c6bc0">Dispensing</text>
+
+        <!-- ── OTC + MEDICINE SHELF (y=281..785) ── -->
+        <!-- Thermo-hygrometer -->
+        <rect x="498" y="284" width="30" height="20" fill="white" stroke="#f57c00" stroke-width="1"/>
+        <text x="513" y="293" text-anchor="middle" font-size="5.5" fill="#e65100" font-weight="bold">THERMO</text>
+        <text x="513" y="301" text-anchor="middle" font-size="5.5" fill="#e65100">HYGRO</text>
+        <!-- Zone label -->
+        <rect x="308" y="284" width="38" height="17" fill="#33691e" rx="2"/>
+        <text x="327" y="296" text-anchor="middle" font-size="9" fill="white" font-weight="bold">14 m²</text>
+        <text x="418" y="540" text-anchor="middle" font-size="11" font-weight="bold" fill="#33691e">ชั้นวางยา + OTC</text>
+        <text x="418" y="554" text-anchor="middle" font-size="8.5" fill="#558b2f">Medicine Shelf + OTC Display</text>
+        <text x="418" y="568" text-anchor="middle" font-size="7.5" fill="#558b2f">Wall shelves | Gondola | Glass cabinet</text>
+        <text x="418" y="582" text-anchor="middle" font-size="7" fill="#888">Signage ก/ข/ค/ง | ≤25°C / ≤60%RH</text>
+
+        <!-- ── AC units (left wall) ── -->
+        <rect x="80" y="580" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
+        <text x="94" y="598" font-size="6.5" fill="#004d50" font-weight="bold">AC-1</text>
+        <text x="94" y="608" font-size="6" fill="#004d50">12K BTU</text>
+        <rect x="80" y="300" width="10" height="55" fill="#80deea" stroke="#006064" stroke-width="1"/>
+        <text x="94" y="318" font-size="6.5" fill="#004d50" font-weight="bold">AC-2</text>
+        <text x="94" y="328" font-size="6" fill="#004d50">12K BTU</text>
+
+        <!-- ── DIMENSION LINES ── -->
+        <line x1="80" y1="44" x2="530" y2="44" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
+        <rect x="261" y="38" width="88" height="14" fill="#f2f2ec"/>
+        <text x="305" y="49" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">5,000 mm</text>
+        <line x1="305" y1="49" x2="305" y2="63" stroke="#999" stroke-width=".75"/>
+        <text x="193" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,500</text>
+        <text x="418" y="56" text-anchor="middle" font-size="7.5" fill="#777">2,500</text>
+        <line x1="550" y1="65" x2="550" y2="785" stroke="#333" stroke-width="1" marker-start="url(#a2)" marker-end="url(#a1)"/>
+        <text x="585" y="425" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" transform="rotate(90,585,425)">8,000 mm</text>
+        <!-- Zone height ticks -->
+        <line x1="533" y1="209" x2="548" y2="209" stroke="#999" stroke-width=".75"/>
+        <text x="553" y="137" font-size="7.5" fill="#777">1,600</text>
+        <line x1="533" y1="281" x2="548" y2="281" stroke="#999" stroke-width=".75"/>
+        <text x="553" y="173" font-size="7.5" fill="#777">2,400</text>
+        <text x="553" y="497" font-size="7.5" fill="#777">6,400</text>
+        <text x="553" y="533" font-size="7.5" fill="#777">5,600</text>
+
+        <!-- ── WALL LABELS ── -->
+        <text x="305" y="22"   text-anchor="middle" font-size="9" font-weight="bold" fill="#555">◄── PARTY WALL — UPPER UNIT ──►</text>
+        <text x="305" y="830" text-anchor="middle" font-size="9" fill="#555">◄── PARTY WALL — LOWER UNIT / STREET ──►</text>
+        <text x="28"  y="425"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(-90,28,425)">OUTSIDE WALL</text>
+        <text x="616" y="425"  text-anchor="middle" font-size="8.5" font-weight="bold" fill="#444" transform="rotate(90,616,425)">OUTSIDE WALL</text>
 
       </svg>
     </div><!-- /fp-svg-wrap -->
@@ -208,54 +241,54 @@
     <div class="side-panel">
 
       <div class="panel-box">
-        <div class="pb-head">คำอธิบายโซน</div>
+        <div class="pb-head">ZONE LEGEND</div>
         <div class="pb-body">
-          <div class="lg-item"><div class="lg-swatch" style="background:#f0f0ee;border-color:#616161"></div><strong>ห้องน้ำ</strong> — Rest Room (4 ตร.ม.)</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#e0f2f1;border-color:#00796b"></div><strong>โซนกิจกรรม</strong> — Activity Zone (6 ตร.ม.)</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#e8edf8;border-color:#3949ab"></div><strong>โซนให้คำปรึกษา</strong> — Consultation (4 ตร.ม.)</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#dce3f5;border-color:#3949ab"></div><strong>โซนจ่ายยา</strong> — Dispensing (12 ตร.ม.)</div>
-          <div class="lg-item"><div class="lg-swatch" style="background:#f9fbe7;border-color:#558b2f"></div><strong>ชั้นวางยา + OTC</strong> — Medicine Shelf (14 ตร.ม.)</div>
-          <div style="font-size:10px;margin-top:6px;color:#555;border-top:1px solid #ddd;padding-top:6px"><strong>รวม: 40 ตร.ม.</strong> (กว้าง 4.0 ม. × ลึก 10.0 ม.)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#f0f0ee;border-color:#616161"></div><strong>Rest Room</strong> — ห้องน้ำ (4 m²)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#e0f2f1;border-color:#00796b"></div><strong>Activity Zone</strong> — โซนกิจกรรม + ชั้นวางยา (6 m²)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#e8edf8;border-color:#3949ab"></div><strong>Consultation</strong> — โซนให้คำปรึกษา (4 m²)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#dce3f5;border-color:#3949ab"></div><strong>Dispensing</strong> — โซนจ่ายยา (12 m²)</div>
+          <div class="lg-item"><div class="lg-swatch" style="background:#f9fbe7;border-color:#558b2f"></div><strong>OTC + Medicine Shelf</strong> — ชั้นวางยา + OTC (14 m²)</div>
+          <div style="font-size:10px;margin-top:6px;color:#555;border-top:1px solid #ddd;padding-top:6px"><strong>Total: 40 m²</strong> (5.0 m × 8.0 m)</div>
         </div>
       </div>
 
       <div class="panel-box">
-        <div class="pb-head">ทิศทางและตำแหน่ง</div>
+        <div class="pb-head">ORIENTATION KEY</div>
         <div class="pb-body" style="font-size:10.5px;line-height:1.7">
-          <div><strong>ผนังซ้าย/ขวา</strong> — ผนังนอก (ด้านนอกอาคาร)</div>
-          <div><strong>ผนังบน/ล่าง</strong> — ผนังร่วม (ติดกับยูนิตข้างเคียง)</div>
-          <div><strong>คอลัมน์ซ้าย</strong> = ห้องน้ำ (2ม. บน) | ให้คำปรึกษา (~2ม.) + จ่ายยา (~6ม.)</div>
-          <div><strong>คอลัมน์ขวา</strong> = โซนกิจกรรม (3ม. บน) | ชั้นวางยา+OTC (7ม. ล่าง)</div>
-          <div style="margin-top:4px;color:#7b1fa2"><strong>เส้นประสีน้ำเงิน</strong> = เส้นแบ่งอ่อน (ภายในโซนรวม)</div>
+          <div><strong>Left / Right walls</strong> — outside walls (exterior-facing)</div>
+          <div><strong>Top / Bottom walls</strong> — party walls (shared units)</div>
+          <div><strong>Left column</strong> = Rest Room (top 1.6m) | Consultation (1.6m) + Dispensing (bottom 4.8m)</div>
+          <div><strong>Right column</strong> = Activity Zone (top 2.4m) | OTC+Shelf (bottom 5.6m)</div>
+          <div style="margin-top:4px;color:#7b1fa2"><strong>Dashed blue line</strong> = soft boundary within merged zone</div>
         </div>
       </div>
 
       <div class="panel-box">
-        <div class="pb-head">สัญลักษณ์</div>
+        <div class="pb-head">SYMBOL LEGEND</div>
         <div class="pb-body">
-          <div class="lg-item"><div style="width:22px;height:15px;background:#80deea;border:1px solid #006064;flex-shrink:0"></div>เครื่องปรับอากาศ (ติดผนังซ้าย)</div>
-          <div class="lg-item"><div style="width:22px;height:15px;background:#fce4ec;border:2px solid #b71c1c;flex-shrink:0"></div>ตู้ยาล็อก (ยึดกับผนัง)</div>
-          <div class="lg-item"><div style="width:22px;height:15px;background:#b2ebf2;border:2px solid #0097a7;flex-shrink:0"></div>ตู้เย็นยา 2–8 °C</div>
-          <div class="lg-item"><div style="width:22px;height:15px;background:#7986cb;flex-shrink:0"></div>เคาน์เตอร์จ่ายยา</div>
-          <div class="lg-item"><div style="width:22px;height:15px;background:#a5d6a7;border:1px solid #388e3c;flex-shrink:0"></div>ตู้โชว์กระจก / ชั้นวางยา</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#80deea;border:1px solid #006064;flex-shrink:0"></div>Air-conditioning unit (left wall-mount)</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#fce4ec;border:2px solid #b71c1c;flex-shrink:0"></div>Locked drug cabinet (wall-anchored)</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#b2ebf2;border:2px solid #0097a7;flex-shrink:0"></div>Pharmaceutical refrigerator 2–8 °C</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#7986cb;flex-shrink:0"></div>Dispensing counter</div>
+          <div class="lg-item"><div style="width:22px;height:15px;background:#a5d6a7;border:1px solid #388e3c;flex-shrink:0"></div>Glass display cabinet / gondola shelf</div>
         </div>
       </div>
 
       <div class="panel-box" style="border-color:#b71c1c">
-        <div class="pb-head" style="background:#b71c1c">รายการบังคับ GPP (อย. ไทย)</div>
+        <div class="pb-head" style="background:#b71c1c">GPP MANDATORY ITEMS (Thai FDA)</div>
         <div class="pb-body">
           <ul style="font-size:10.5px;margin-left:15px;line-height:1.8">
-            <li>ป้ายแยกประเภทยา ก/ข/ค/ง ที่ชั้นวาง</li>
-            <li>อ่างล้างมือที่เคาน์เตอร์จ่ายยา</li>
-            <li>กรอบใบอนุญาตเภสัชกร ติดให้มองเห็นที่เคาน์เตอร์</li>
-            <li>ตู้เหล็กล็อกสำหรับยาประเภท ก/ข</li>
-            <li><strong>กล้อง CCTV ครอบคลุมตู้ยาล็อก (CAM-1 บังคับ)</strong></li>
-            <li>ตู้เย็นยา 2–8 °C + บันทึกอุณหภูมิรายวัน</li>
-            <li>เทอร์โมไฮโกรมิเตอร์ในโซน OTC+ชั้นวาง</li>
-            <li>ฉากกั้นความเป็นส่วนตัวในโซนให้คำปรึกษา</li>
-            <li>หนังสืออ้างอิงในโซนให้คำปรึกษา</li>
-            <li>พื้นที่เก็บยาทุกจุด ≤ 25 °C / ≤ 60 % RH</li>
-            <li>เภสัชกรที่มีใบอนุญาตต้องอยู่ตลอดเวลาทำการ</li>
+            <li>Drug classification signage ก/ข/ค/ง at shelf tops</li>
+            <li>Hand-wash sink at dispensing counter</li>
+            <li>Pharmacist license framed &amp; visible at counter</li>
+            <li>Locked steel cabinet for Schedule A/B drugs</li>
+            <li><strong>CCTV covering locked cabinet (CAM-1 mandatory)</strong></li>
+            <li>Pharma fridge 2–8 °C + daily temp log</li>
+            <li>Thermo-hygrometer in OTC+shelf zone</li>
+            <li>Privacy screen in consultation zone</li>
+            <li>Reference books in consultation zone</li>
+            <li>All storage ≤ 25 °C / ≤ 60 % RH</li>
+            <li>Licensed pharmacist present ALL operating hours</li>
           </ul>
         </div>
       </div>
@@ -414,9 +447,9 @@
 
   <!-- FOOTER -->
   <div class="doc-footer">
-    <div>แบบ: RPC-FP-001 ฉบับ C | มาตรฐาน GPP อย. ไทย | มาตราส่วน 1:50 (แบบแผนผัง)</div>
+    <div>แบบ: RPC-FP-001 ฉบับ D | มาตรฐาน GPP อย. ไทย | มาตราส่วน 1:50 (แบบแผนผัง)</div>
     <div>ร้านยาราชดาเพรสทีจ คอนโด | เพื่อให้ผู้รับเหมาตรวจสอบเท่านั้น</div>
-    <div>40 ตร.ม. | 4.0 ม. × 10.0 ม. | วันที่: 2026-05-26</div>
+    <div>40 ตร.ม. | 5.0 ม. × 8.0 ม. | วันที่: 2026-05-27</div>
   </div>
 
 </div><!-- /page -->
