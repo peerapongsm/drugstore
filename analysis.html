@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tPHARM vs DuckDuckDrug — Competitive Analysis</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f5f7e8; color: #1f2937; line-height: 1.6; }
+
+  .header {
+    background: linear-gradient(135deg, #879b22 0%, #6b7a1a 100%);
+    color: #fff;
+    padding: 40px 32px 32px;
+  }
+  .header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 6px; }
+  .header .meta { font-size: 0.875rem; opacity: 0.85; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+
+  section { margin-bottom: 32px; }
+  h2 {
+    font-size: 1.125rem; font-weight: 700; color: #879b22;
+    border-left: 4px solid #879b22; padding-left: 12px; margin-bottom: 16px;
+  }
+  h3 { font-size: 0.95rem; font-weight: 600; color: #374151; margin: 16px 0 8px; }
+
+  .card {
+    background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+    padding: 20px; margin-bottom: 16px;
+  }
+
+  /* Profile grid */
+  .profile-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;
+  }
+  .profile-item { background: #f9fafb; border-radius: 8px; padding: 12px; }
+  .profile-item .label { font-size: 0.7rem; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .profile-item .value { font-size: 0.875rem; font-weight: 500; color: #1f2937; }
+
+  /* Feature list */
+  .feature-group { margin-bottom: 12px; }
+  .feature-group ul { list-style: none; padding: 0; }
+  .feature-group li {
+    padding: 5px 0; font-size: 0.875rem; border-bottom: 1px solid #f3f4f6;
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .feature-group li:last-child { border-bottom: none; }
+  .feature-group li::before { content: "•"; color: #879b22; font-weight: 700; flex-shrink: 0; }
+
+  /* Comparison table */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  th {
+    background: #f9fafb; padding: 10px 14px; font-weight: 600; color: #6b7280;
+    border-bottom: 2px solid #e5e7eb; text-align: left; white-space: nowrap;
+  }
+  th:not(:first-child) { text-align: center; }
+  td { padding: 9px 14px; border-bottom: 1px solid #f3f4f6; }
+  td:not(:first-child) { text-align: center; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f9fafb; }
+  .check { color: #16a34a; font-size: 1rem; }
+  .cross { color: #dc2626; font-size: 1rem; }
+  .neutral { color: #6b7280; font-size: 0.8rem; }
+
+  /* Wins cards */
+  .wins-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .wins-grid { grid-template-columns: 1fr; } }
+  .wins-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; }
+  .wins-card.tpharm { border-top: 3px solid #6366f1; }
+  .wins-card.ours   { border-top: 3px solid #879b22; }
+  .wins-card h3 { font-size: 0.95rem; margin: 0 0 12px; }
+  .wins-card.tpharm h3 { color: #6366f1; }
+  .wins-card.ours   h3 { color: #879b22; }
+  .wins-card ol { padding-left: 18px; }
+  .wins-card ol li { font-size: 0.875rem; margin-bottom: 6px; color: #374151; }
+  .wins-card ol li strong { color: #111827; }
+
+  /* Gap table */
+  .gap-badge {
+    display: inline-block; font-size: 0.7rem; padding: 2px 8px;
+    border-radius: 12px; font-weight: 500;
+  }
+  .high   { background: #fee2e2; color: #b91c1c; }
+  .medium { background: #fef9c3; color: #92400e; }
+  .low    { background: #dcfce7; color: #166534; }
+
+  /* Positioning */
+  .positioning {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  @media (max-width: 640px) { .positioning { grid-template-columns: 1fr; } }
+  .pos-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; text-align: center; }
+  .pos-card .brand { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .pos-card.tpharm .brand { color: #6366f1; }
+  .pos-card.ours   .brand { color: #879b22; }
+  .pos-card .desc { font-size: 0.875rem; color: #6b7280; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div style="max-width:1100px;margin:0 auto">
+    <h1>tPHARM vs DuckDuckDrug</h1>
+    <div class="meta">Competitive Analysis &nbsp;·&nbsp; 2026-06-05</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Profile -->
+  <section>
+    <h2>tPHARM Profile</h2>
+    <div class="card">
+      <div class="profile-grid">
+        <div class="profile-item"><div class="label">Developer</div><div class="value">Waiprib Solutions Co., Ltd.</div></div>
+        <div class="profile-item"><div class="label">Type</div><div class="value">Electron desktop app</div></div>
+        <div class="profile-item"><div class="label">Stack</div><div class="value">Angular + PouchDB + Ionic/Material Design</div></div>
+        <div class="profile-item"><div class="label">Version</div><div class="value">1.1.131</div></div>
+        <div class="profile-item"><div class="label">Backend</div><div class="value">api.tpharm.app + inventory.tpharm.app (CouchDB)</div></div>
+        <div class="profile-item"><div class="label">Architecture</div><div class="value">Offline-first — PouchDB syncs to cloud</div></div>
+        <div class="profile-item"><div class="label">Platform</div><div class="value">Windows desktop only</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- tPHARM Features -->
+  <section>
+    <h2>tPHARM Feature List</h2>
+    <div class="card">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+        <div class="feature-group">
+          <h3>POS &amp; Sales</h3>
+          <ul>
+            <li>Cash / Credit Card / PromptPay QR payment</li>
+            <li>VAT 7% calculation + discount application</li>
+            <li>Thermal receipt printing: 57mm and 80mm paper</li>
+            <li>Receipt status: Idle / Paid / Cancelled / Returns</li>
+            <li>Sales history and audit trail</li>
+          </ul>
+        </div>
+        <div class="feature-group">
+          <h3>Inventory</h3>
+          <ul>
+            <li>Medications, Dietary Supplements, Beauty, Medical Equipment, Food/Drinks, Other</li>
+            <li>Stock tracking + cloud synchronization</li>
+            <li>Product categories and pricing</li>
+            <li>Item search/filter</li>
+          </ul>
+        </div>
+        <div class="feature-group">
+          <h3>Customer Management</h3>
+          <ul>
+            <li>Customer profiles and purchase history</li>
+            <li>Customer display screen (secondary monitor)</li>
+          </ul>
+        </div>
+        <div class="feature-group">
+          <h3>Promotions</h3>
+          <ul>
+            <li>Promotional campaigns management</li>
+            <li>Discount rules</li>
+          </ul>
+        </div>
+        <div class="feature-group">
+          <h3>Reporting</h3>
+          <ul>
+            <li>Sales statistics (date range, max 31 days/query)</li>
+            <li>Export CSV and PDF</li>
+            <li>Receipt audit trail</li>
+          </ul>
+        </div>
+        <div class="feature-group">
+          <h3>Hardware Integration</h3>
+          <ul>
+            <li>Cash drawer: USB or serial port</li>
+            <li>Thermal printers: 57mm + 80mm, silent print mode</li>
+            <li>Serial port: Full I/O for peripherals</li>
+            <li>Customer display: Secondary monitor</li>
+          </ul>
+        </div>
+        <div class="feature-group">
+          <h3>User &amp; Auth</h3>
+          <ul>
+            <li>Role-based: store owner / staff / branch</li>
+            <li>Main vs. secondary branch restrictions</li>
+            <li>Demo/guest mode</li>
+          </ul>
+        </div>
+        <div class="feature-group">
+          <h3>Backup &amp; Sync</h3>
+          <ul>
+            <li>Full offline mode (PouchDB)</li>
+            <li>Cloud sync to CouchDB backend</li>
+            <li>Backup upload/restore from cloud</li>
+            <li>Auto-update via electron-updater</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section>
+    <h2>Feature Comparison</h2>
+    <div class="card" style="padding:0">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:42%">Feature</th>
+              <th>tPHARM</th>
+              <th>DuckDuckDrug</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Platform</strong></td><td><span class="neutral">Desktop (Windows)</span></td><td><span class="neutral">Web + mobile (any device)</span></td></tr>
+            <tr><td><strong>Offline mode</strong></td><td><span class="check">✓</span> Full offline (PouchDB)</td><td><span class="cross">✗</span> Requires internet</td></tr>
+            <tr><td><strong>Cash drawer hardware</strong></td><td><span class="check">✓</span> USB/serial</td><td><span class="cross">✗</span></td></tr>
+            <tr><td><strong>Credit card terminal</strong></td><td><span class="check">✓</span></td><td><span class="cross">✗</span></td></tr>
+            <tr><td><strong>Customer display screen</strong></td><td><span class="check">✓</span> Secondary monitor</td><td><span class="cross">✗</span></td></tr>
+            <tr><td><strong>Thermal printer</strong></td><td><span class="check">✓</span> 57mm + 80mm</td><td><span class="check">✓</span> 58mm (receipt + drug labels)</td></tr>
+            <tr><td><strong>Auto-update</strong></td><td><span class="check">✓</span> electron-updater</td><td><span class="check">✓</span> Vercel (zero-touch)</td></tr>
+            <tr><td><strong>Multi-branch</strong></td><td><span class="check">✓</span> Built-in</td><td><span class="check">✓</span> Multi-tenant SaaS</td></tr>
+            <tr><td><strong>Cloud backup/restore</strong></td><td><span class="check">✓</span></td><td><span class="check">✓</span> MongoDB Atlas managed</td></tr>
+            <tr><td><strong>Product scope</strong></td><td><span class="neutral">Drugs + beauty + food + equipment</span></td><td><span class="neutral">Drugs only</span></td></tr>
+            <tr><td><strong>Promotional campaigns</strong></td><td><span class="check">✓</span></td><td><span class="check">✓</span> PERCENT_OFF_ALL, BUY_X_GET_Y_FREE</td></tr>
+            <tr><td><strong>Customer loyalty tiers</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span> 3-tier 0/3/5% auto-discount</td></tr>
+            <tr><td><strong>Barcode scanner</strong></td><td><span class="neutral">USB hardware only</span></td><td><span class="check">✓</span> Camera scan via @zxing/browser</td></tr>
+            <tr><td><strong>Mobile-responsive UI</strong></td><td><span class="cross">✗</span> Desktop only</td><td><span class="check">✓</span> MUI responsive + MobileNav</td></tr>
+            <tr><td><strong>Prescription (Rx) management</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span> Full Rx workflow + dispensing log</td></tr>
+            <tr><td><strong>Drug legal classification</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span> ยาอันตราย / ยาควบคุมพิเศษ / OTC</td></tr>
+            <tr><td><strong>Drug label printing</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span> 58mm per-drug labels (patient + dosage)</td></tr>
+            <tr><td><strong>Drug sub-units (tablet/blister)</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td><strong>Lot/batch management (FIFO)</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span> Full FIFO expiry tracking</td></tr>
+            <tr><td><strong>Stocktake workflow</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span> Full count + variance adjustment</td></tr>
+            <tr><td><strong>Drug destruction records</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span> DD workflow with approval chain</td></tr>
+            <tr><td><strong>Appointment management</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td><strong>Purchasing (PO → GR → Returns)</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span> Full procurement chain</td></tr>
+            <tr><td><strong>Supplier management</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td><strong>GPP compliance tools</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span> Stocktake, destruction, dispensing log</td></tr>
+            <tr><td><strong>Reports: GP%, payment split</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td><strong>Reports: top 10 drugs</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td><strong>Report date range</strong></td><td><span class="neutral">Max 31 days</span></td><td><span class="neutral">Unlimited</span></td></tr>
+            <tr><td><strong>OpenFDA drug data</strong></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wins -->
+  <section>
+    <h2>Where Each Side Wins</h2>
+    <div class="wins-grid">
+      <div class="wins-card tpharm">
+        <h3>tPHARM Advantages</h3>
+        <ol>
+          <li><strong>Offline-first</strong> — PouchDB works when internet drops. Critical for Thai pharmacies with unstable connections.</li>
+          <li><strong>Hardware integration</strong> — Cash drawer, credit card terminal, customer display screen.</li>
+          <li><strong>Broader product scope</strong> — Sells beauty, food, supplements, and equipment. More revenue per store.</li>
+          <li><strong>57mm + 80mm printer</strong> — Wider hardware compatibility.</li>
+          <li><strong>Customer display screen</strong> — Professional POS counter experience.</li>
+        </ol>
+      </div>
+      <div class="wins-card ours">
+        <h3>DuckDuckDrug Advantages</h3>
+        <ol>
+          <li><strong>Full pharma compliance</strong> — Rx, dispensing log, destruction, GPP. tPHARM is retail POS with drug support bolted on.</li>
+          <li><strong>Mobile-first</strong> — Works on any phone/tablet, no installation. Check inventory floor-side.</li>
+          <li><strong>Drug label printing</strong> — Patient name, dosage, frequency, meal timing, pharmacist name per drug.</li>
+          <li><strong>Lot/batch management + FIFO</strong> — Per-batch expiry tracking, deducts oldest stock first.</li>
+          <li><strong>Purchasing workflow</strong> — PO → GR → Purchase Returns with supplier management.</li>
+          <li><strong>Drug sub-units</strong> — Sell individual tablets vs. full blister pack.</li>
+          <li><strong>Customer loyalty tiers</strong> — Auto-discount 3/5% for loyal patients.</li>
+          <li><strong>Multi-tenant SaaS</strong> — 100 stores on one platform, root admin impersonation.</li>
+          <li><strong>Camera barcode scan</strong> — Phone camera as scanner; no USB hardware needed.</li>
+          <li><strong>Deeper reports</strong> — GP%, purchase returns, payment type split, unlimited date range.</li>
+          <li><strong>Zero-touch updates</strong> — Push to Vercel = all stores get update instantly.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Positioning -->
+  <section>
+    <h2>Positioning</h2>
+    <div class="positioning">
+      <div class="pos-card tpharm">
+        <div class="brand">tPHARM</div>
+        <div class="desc">General retail POS that can sell drugs</div>
+      </div>
+      <div class="pos-card ours">
+        <div class="brand">DuckDuckDrug</div>
+        <div class="desc">Full pharmacy management system with POS included</div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;background:#fffbeb;border-color:#fde68a">
+      <p style="font-size:0.875rem;color:#78350f">Not directly head-to-head on most features. Competing for the same customers (Thai pharmacy owners) but serving different operational needs.</p>
+    </div>
+  </section>
+
+  <!-- Strategic Gaps -->
+  <section>
+    <h2>Strategic Gaps to Close</h2>
+    <div class="card" style="padding:0">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Gap</th>
+              <th>Business Impact</th>
+              <th>Dev Effort</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Offline mode</strong> (PWA service worker)</td>
+              <td><span class="gap-badge high">High</span> — Thai internet is unreliable</td>
+              <td><span class="gap-badge high">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>Cash drawer</strong> (Web Serial API)</td>
+              <td><span class="gap-badge medium">Medium</span> — essential for POS counter</td>
+              <td><span class="gap-badge medium">Medium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Non-drug product types</strong> (beauty, supplements)</td>
+              <td><span class="gap-badge medium">Medium</span> — extra revenue per store</td>
+              <td><span class="gap-badge low">Low</span></td>
+            </tr>
+            <tr>
+              <td><strong>Customer display</strong> (second browser tab/device)</td>
+              <td><span class="gap-badge low">Low</span> — can simulate easily</td>
+              <td><span class="gap-badge low">Low</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div style="text-align:center;padding:24px;font-size:0.75rem;color:#9ca3af">
+  Generated 2026-06-05 · DuckDuckDrug Internal
+</div>
+
+</body>
+</html>
